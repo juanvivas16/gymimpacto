@@ -5,14 +5,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.main_io_controller">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.main_io_controller">
    <children>
-      <ImageView fitHeight="173.0" fitWidth="414.0" layoutX="93.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="104.0" fitWidth="388.0" layoutX="150.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/logo.jpg" />
          </image>
       </ImageView>
-      <MenuBar prefHeight="29.0" prefWidth="628.0">
+      <MenuBar prefHeight="29.0" prefWidth="640.0">
         <menus>
           <Menu mnemonicParsing="false" text="Archivo">
             <items>
@@ -28,9 +28,10 @@
       </MenuBar>
        <TextField fx:id="user_text_field" layoutX="223.0" layoutY="211.0" />
         <PasswordField fx:id="pass_text_field" layoutX="223.0" layoutY="253.0" />
-      <Label layoutX="160.0" layoutY="216.0" text="Usuario:" />
-      <Label layoutX="159.0" layoutY="258.0" text="Clave:" />
-      <CheckBox layoutX="300.0" layoutY="303.0" mnemonicParsing="false" text="Recordar" />
-      <Button defaultButton="true" layoutX="223.0" layoutY="298.0" mnemonicParsing="false" onAction="#handle_login_button_action" text="Entrar" />
+      <Label layoutX="169.0" layoutY="216.0" text="Usuario:" />
+      <Label layoutX="182.0" layoutY="258.0" text="Clave:" />
+      <CheckBox layoutX="223.0" layoutY="337.0" mnemonicParsing="false" text="Recordar" />
+      <Button defaultButton="true" layoutX="223.0" layoutY="299.0" mnemonicParsing="false" onAction="#handle_login_button_action" text="Entrar" />
+      <Button layoutX="297.0" layoutY="299.0" mnemonicParsing="false" text="Salir" />
    </children>
 </Pane>

@@ -31,6 +31,15 @@ CREATE TABLE `cliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+DROP TABLE IF EXISTS `egresos`;
+CREATE TABLE `egresos` (
+  `cod_egreso` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(40) NOT NULL,
+  `valor` float unsigned NOT NULL,
+  PRIMARY KEY (`cod_egreso`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 DROP TABLE IF EXISTS `ingresos`;
 CREATE TABLE `ingresos` (
   `id_pago` int(11) NOT NULL AUTO_INCREMENT,
@@ -81,6 +90,17 @@ CREATE TABLE `personal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+DROP TABLE IF EXISTS `proveedor`;
+CREATE TABLE `proveedor` (
+  `rif` varchar(10) NOT NULL,
+  `nombre` varchar(40) NOT NULL,
+  `telefono` varchar(11) NOT NULL,
+  `direccion` longtext NOT NULL,
+  `descripcion` longtext NOT NULL,
+  PRIMARY KEY (`rif`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `cod_usuario` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -93,4 +113,4 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- 2016-11-01 01:12:27
+-- 2016-11-01 02:21:20

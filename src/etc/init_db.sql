@@ -36,6 +36,7 @@ CREATE TABLE `egresos` (
   `cod_egreso` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(40) NOT NULL,
   `valor` float unsigned NOT NULL,
+  `fecha` date NOT NULL,
   PRIMARY KEY (`cod_egreso`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -97,6 +98,7 @@ CREATE TABLE `proveedor` (
   `telefono` varchar(11) NOT NULL,
   `direccion` longtext NOT NULL,
   `descripcion` longtext NOT NULL,
+  `fecha` date NOT NULL,
   PRIMARY KEY (`rif`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -113,4 +115,4 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- 2016-11-01 02:21:20
+-- 2016-11-01 02:38:02

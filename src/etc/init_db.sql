@@ -5,9 +5,9 @@ SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
-DROP DATABASE IF EXISTS `gimpacto`;
-CREATE DATABASE `gimpacto` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `gimpacto`;
+DROP DATABASE IF EXISTS `gymimpacto`;
+CREATE DATABASE `gymimpacto` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `gymimpacto`;
 
 DROP TABLE IF EXISTS `cafetin`;
 CREATE TABLE `cafetin` (
@@ -77,6 +77,8 @@ CREATE TABLE `persona` (
   PRIMARY KEY (`ci`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `persona` (`ci`, `nombres`, `apellidos`, `fecha_nac`, `sexo`, `direccion`, `telefono`) VALUES
+  ('V-20431975',	'Juan Andres',	'Vivas Contreras',	'1992-09-16',	'Masculino',	'Santa Maria Sur',	'0424-7804473');
 
 DROP TABLE IF EXISTS `personal`;
 CREATE TABLE `personal` (
@@ -112,7 +114,9 @@ CREATE TABLE `usuarios` (
   PRIMARY KEY (`cod_usuario`),
   KEY `ci_persona` (`ci_persona`),
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`ci_persona`) REFERENCES `persona` (`ci`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
+INSERT INTO `usuarios` (`cod_usuario`, `pass`, `rol`, `ci_persona`) VALUES
+  (1,	'1234',	1,	'V-20431975');
 
--- 2016-11-01 02:38:02
+-- 2016-11-18 22:16:52

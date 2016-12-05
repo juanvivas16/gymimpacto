@@ -1,0 +1,126 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-02 16:43:09 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/$db/points.odb' is opened by 4243@DrexoxManjaro
+
+[2016-12-02 16:43:09 #2 type.registry] 
+New type tutorial.Point
+
+[2016-12-02 16:43:09 #3 type] 
+Type tutorial.Point is not enhanced.
+
+[2016-12-02 16:43:09 #4 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/$db/points.odb' is closed by 4243@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-02 16:43:48 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Paola/$db/points.odb' is opened by 6897@DrexoxII
+
+[2016-12-02 16:43:48 #2 type.registry] 
+New type tutorial.Point
+
+[2016-12-02 16:43:48 #3 type] 
+Type tutorial.Point is not enhanced.
+
+[2016-12-02 16:43:48 #4 store] 
+Database '/home/juancho/IdeaProjects/prac3Paola/$db/points.odb' is closed by 6897@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-02 16:45:49 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/$db/points.odb' is opened by 4475@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-02 16:48:31 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Paola/$db/points.odb' is opened by 7031@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-02 16:50:17 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/points.odb' is opened by 4813@DrexoxManjaro
+
+[2016-12-02 16:50:18 #2 type.registry] 
+New type tutorial.Point
+
+[2016-12-02 16:50:18 #3 type] 
+Type tutorial.Point is not enhanced.
+
+[2016-12-02 16:50:18 #4 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/points.odb' is closed by 4813@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-02 17:18:17 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7375@DrexoxManjaro
+
+[2016-12-02 17:18:17 #2 type.registry] 
+New type person.Person
+
+[2016-12-02 17:18:17 #3 type] 
+Type person.Person is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-02 17:22:27 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' has been recovered (tr. 1-4)
+
+[2016-12-02 17:22:27 #2 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7717@DrexoxManjaro
+
+[2016-12-02 17:22:28 #3 type] 
+Type person.Person is not enhanced.
+
+[2016-12-02 17:22:28 #4 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 7717@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-02 17:23:29 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 8138@DrexoxManjaro
+
+[2016-12-02 17:23:29 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-02 17:23:29 #3 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 8138@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-02 17:23:44 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 8210@DrexoxManjaro
+
+[2016-12-02 17:24:32 #2 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 8210@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-02 17:25:05 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 8343@DrexoxManjaro
+
+[2016-12-02 17:25:08 #2 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 8343@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-02 17:25:11 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 8387@DrexoxManjaro
+
+[2016-12-02 17:25:11 #2 type.registry] 
+New type person.Person
+
+[2016-12-02 17:25:11 #3 type] 
+Type person.Person is not enhanced.
+
+[2016-12-02 17:25:11 #4 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 8387@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-02 17:25:18 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 8452@DrexoxManjaro
+
+[2016-12-02 17:28:39 #2 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 8452@DrexoxManjaro
+

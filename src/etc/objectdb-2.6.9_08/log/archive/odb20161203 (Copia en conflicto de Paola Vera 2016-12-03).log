@@ -1,0 +1,230 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 16:47:55 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/$db/points.odb' is opened by 2972@paovera
+
+[2016-12-03 16:47:56 #2 type] 
+Type tutorial.Point is not enhanced.
+
+[2016-12-03 16:48:02 #3 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/$db/points.odb' is closed by 2972@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 16:55:21 #1 explorer] 
+[ObjectDB 2.6.9_08] javax.persistence.PersistenceException
+Failed to open file '/' (error 115)
+	at javax.swing.Timer.fireActionPerformed(Timer.java:313)
+	at javax.swing.Timer$DoPostEvent.run(Timer.java:245)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Caused by: com.objectdb.o.UserException: Failed to open file '/'
+	at com.objectdb.o.MSG.d(MSG.java:75)
+	at com.objectdb.o.LFL.M(LFL.java:1204)
+	at com.objectdb.o.LFL.B(LFL.java:899)
+	at com.objectdb.o.LFL.B(LFL.java:794)
+	at com.objectdb.o.SFL.<init>(SFL.java:235)
+	at com.objectdb.o.MST.<init>(MST.java:123)
+	at com.objectdb.o.MST.aN(MST.java:105)
+	at com.objectdb.o.MSF.Vn(MSF.java:188)
+	at com.objectdb.o.OMF.an(OMF.java:782)
+	at com.objectdb.jpa.EMF.an(EMF.java:131)
+	at com.objectdb.o.OMF.am(OMF.java:693)
+	at com.objectdb.jpa.EMF.createEntityManager(EMF.java:150)
+	... 18 more
+Caused by: java.io.FileNotFoundException: / (Es un directorio)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(RandomAccessFile.java:316)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:243)
+	at com.objectdb.o.LFL.B(LFL.java:882)
+	... 27 more
+
+[2016-12-03 16:55:37 #2 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/objectdb-2.6.9_08/db/points.odb' is opened by 3533@paovera
+
+[2016-12-03 16:56:00 #3 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/objectdb-2.6.9_08/db/points.odb' is closed by 3533@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 17:50:04 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 6858@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 17:53:46 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' has been recovered (tr. 1-2)
+
+[2016-12-03 17:53:47 #2 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 6992@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 17:56:20 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7098@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:08:41 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7468@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:10:32 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7564@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:10:54 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7617@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:11:16 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7664@DrexoxII
+
+[2016-12-03 18:11:16 #2 type.registry] 
+New type person.Person
+
+[2016-12-03 18:11:16 #3 type.registry] 
+New type person.Student
+
+[2016-12-03 18:11:16 #4 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 18:11:16 #5 type.registry] 
+New type java.time.LocalDate
+
+[2016-12-03 18:11:16 #6 type] 
+Type person.Student is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:11:26 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' has been recovered (tr. 3-3)
+
+[2016-12-03 18:11:27 #2 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7706@DrexoxII
+
+[2016-12-03 18:11:27 #3 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 18:11:27 #4 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 18:11:27 #5 type.registry] 
+New type person.Professor
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:11:55 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' has been recovered (tr. 4-4)
+
+[2016-12-03 18:11:56 #2 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7764@DrexoxII
+
+[2016-12-03 18:11:56 #3 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 18:11:56 #4 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 18:11:56 #5 type] 
+Type person.Professor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:29:47 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' has been recovered (tr. 5-5)
+
+[2016-12-03 18:29:47 #2 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 8235@DrexoxII
+
+[2016-12-03 18:29:48 #3 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 18:29:48 #4 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 18:29:48 #5 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 18:29:48 #6 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 8235@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:30:33 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 8296@DrexoxII
+
+[2016-12-03 18:30:45 #2 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 8296@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:39:21 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 8574@DrexoxII
+
+[2016-12-03 18:39:21 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 18:39:21 #3 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 18:39:21 #4 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 18:39:22 #5 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 8574@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:49:29 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 8875@DrexoxII
+
+[2016-12-03 18:49:29 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 18:49:29 #3 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 18:49:29 #4 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 18:49:30 #5 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 8875@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:51:17 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/$db/points.odb' is opened by 8677@paovera
+
+[2016-12-03 18:51:18 #2 type] 
+Type tutorial.Point is not enhanced.
+
+[2016-12-03 18:51:19 #3 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/$db/points.odb' is closed by 8677@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:51:53 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/$db/points.odb' is opened by 8726@paovera
+
+[2016-12-03 18:51:53 #2 type] 
+Type tutorial.Point is not enhanced.
+
+[2016-12-03 18:51:55 #3 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/$db/points.odb' is closed by 8726@paovera
+

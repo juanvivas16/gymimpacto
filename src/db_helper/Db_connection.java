@@ -1,13 +1,10 @@
 package db_helper;
 
 
-import data_model.Person;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.*;
-import java.sql.Date;
 import java.util.*;
 
 

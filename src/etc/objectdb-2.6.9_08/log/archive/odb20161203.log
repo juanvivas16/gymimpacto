@@ -1,0 +1,1318 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 16:47:55 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/$db/points.odb' is opened by 2972@paovera
+
+[2016-12-03 16:47:56 #2 type] 
+Type tutorial.Point is not enhanced.
+
+[2016-12-03 16:48:02 #3 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/$db/points.odb' is closed by 2972@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 16:55:21 #1 explorer] 
+[ObjectDB 2.6.9_08] javax.persistence.PersistenceException
+Failed to open file '/' (error 115)
+	at javax.swing.Timer.fireActionPerformed(Timer.java:313)
+	at javax.swing.Timer$DoPostEvent.run(Timer.java:245)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Caused by: com.objectdb.o.UserException: Failed to open file '/'
+	at com.objectdb.o.MSG.d(MSG.java:75)
+	at com.objectdb.o.LFL.M(LFL.java:1204)
+	at com.objectdb.o.LFL.B(LFL.java:899)
+	at com.objectdb.o.LFL.B(LFL.java:794)
+	at com.objectdb.o.SFL.<init>(SFL.java:235)
+	at com.objectdb.o.MST.<init>(MST.java:123)
+	at com.objectdb.o.MST.aN(MST.java:105)
+	at com.objectdb.o.MSF.Vn(MSF.java:188)
+	at com.objectdb.o.OMF.an(OMF.java:782)
+	at com.objectdb.jpa.EMF.an(EMF.java:131)
+	at com.objectdb.o.OMF.am(OMF.java:693)
+	at com.objectdb.jpa.EMF.createEntityManager(EMF.java:150)
+	... 18 more
+Caused by: java.io.FileNotFoundException: / (Es un directorio)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(RandomAccessFile.java:316)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:243)
+	at com.objectdb.o.LFL.B(LFL.java:882)
+	... 27 more
+
+[2016-12-03 16:55:37 #2 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/objectdb-2.6.9_08/db/points.odb' is opened by 3533@paovera
+
+[2016-12-03 16:56:00 #3 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/objectdb-2.6.9_08/db/points.odb' is closed by 3533@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 17:50:04 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 6858@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 17:53:46 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' has been recovered (tr. 1-2)
+
+[2016-12-03 17:53:47 #2 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 6992@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 17:56:20 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7098@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:08:41 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7468@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:10:32 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7564@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:10:54 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7617@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:11:16 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7664@DrexoxII
+
+[2016-12-03 18:11:16 #2 type.registry] 
+New type person.Person
+
+[2016-12-03 18:11:16 #3 type.registry] 
+New type person.Student
+
+[2016-12-03 18:11:16 #4 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 18:11:16 #5 type.registry] 
+New type java.time.LocalDate
+
+[2016-12-03 18:11:16 #6 type] 
+Type person.Student is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:11:26 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' has been recovered (tr. 3-3)
+
+[2016-12-03 18:11:27 #2 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7706@DrexoxII
+
+[2016-12-03 18:11:27 #3 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 18:11:27 #4 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 18:11:27 #5 type.registry] 
+New type person.Professor
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:11:55 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' has been recovered (tr. 4-4)
+
+[2016-12-03 18:11:56 #2 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 7764@DrexoxII
+
+[2016-12-03 18:11:56 #3 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 18:11:56 #4 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 18:11:56 #5 type] 
+Type person.Professor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:29:47 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' has been recovered (tr. 5-5)
+
+[2016-12-03 18:29:47 #2 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 8235@DrexoxII
+
+[2016-12-03 18:29:48 #3 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 18:29:48 #4 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 18:29:48 #5 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 18:29:48 #6 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 8235@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:30:33 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 8296@DrexoxII
+
+[2016-12-03 18:30:45 #2 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 8296@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:39:21 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 8574@DrexoxII
+
+[2016-12-03 18:39:21 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 18:39:21 #3 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 18:39:21 #4 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 18:39:22 #5 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 8574@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:49:29 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 8875@DrexoxII
+
+[2016-12-03 18:49:29 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 18:49:29 #3 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 18:49:29 #4 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 18:49:30 #5 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 8875@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:51:17 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/$db/points.odb' is opened by 8677@paovera
+
+[2016-12-03 18:51:18 #2 type] 
+Type tutorial.Point is not enhanced.
+
+[2016-12-03 18:51:19 #3 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/$db/points.odb' is closed by 8677@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:51:45 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 8974@DrexoxII
+
+[2016-12-03 18:51:45 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 18:51:46 #3 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 18:51:46 #4 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 18:51:46 #5 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 8974@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:51:57 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 9020@DrexoxII
+
+[2016-12-03 18:51:57 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 18:51:57 #3 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 18:51:57 #4 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 18:51:57 #5 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 9020@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:54:46 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 8861@paovera
+
+[2016-12-03 18:54:47 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 18:54:47 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 18:54:47 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 18:55:24 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' has been recovered (tr. 1-3)
+
+[2016-12-03 18:55:25 #2 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 8906@paovera
+
+[2016-12-03 18:55:25 #3 type] 
+Type Practica3.Persona is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 19:01:16 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 9138@paovera
+
+[2016-12-03 19:01:16 #2 type] 
+Type Practica3.Persona is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 19:01:49 #1 explorer] 
+[ObjectDB 2.6.9_08] javax.persistence.PersistenceException
+Failed to open file '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/objectdb-2.6.9_08/bin' (error 115)
+	at javax.swing.Timer.fireActionPerformed(Timer.java:313)
+	at javax.swing.Timer$DoPostEvent.run(Timer.java:245)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Caused by: com.objectdb.o.UserException: Failed to open file '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/objectdb-2.6.9_08/bin'
+	at com.objectdb.o.MSG.d(MSG.java:75)
+	at com.objectdb.o.LFL.M(LFL.java:1204)
+	at com.objectdb.o.LFL.B(LFL.java:899)
+	at com.objectdb.o.LFL.B(LFL.java:794)
+	at com.objectdb.o.SFL.<init>(SFL.java:235)
+	at com.objectdb.o.MST.<init>(MST.java:123)
+	at com.objectdb.o.MST.aN(MST.java:105)
+	at com.objectdb.o.MSF.Vn(MSF.java:188)
+	at com.objectdb.o.OMF.an(OMF.java:782)
+	at com.objectdb.jpa.EMF.an(EMF.java:131)
+	at com.objectdb.o.OMF.am(OMF.java:693)
+	at com.objectdb.jpa.EMF.createEntityManager(EMF.java:150)
+	... 18 more
+Caused by: java.io.FileNotFoundException: /home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/objectdb-2.6.9_08/bin (Es un directorio)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(RandomAccessFile.java:316)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:243)
+	at com.objectdb.o.LFL.B(LFL.java:882)
+	... 27 more
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 19:05:17 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 9327@paovera
+
+[2016-12-03 19:05:17 #2 type] 
+Type Practica3.Persona is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 19:05:52 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 9451@DrexoxII
+
+[2016-12-03 19:05:52 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 19:05:52 #3 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 19:05:52 #4 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 19:05:53 #5 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 9451@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 19:09:55 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 9477@paovera
+
+[2016-12-03 19:09:55 #2 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 19:09:55 #3 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 19:09:55 #4 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 19:09:55 #5 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 19:09:55 #6 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 9477@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 19:11:55 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 9724@DrexoxII
+
+[2016-12-03 19:11:55 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 19:11:55 #3 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 19:11:55 #4 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 19:11:55 #5 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 9724@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 19:13:34 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 9812@DrexoxII
+
+[2016-12-03 19:13:34 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 19:13:34 #3 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 19:13:34 #4 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 19:13:34 #5 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 9812@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 19:14:09 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 9868@DrexoxII
+
+[2016-12-03 19:14:09 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 19:14:09 #3 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 19:14:09 #4 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 19:14:10 #5 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 9868@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 19:14:40 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 9618@paovera
+
+[2016-12-03 19:14:41 #2 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 19:14:41 #3 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 19:14:41 #4 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 19:14:42 #5 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 9618@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 19:15:59 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 9953@DrexoxII
+
+[2016-12-03 19:15:59 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 19:15:59 #3 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 19:15:59 #4 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 19:15:59 #5 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 9953@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 20:24:19 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 10929@DrexoxII
+
+[2016-12-03 20:24:19 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 20:24:19 #3 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 20:24:19 #4 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 20:24:20 #5 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 10929@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 20:30:59 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 11640@paovera
+
+[2016-12-03 20:30:59 #2 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 20:30:59 #3 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 20:30:59 #4 type] 
+Type Practica3.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 20:31:34 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' has been recovered (tr. 8-8)
+
+[2016-12-03 20:31:35 #2 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 11693@paovera
+
+[2016-12-03 20:31:35 #3 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 20:31:35 #4 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 20:31:35 #5 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 20:31:36 #6 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 11693@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 20:31:51 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 11179@DrexoxII
+
+[2016-12-03 20:31:51 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 20:31:51 #3 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 20:31:51 #4 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 20:31:51 #5 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 11179@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 20:33:25 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 11762@paovera
+
+[2016-12-03 20:33:25 #2 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 20:33:25 #3 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 20:33:25 #4 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 20:33:26 #5 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 11762@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 20:34:28 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 11279@DrexoxII
+
+[2016-12-03 20:34:28 #2 type] 
+Type person.Person is not enhanced.
+
+[2016-12-03 20:34:29 #3 type] 
+Type person.Student is not enhanced.
+
+[2016-12-03 20:34:29 #4 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-03 20:34:29 #5 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 11279@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 20:36:05 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 11871@paovera
+
+[2016-12-03 20:36:05 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 20:36:05 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 20:36:05 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 20:36:05 #5 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 20:36:05 #6 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 20:36:05 #7 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 20:36:06 #8 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 11871@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 20:38:17 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 11949@paovera
+
+[2016-12-03 20:38:17 #2 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 20:38:17 #3 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 20:38:17 #4 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 20:38:18 #5 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 11949@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 20:40:06 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 12028@paovera
+
+[2016-12-03 20:40:07 #2 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 20:40:07 #3 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 20:40:07 #4 type] 
+Type Practica3.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 20:40:26 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' has been recovered (tr. 7-7)
+
+[2016-12-03 20:40:26 #2 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 12073@paovera
+
+[2016-12-03 20:40:26 #3 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 20:40:26 #4 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 20:40:26 #5 type] 
+Type Practica3.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 20:43:15 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 12171@paovera
+
+[2016-12-03 20:43:16 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 20:43:16 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 20:43:16 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 20:43:16 #5 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 20:43:16 #6 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 20:43:16 #7 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 20:43:17 #8 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 12171@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 20:45:05 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 12248@paovera
+
+[2016-12-03 20:45:05 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 20:45:05 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 20:45:05 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 20:45:05 #5 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 20:45:05 #6 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 20:45:05 #7 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 20:45:11 #8 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 12248@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 20:57:07 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 12579@paovera
+
+[2016-12-03 20:57:07 #2 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 20:57:07 #3 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 20:57:07 #4 type] 
+Type Practica3.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 20:59:14 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 12653@paovera
+
+[2016-12-03 20:59:15 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 20:59:15 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 20:59:15 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 20:59:15 #5 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 20:59:15 #6 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 20:59:15 #7 type] 
+Type Practica3.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:00:09 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' has been recovered (tr. 1-5)
+
+[2016-12-03 21:00:09 #2 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 12716@paovera
+
+[2016-12-03 21:00:09 #3 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:00:09 #4 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:00:09 #5 type] 
+Type Practica3.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:00:38 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' has been recovered (tr. 6-6)
+
+[2016-12-03 21:00:38 #2 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 12755@paovera
+
+[2016-12-03 21:00:39 #3 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:00:39 #4 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:00:39 #5 type] 
+Type Practica3.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:07:43 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 12945@paovera
+
+[2016-12-03 21:07:44 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 21:07:44 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 21:07:44 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:07:44 #5 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:07:44 #6 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 21:07:44 #7 type] 
+Type Practica3.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:09:47 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' has been recovered (tr. 1-5)
+
+[2016-12-03 21:09:47 #2 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 13033@paovera
+
+[2016-12-03 21:09:48 #3 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:09:48 #4 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:09:48 #5 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 21:09:49 #6 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 13033@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:10:39 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 13088@paovera
+
+[2016-12-03 21:10:39 #2 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:10:39 #3 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:10:39 #4 type] 
+Type Practica3.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:10:56 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' has been recovered (tr. 7-7)
+
+[2016-12-03 21:10:57 #2 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 13130@paovera
+
+[2016-12-03 21:10:57 #3 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:10:57 #4 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:10:57 #5 type] 
+Type Practica3.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:11:11 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' has been recovered (tr. 8-8)
+
+[2016-12-03 21:11:11 #2 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 13167@paovera
+
+[2016-12-03 21:11:11 #3 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:11:11 #4 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:11:11 #5 type] 
+Type Practica3.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:11:29 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' has been recovered (tr. 9-9)
+
+[2016-12-03 21:11:35 #2 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 13209@paovera
+
+[2016-12-03 21:11:35 #3 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:11:35 #4 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:11:35 #5 type] 
+Type Practica3.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:12:04 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' has been recovered (tr. 10-10)
+
+[2016-12-03 21:12:04 #2 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 13255@paovera
+
+[2016-12-03 21:12:04 #3 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:12:04 #4 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:12:04 #5 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 21:12:06 #6 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 13255@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:15:22 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 13363@paovera
+
+[2016-12-03 21:15:23 #2 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:15:23 #3 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:15:23 #4 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 21:15:24 #5 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 13363@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:16:25 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 13861@paovera
+
+[2016-12-03 21:16:25 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 21:16:25 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 21:16:25 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:16:25 #5 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:16:25 #6 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 21:16:25 #7 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 21:16:26 #8 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 13861@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:31:07 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 14226@paovera
+
+[2016-12-03 21:31:08 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 21:31:08 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 21:31:08 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:31:08 #5 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:31:08 #6 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 21:31:08 #7 type] 
+Type Practica3.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:31:38 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 14282@paovera
+
+[2016-12-03 21:31:38 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 21:31:38 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 21:31:38 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:31:39 #5 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:31:39 #6 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 21:31:39 #7 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 21:31:39 #8 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 14282@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:32:22 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 14331@paovera
+
+[2016-12-03 21:32:22 #2 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:32:22 #3 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:32:22 #4 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 21:32:25 #5 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 14331@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:34:24 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 14415@paovera
+
+[2016-12-03 21:34:24 #2 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:34:24 #3 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:34:24 #4 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 21:34:25 #5 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 14415@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:35:24 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 14488@paovera
+
+[2016-12-03 21:35:25 #2 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:35:25 #3 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:35:25 #4 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 21:35:26 #5 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 14488@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:37:37 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 14587@paovera
+
+[2016-12-03 21:37:37 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 21:37:37 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 21:37:37 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:37:37 #5 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:37:37 #6 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 21:37:37 #7 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 21:37:38 #8 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 14587@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:40:01 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 14675@paovera
+
+[2016-12-03 21:40:02 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 21:40:02 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 21:40:02 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:40:02 #5 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:40:02 #6 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 21:40:02 #7 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 21:40:03 #8 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 14675@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:42:27 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 14773@paovera
+
+[2016-12-03 21:42:28 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 21:42:28 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 21:42:28 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:42:28 #5 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:42:28 #6 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 21:42:28 #7 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 21:42:29 #8 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 14773@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:52:02 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 15018@paovera
+
+[2016-12-03 21:52:03 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 21:52:03 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 21:52:03 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:52:03 #5 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:52:03 #6 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 21:52:03 #7 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 21:52:04 #8 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 15018@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:57:20 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 15171@paovera
+
+[2016-12-03 21:57:20 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 21:57:20 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 21:57:20 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 21:57:20 #5 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 21:57:20 #6 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 21:57:20 #7 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 21:57:21 #8 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 15171@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 21:59:10 #1 explorer] 
+[ObjectDB 2.6.9_08] javax.persistence.PersistenceException
+Failed to open file '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/objectdb-2.6.9_08/bin' (error 115)
+	at javax.swing.Timer.fireActionPerformed(Timer.java:313)
+	at javax.swing.Timer$DoPostEvent.run(Timer.java:245)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Caused by: com.objectdb.o.UserException: Failed to open file '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/objectdb-2.6.9_08/bin'
+	at com.objectdb.o.MSG.d(MSG.java:75)
+	at com.objectdb.o.LFL.M(LFL.java:1204)
+	at com.objectdb.o.LFL.B(LFL.java:899)
+	at com.objectdb.o.LFL.B(LFL.java:794)
+	at com.objectdb.o.SFL.<init>(SFL.java:235)
+	at com.objectdb.o.MST.<init>(MST.java:123)
+	at com.objectdb.o.MST.aN(MST.java:105)
+	at com.objectdb.o.MSF.Vn(MSF.java:188)
+	at com.objectdb.o.OMF.an(OMF.java:782)
+	at com.objectdb.jpa.EMF.an(EMF.java:131)
+	at com.objectdb.o.OMF.am(OMF.java:693)
+	at com.objectdb.jpa.EMF.createEntityManager(EMF.java:150)
+	... 18 more
+Caused by: java.io.FileNotFoundException: /home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/objectdb-2.6.9_08/bin (Es un directorio)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(RandomAccessFile.java:316)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:243)
+	at com.objectdb.o.LFL.B(LFL.java:882)
+	... 27 more
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 22:02:01 #1 explorer] 
+[ObjectDB 2.6.9_08] javax.persistence.PersistenceException
+Failed to open file '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola' (error 115)
+	at javax.swing.Timer.fireActionPerformed(Timer.java:313)
+	at javax.swing.Timer$DoPostEvent.run(Timer.java:245)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Caused by: com.objectdb.o.UserException: Failed to open file '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola'
+	at com.objectdb.o.MSG.d(MSG.java:75)
+	at com.objectdb.o.LFL.M(LFL.java:1204)
+	at com.objectdb.o.LFL.B(LFL.java:899)
+	at com.objectdb.o.LFL.B(LFL.java:794)
+	at com.objectdb.o.SFL.<init>(SFL.java:235)
+	at com.objectdb.o.MST.<init>(MST.java:123)
+	at com.objectdb.o.MST.aN(MST.java:105)
+	at com.objectdb.o.MSF.Vn(MSF.java:188)
+	at com.objectdb.o.OMF.an(OMF.java:782)
+	at com.objectdb.jpa.EMF.an(EMF.java:131)
+	at com.objectdb.o.OMF.am(OMF.java:693)
+	at com.objectdb.jpa.EMF.createEntityManager(EMF.java:150)
+	... 18 more
+Caused by: java.io.FileNotFoundException: /home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola (Es un directorio)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(RandomAccessFile.java:316)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:243)
+	at com.objectdb.o.LFL.B(LFL.java:882)
+	... 27 more
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 22:04:16 #1 explorer] 
+[ObjectDB 2.6.9_08] javax.persistence.PersistenceException
+Failed to open file '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db' (error 115)
+	at javax.swing.Timer.fireActionPerformed(Timer.java:313)
+	at javax.swing.Timer$DoPostEvent.run(Timer.java:245)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+Caused by: com.objectdb.o.UserException: Failed to open file '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db'
+	at com.objectdb.o.MSG.d(MSG.java:75)
+	at com.objectdb.o.LFL.M(LFL.java:1204)
+	at com.objectdb.o.LFL.B(LFL.java:899)
+	at com.objectdb.o.LFL.B(LFL.java:794)
+	at com.objectdb.o.SFL.<init>(SFL.java:235)
+	at com.objectdb.o.MST.<init>(MST.java:123)
+	at com.objectdb.o.MST.aN(MST.java:105)
+	at com.objectdb.o.MSF.Vn(MSF.java:188)
+	at com.objectdb.o.OMF.an(OMF.java:782)
+	at com.objectdb.jpa.EMF.an(EMF.java:131)
+	at com.objectdb.o.OMF.am(OMF.java:693)
+	at com.objectdb.jpa.EMF.createEntityManager(EMF.java:150)
+	... 18 more
+Caused by: java.io.FileNotFoundException: /home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db (Es un directorio)
+	at java.io.RandomAccessFile.open0(Native Method)
+	at java.io.RandomAccessFile.open(RandomAccessFile.java:316)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:243)
+	at com.objectdb.o.LFL.B(LFL.java:882)
+	... 27 more
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 22:04:57 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 15399@paovera
+
+[2016-12-03 22:05:38 #2 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 15399@paovera
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-03 22:09:06 #1 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is opened by 15586@paovera
+
+[2016-12-03 22:09:06 #2 type.registry] 
+New type Practica3.Persona
+
+[2016-12-03 22:09:06 #3 type.registry] 
+New type Practica3.Estudiante
+
+[2016-12-03 22:09:06 #4 type] 
+Type Practica3.Persona is not enhanced.
+
+[2016-12-03 22:09:06 #5 type] 
+Type Practica3.Estudiante is not enhanced.
+
+[2016-12-03 22:09:06 #6 type.registry] 
+New type Practica3.Profesor
+
+[2016-12-03 22:09:06 #7 type] 
+Type Practica3.Profesor is not enhanced.
+
+[2016-12-03 22:09:07 #8 store] 
+Database '/home/paovera/Dropbox/Cosas de Pao&Juancho/Base de Datos A2016/practicas/evaluada3/prac3Paola/db/Practica3.odb' is closed by 15586@paovera
+

@@ -1,0 +1,400 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 10:19:35 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/points.odb' is opened by 1830@DrexoxManjaro
+
+[2016-12-04 10:19:35 #2 type.registry] 
+New type tutorial.Point
+
+[2016-12-04 10:19:35 #3 type] 
+Type tutorial.Point is not enhanced.
+
+[2016-12-04 10:19:36 #4 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/points.odb' is closed by 1830@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 10:20:18 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/points.odb' is opened by 1871@DrexoxManjaro
+
+[2016-12-04 10:20:55 #2 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/points.odb' is closed by 1871@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 10:21:02 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/points.odb' is opened by 1919@DrexoxManjaro
+
+[2016-12-04 10:21:07 #2 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/points.odb' is closed by 1919@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 11:20:33 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 23604@DrexoxII
+
+[2016-12-04 11:20:34 #2 type.registry] 
+New type person.Person
+
+[2016-12-04 11:20:34 #3 type.registry] 
+New type person.Student
+
+[2016-12-04 11:20:34 #4 type] 
+Type person.Person is not enhanced.
+
+[2016-12-04 11:20:34 #5 type] 
+Type person.Student is not enhanced.
+
+[2016-12-04 11:20:34 #6 type.registry] 
+New type person.Professor
+
+[2016-12-04 11:20:34 #7 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-04 11:20:34 #8 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 23604@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 11:33:30 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 24018@DrexoxII
+
+[2016-12-04 11:33:31 #2 type.registry] 
+New type person.Person
+
+[2016-12-04 11:33:31 #3 type.registry] 
+New type person.Student
+
+[2016-12-04 11:33:31 #4 type] 
+Type person.Person is not enhanced.
+
+[2016-12-04 11:33:31 #5 type] 
+Type person.Student is not enhanced.
+
+[2016-12-04 11:33:31 #6 type.registry] 
+New type person.Professor
+
+[2016-12-04 11:33:31 #7 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-04 11:33:31 #8 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 24018@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 11:34:56 #1 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is opened by 24101@DrexoxII
+
+[2016-12-04 11:34:56 #2 type.registry] 
+New type person.Person
+
+[2016-12-04 11:34:56 #3 type.registry] 
+New type person.Student
+
+[2016-12-04 11:34:56 #4 type] 
+Type person.Person is not enhanced.
+
+[2016-12-04 11:34:56 #5 type] 
+Type person.Student is not enhanced.
+
+[2016-12-04 11:34:56 #6 type.registry] 
+New type person.Professor
+
+[2016-12-04 11:34:56 #7 type] 
+Type person.Professor is not enhanced.
+
+[2016-12-04 11:34:56 #8 store] 
+Database '/home/juancho/IdeaProjects/prac3Juan/db/person.odb' is closed by 24101@DrexoxII
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:01:55 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 4027@DrexoxManjaro
+
+[2016-12-04 12:01:56 #2 type.registry] 
+New type Practica.Persona
+
+[2016-12-04 12:01:56 #3 type.registry] 
+New type Practica.Estudiante
+
+[2016-12-04 12:01:56 #4 type] 
+Type Practica.Persona is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:03:11 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' has been recovered (tr. 1-3)
+
+[2016-12-04 12:03:11 #2 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 4112@DrexoxManjaro
+
+[2016-12-04 12:03:11 #3 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:03:11 #4 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:03:11 #5 type.registry] 
+New type Practica.Profesor
+
+[2016-12-04 12:03:11 #6 type] 
+Type Practica.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:04:03 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' has been recovered (tr. 4-6)
+
+[2016-12-04 12:04:03 #2 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 4191@DrexoxManjaro
+
+[2016-12-04 12:04:03 #3 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:04:03 #4 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:04:03 #5 type] 
+Type Practica.Profesor is not enhanced.
+
+[2016-12-04 12:04:03 #6 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is closed by 4191@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:05:39 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 4311@DrexoxManjaro
+
+[2016-12-04 12:05:39 #2 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:05:39 #3 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:05:39 #4 type] 
+Type Practica.Profesor is not enhanced.
+
+[2016-12-04 12:05:39 #5 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is closed by 4311@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:06:17 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 4379@DrexoxManjaro
+
+[2016-12-04 12:06:17 #2 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:06:17 #3 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:06:17 #4 type] 
+Type Practica.Profesor is not enhanced.
+
+[2016-12-04 12:06:17 #5 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is closed by 4379@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:06:30 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 4435@DrexoxManjaro
+
+[2016-12-04 12:06:30 #2 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:06:30 #3 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:06:30 #4 type] 
+Type Practica.Profesor is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:07:09 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' has been recovered (tr. 10-10)
+
+[2016-12-04 12:07:09 #2 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 4501@DrexoxManjaro
+
+[2016-12-04 12:07:09 #3 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:07:09 #4 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:07:09 #5 type] 
+Type Practica.Profesor is not enhanced.
+
+[2016-12-04 12:07:09 #6 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is closed by 4501@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:09:14 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 4582@DrexoxManjaro
+
+[2016-12-04 12:09:14 #2 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:09:14 #3 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:09:14 #4 type] 
+Type Practica.Profesor is not enhanced.
+
+[2016-12-04 12:09:14 #5 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is closed by 4582@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:13:00 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 4714@DrexoxManjaro
+
+[2016-12-04 12:13:00 #2 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:13:00 #3 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:13:00 #4 type] 
+Type Practica.Profesor is not enhanced.
+
+[2016-12-04 12:13:00 #5 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is closed by 4714@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:13:59 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 4787@DrexoxManjaro
+
+[2016-12-04 12:13:59 #2 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:13:59 #3 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:13:59 #4 type] 
+Type Practica.Profesor is not enhanced.
+
+[2016-12-04 12:14:00 #5 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is closed by 4787@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:16:03 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 4884@DrexoxManjaro
+
+[2016-12-04 12:16:03 #2 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:16:03 #3 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:16:03 #4 type] 
+Type Practica.Profesor is not enhanced.
+
+[2016-12-04 12:16:03 #5 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is closed by 4884@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:17:06 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 4963@DrexoxManjaro
+
+[2016-12-04 12:17:06 #2 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:17:06 #3 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:17:06 #4 type] 
+Type Practica.Profesor is not enhanced.
+
+[2016-12-04 12:17:07 #5 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is closed by 4963@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:18:10 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 5043@DrexoxManjaro
+
+[2016-12-04 12:18:10 #2 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:18:10 #3 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:18:10 #4 type] 
+Type Practica.Profesor is not enhanced.
+
+[2016-12-04 12:18:10 #5 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is closed by 5043@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:18:56 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 5106@DrexoxManjaro
+
+[2016-12-04 12:18:56 #2 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:18:56 #3 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:18:56 #4 type] 
+Type Practica.Profesor is not enhanced.
+
+[2016-12-04 12:18:56 #5 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is closed by 5106@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:22:51 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 5287@DrexoxManjaro
+
+[2016-12-04 12:22:51 #2 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:22:51 #3 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:22:51 #4 type] 
+Type Practica.Profesor is not enhanced.
+
+[2016-12-04 12:22:52 #5 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is closed by 5287@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:27:01 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 5439@DrexoxManjaro
+
+[2016-12-04 12:27:01 #2 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:27:01 #3 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:27:01 #4 type] 
+Type Practica.Profesor is not enhanced.
+
+[2016-12-04 12:27:01 #5 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is closed by 5439@DrexoxManjaro
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2016-12-04 12:27:13 #1 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is opened by 5499@DrexoxManjaro
+
+[2016-12-04 12:27:13 #2 type] 
+Type Practica.Persona is not enhanced.
+
+[2016-12-04 12:27:13 #3 type] 
+Type Practica.Estudiante is not enhanced.
+
+[2016-12-04 12:27:13 #4 type] 
+Type Practica.Profesor is not enhanced.
+
+[2016-12-04 12:27:14 #5 store] 
+Database '/home/juancho/IdeaProjects/JulianBD/db/practica3.odb' is closed by 5499@DrexoxManjaro
+

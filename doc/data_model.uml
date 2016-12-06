@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>data_model</OriginalElement>
+  <nodes>
+    <node x="569.0" y="425.0">data_model.User</node>
+    <node x="304.0" y="1012.0">data_model.Earnings_product</node>
+    <node x="0.0" y="661.0">data_model.Equipment_inventory</node>
+    <node x="235.0" y="425.0">data_model.Staff</node>
+    <node x="274.0" y="1248.0">data_model.type_contract</node>
+    <node x="752.0" y="661.0">data_model.Product</node>
+    <node x="0.0" y="1012.0">data_model.Service</node>
+    <node x="0.0" y="1248.0">data_model.Supplier_product</node>
+    <node x="904.0" y="1012.0">data_model.EarningproductID</node>
+    <node x="1192.0" y="1012.0">data_model.ServiceId</node>
+    <node x="425.0" y="1248.0">data_model.service_type</node>
+    <node x="1052.0" y="661.0">data_model.Expenses</node>
+    <node x="190.0" y="0.0">data_model.Person</node>
+    <node x="0.0" y="471.0">data_model.Customer</node>
+    <node x="902.0" y="0.0">data_model.Earnings</node>
+    <node x="380.0" y="661.0">data_model.Supplier</node>
+    <node x="569.0" y="1248.0">data_model.Estate</node>
+    <node x="615.0" y="1012.0">data_model.SupplierProductID</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="data_model.Staff" target="data_model.Person">
+      <point x="0.0" y="-95.5" />
+      <point x="-2.8421709430404007E-14" y="187.5" />
+    </edge>
+    <edge source="data_model.Customer" target="data_model.Person">
+      <point x="0.0" y="-49.5" />
+      <point x="107.5" y="400.0" />
+      <point x="257.33333333333337" y="400.0" />
+      <point x="-134.66666666666666" y="187.5" />
+    </edge>
+    <edge source="data_model.User" target="data_model.Person">
+      <point x="0.0" y="-95.5" />
+      <point x="713.0" y="400.0" />
+      <point x="526.6666666666666" y="400.0" />
+      <point x="134.66666666666663" y="187.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6000000000000001" x="829.2692307692304" y="518.8882783882781" />
+  <SelectedNodes>
+    <node>data_model.Supplier</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

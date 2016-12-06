@@ -31,4 +31,87 @@ public class Person
     this.dir = dir;
     this.phone = phone;
   }
+  
+  public String getCi( )
+  {
+    return ci;
+  }
+  
+  public Person setCi(String ci)
+  {
+    this.ci = ci;
+    return this;
+  }
+  
+  public String getName( )
+  {
+    return name;
+  }
+  
+  public Person setName(String name)
+  {
+    this.name = name;
+    return this;
+  }
+  
+  public String getLast_name( )
+  {
+    return last_name;
+  }
+  
+  public Person setLast_name(String last_name)
+  {
+    this.last_name = last_name;
+    return this;
+  }
+  
+  public Date getBirth_date( )
+  {
+    return birth_date;
+  }
+  
+  public Person setBirth_date(Date birth_date)
+  {
+    this.birth_date = birth_date;
+    return this;
+  }
+  
+  public String getGender( )
+  {
+    return gender;
+  }
+  
+  public Person setGender(String gender)
+  {
+    this.gender = gender;
+    return this;
+  }
+  
+  public String getDir( )
+  {
+    return dir;
+  }
+  
+  public Person setDir(String dir)
+  {
+    this.dir = dir;
+    return this;
+  }
+  
+  public String getPhone( )
+  {
+    return phone;
+  }
+  
+  public Person setPhone(String phone)
+  {
+    this.phone = phone;
+    return this;
+  }
+  
+  @Override
+  public String toString( )
+  {
+    return "Person{" + "ci='" + ci + '\'' + ", name='" + name + '\'' + ", last_name='" + last_name + '\'' + ", birth_date=" + birth_date + ", gender='" + gender + '\'' + ", dir='" + dir + '\'' + ", phone='" + phone + '\'' + '}';
+  }
 }

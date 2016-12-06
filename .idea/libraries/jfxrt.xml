@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="objectdb">
+  <library name="jfxrt">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/src/db_helper/objectdb.jar!/" />
+      <root url="jar:///usr/lib/jvm/java-8-openjdk/lib/jfxrt.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

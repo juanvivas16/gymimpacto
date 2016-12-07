@@ -2,7 +2,6 @@ package data_model;
 
 import java.sql.Date;
 
-enum Erol_type {Recepcion, Administrador}
 /**
  * Created by juancho on 04/12/16.
  */
@@ -10,12 +9,12 @@ public class User extends Person
 {
   private String username;
   private String password;
-  private Erol_type rol;
+  private Enrol rol;
   
   public User( ) {}
   
-  public User(String ci, String name, String last_name, Date birth_date, Egender gender, String dir, String phone,
-              String username, String password, Erol_type rol)
+  public User(String ci, String name, String last_name, Date birth_date, Engender gender, String dir, String phone,
+              String username, String password, Enrol rol)
   {
     super(ci, name, last_name, birth_date, gender, dir, phone);
     this.username = username;
@@ -45,12 +44,12 @@ public class User extends Person
     return this;
   }
   
-  public Erol_type getRol( )
+  public Enrol getRol( )
   {
     return rol;
   }
   
-  public User setRol(Erol_type rol)
+  public User setRol(Enrol rol)
   {
     this.rol = rol;
     return this;

@@ -15,12 +15,12 @@ public class Equipment_inventory
   private Date ad_date;
   private double cost;
   private int quantity;
-  private Estate state;
+  private Enstate state;
   
   public Equipment_inventory() {}
   
   public Equipment_inventory(long id, String name, String model, String desc, Date ad_date, double cost, int quantity,
-                             Estate state)
+                             Enstate state)
   {
     this.id = id;
     this.name = name;
@@ -102,12 +102,12 @@ public class Equipment_inventory
     this.quantity = quantity;
   }
   
-  public Estate getState( )
+  public Enstate getState( )
   {
     return state;
   }
   
-  public void setState(Estate state)
+  public void setState(Enstate state)
   {
     this.state = state;
   }

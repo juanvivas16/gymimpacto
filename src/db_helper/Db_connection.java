@@ -1,8 +1,10 @@
 package db_helper;
 
 
-import data_model.Egender;
+import data_model.Employee;
+import data_model.Engender;
 import data_model.Person;
+import data_model.Type_contract;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -147,30 +149,67 @@ public class Db_connection
     }
     return  -1;
   }
-
-    public Person get_person_by_id(String id) throws SQLException
-    {
-      ResultSet rs = this.execute_query("SELECT * from Person WHERE Person.id=" + id);
-      if(rs.next())
-      {
-         String ci = rs.getString("ci");
-         String name = rs.getString("name");
-         String last_name = rs.getString("last_name");
-         Date birth_date = rs.getDate("birth_date");
-         Egender gender = Egender.Masculino;
-         
-         if(rs.getString("gender").equals("Masculino"))
-           gender = Egender.Masculino;
-         else if(rs.getString("gender").equals("Femenino"))
-           gender = Egender.Femenino;
-        
-         String dir = rs.getString("dir");
-         String phone = rs.getString("phone");
   
-         return new Person(ci, name, last_name, birth_date, gender, dir, phone);
-      }
-      return null;
+  public Person get_person_by_id(String id) throws SQLException
+  {
+    ResultSet rs = this.execute_query("SELECT * from person WHERE person.ci='" + id + "'");
+    if(rs.next())
+    {
+      String ci = rs.getString("ci");
+      String name = rs.getString("name");
+      String last_name = rs.getString("last_name");
+      Date birth_date = rs.getDate("birth_date");
+      Engender gender = Engender.Masculino;
+      
+      if(rs.getString("gender").equals("Masculino"))
+        gender = Engender.Masculino;
+      else if(rs.getString("gender").equals("Femenino"))
+        gender = Engender.Femenino;
+      
+      String dir = rs.getString("dir");
+      String phone = rs.getString("phone");
+      
+      return new Person(ci, name, last_name, birth_date, gender, dir, phone);
     }
+    return null;
+  }
+  
+  public Employee get_employee_by_id(String id) throws SQLException
+  {
+    ResultSet rs = this.execute_query("SELECT * FROM person p JOIN employee em ON p.ci = em.employee_ci WHERE em.employee_ci ='" + id + "'");
+    
+    if(rs.next())
+    {
+      String ci = rs.getString("ci");
+      String name = rs.getString("name");
+      String last_name = rs.getString("last_name");
+      Date birth_date = rs.getDate("birth_date");
+      Engender gender = Engender.Masculino;
+      
+      if(rs.getString("gender").equals("Masculino"))
+        gender = Engender.Masculino;
+      else if(rs.getString("gender").equals("Femenino"))
+        gender = Engender.Femenino;
+      
+      String dir = rs.getString("dir");
+      String phone = rs.getString("phone");
+      Type_contract type_c = Type_contract.Medio_tiempo;
+      
+      if(rs.getString("type_c").equals("Tiempo_completo"))
+        type_c = Type_contract.Tiempo_completo;
+      else if(rs.getString("type_c").equals("Medio_tiempo"))
+        type_c = Type_contract.Medio_tiempo;
+      else if(rs.getString("type_c").equals("Por_horas"))
+        type_c = Type_contract.Por_horas;
+      
+      double pay = rs.getDouble("pay");
+      String activity = rs.getString("activity");
+      
+      return new Employee(ci, name, last_name, birth_date, gender, dir, phone, type_c, pay, activity);
+    }
+    
+    return null;
+  }
 
 /* EJEMPLO MUDAFAR
     public Person get_person_by_id(String id) throws SQLException

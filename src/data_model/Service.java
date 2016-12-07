@@ -9,13 +9,13 @@ import java.sql.Date;
 public class Service
 {
   private long income_id;
-  private service_type type_s;
+  private Service_type type_s;
   private Date init_date;
   private String customer_ci;
   
   public Service( ) {}
   
-  public Service(long income_id, service_type type_s, Date init_date, String customer_ci)
+  public Service(long income_id, Service_type type_s, Date init_date, String customer_ci)
   {
     this.income_id = income_id;
     this.type_s = type_s;
@@ -33,12 +33,12 @@ public class Service
     this.income_id = income_id;
   }
   
-  public service_type getType_s( )
+  public Service_type getType_s( )
   {
     return type_s;
   }
   
-  public void setType_s(service_type type_s)
+  public void setType_s(Service_type type_s)
   {
     this.type_s = type_s;
   }

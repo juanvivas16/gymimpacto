@@ -5,7 +5,7 @@ import java.sql.Date;
 /**
  * Created by juancho on 04/12/16.
  */
-public class Income extends Customer
+public class Income
 {
   private long id;
   private String desc;

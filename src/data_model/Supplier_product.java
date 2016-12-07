@@ -1,49 +1,18 @@
 package data_model;
 
-import javax.persistence.Embeddable;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-
 /**
  * Created by juancho on 05/12/16.
  */
-@Entity
+
 public class Supplier_product
 {
-  @EmbeddedId SupplierProductID id;
+
+  private long product_id;
+  private String supplier_rif;
   
   public Supplier_product() {}
   
-  public Supplier_product(SupplierProductID id)
-  {
-    this.id = id;
-  }
-  
-  public SupplierProductID getId( )
-  {
-    return id;
-  }
-  
-  public void setId(SupplierProductID id)
-  {
-    this.id = id;
-  }
-  
-  @Override
-  public String toString( )
-  {
-    return "Supplier_product{" + "id=" + id + '}';
-  }
-}
-
-@Embeddable class SupplierProductID
-{
-  long product_id;
-  String supplier_rif;
-  
-  public SupplierProductID( ) {}
-  
-  public SupplierProductID(long product_id, String supplier_rif)
+  public Supplier_product(long product_id, String supplier_rif)
   {
     this.product_id = product_id;
     this.supplier_rif = supplier_rif;
@@ -72,6 +41,6 @@ public class Supplier_product
   @Override
   public String toString( )
   {
-    return "SupplierProductID{" + "product_id=" + product_id + ", supplier_rif='" + supplier_rif + '\'' + '}';
+    return "Supplier_product{" + "product_id=" + product_id + ", supplier_rif='" + supplier_rif + '\'' + '}';
   }
 }

@@ -11,7 +11,7 @@
 
     <body>
         <form method="POST" action="GuestServlet">
-            Name: <input type="text" name="name" />
+            Name: <input type="text" desc="desc" />
             <input type="submit" value="Add" />
         </form>
 

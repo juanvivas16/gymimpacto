@@ -1,26 +1,27 @@
 package data_model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Date;
 
 /**
  * Created by juancho on 05/12/16.
  */
 
-enum Egender {Masculino, Femenino}
-
+@Entity
 public class Person
 {
-  private String ci;
+  @Id private String ci;
   private String name;
   private String last_name;
   private Date birth_date;
-  private Egender gender;
+  private String gender;
   private String dir;
   private String phone;
   
   public Person( ) {}
   
-  public Person(String ci, String name, String last_name, Date birth_date, Egender gender, String dir, String phone)
+  public Person(String ci, String name, String last_name, Date birth_date, String gender, String dir, String phone)
   {
     this.ci = ci;
     this.name = name;
@@ -75,12 +76,12 @@ public class Person
     return this;
   }
   
-  public Egender getGender( )
+  public String getGender( )
   {
     return gender;
   }
   
-  public Person setGender(Egender gender)
+  public Person setGender(String gender)
   {
     this.gender = gender;
     return this;

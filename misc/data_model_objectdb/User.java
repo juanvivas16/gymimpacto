@@ -1,21 +1,23 @@
 package data_model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Date;
 
-enum Erol_type {Recepcion, Administrador}
 /**
  * Created by juancho on 04/12/16.
  */
+@Entity
 public class User extends Person
 {
-  private String username;
+  @Id private String username;
   private String password;
-  private Erol_type rol;
+  private int rol;
   
   public User( ) {}
   
-  public User(String ci, String name, String last_name, Date birth_date, Egender gender, String dir, String phone,
-              String username, String password, Erol_type rol)
+  public User(String ci, String name, String last_name, Date birth_date, String gender, String dir, String phone,
+              String username, String password, int rol)
   {
     super(ci, name, last_name, birth_date, gender, dir, phone);
     this.username = username;
@@ -45,12 +47,12 @@ public class User extends Person
     return this;
   }
   
-  public Erol_type getRol( )
+  public int getRol( )
   {
     return rol;
   }
   
-  public User setRol(Erol_type rol)
+  public User setRol(int rol)
   {
     this.rol = rol;
     return this;

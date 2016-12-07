@@ -1,13 +1,17 @@
 package data_model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.sql.Date;
 
 /**
  * Created by juancho on 04/12/16.
  */
-public class Earnings extends Customer
+@Entity
+public class Earnings
 {
-  private long id;
+  @Id @GeneratedValue private long id;
   private String desc;
   private Date date;
   private double sub_total;
@@ -32,11 +36,6 @@ public class Earnings extends Customer
   public long getId( )
   {
     return id;
-  }
-  
-  public void setId(long id)
-  {
-    this.id = id;
   }
   
   public String getDesc( )

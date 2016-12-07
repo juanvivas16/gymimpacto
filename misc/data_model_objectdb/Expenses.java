@@ -1,23 +1,26 @@
 package data_model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.sql.Date;
 
 /**
  * Created by juancho on 04/12/16.
  */
-
+@Entity
 public class Expenses
 {
-  private long id;
-  private String desc;
+  @Id @GeneratedValue private long id;
+  private String name;
   private Date date;
   private double total;
   
   public Expenses() {}
   
-  public Expenses(String desc, Date date, double total)
+  public Expenses(String name, Date date, double total)
   {
-    this.desc = desc;
+    this.name = name;
     this.date = date;
     this.total = total;
   }
@@ -27,19 +30,14 @@ public class Expenses
     return id;
   }
   
-  public void setId(long id)
+  public String getName( )
   {
-    this.id = id;
+    return name;
   }
   
-  public String getDesc( )
+  public void setName(String name)
   {
-    return desc;
-  }
-  
-  public void setDesc(String desc)
-  {
-    this.desc = desc;
+    this.name = name;
   }
   
   public Date getDate( )
@@ -65,6 +63,6 @@ public class Expenses
   @Override
   public String toString( )
   {
-    return "Expenses{" + "id=" + id + ", desc='" + desc + '\'' + ", date=" + date + ", total=" + total + '}';
+    return "Expenses{" + "id=" + id + ", name='" + name + '\'' + ", date=" + date + ", total=" + total + '}';
   }
 }

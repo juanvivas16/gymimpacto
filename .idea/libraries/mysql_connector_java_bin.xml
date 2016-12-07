@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="objectdb">
+  <library name="mysql-connector-java-bin">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/src/db_helper/objectdb.jar!/" />
+      <root url="jar:///usr/share/java/mysql-connector-java-bin.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

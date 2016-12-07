@@ -32,6 +32,6 @@
       <Label layoutX="182.0" layoutY="258.0" text="Clave:" />
       <CheckBox layoutX="223.0" layoutY="337.0" mnemonicParsing="false" text="Recordar" />
       <Button defaultButton="true" layoutX="223.0" layoutY="299.0" mnemonicParsing="false" onAction="#handle_login_button_action" text="Entrar" />
-      <Button layoutX="297.0" layoutY="299.0" mnemonicParsing="false" text="Salir" />
+      <Button layoutX="297.0" layoutY="299.0" mnemonicParsing="false" onAction="#handle_exit_button_action" text="Salir" />
    </children>
 </Pane>

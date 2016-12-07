@@ -1,21 +1,24 @@
 package data_model;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.sql.Date;
 
 enum type_contract { Tiempo_completo, Medio_tiempo, Por_horas }
 /**
  * Created by juancho on 04/12/16.
  */
-
+@Entity
 public class Staff extends Person
 {
-  private type_contract type_c;
+  @Enumerated(EnumType.STRING) private type_contract type_c;
   private double pay;
   private String activity;
   
   public Staff() {}
   
-  public Staff(String ci, String name, String last_name, Date birth_date, Egender gender, String dir, String phone,
+  public Staff(String ci, String name, String last_name, Date birth_date, String gender, String dir, String phone,
                type_contract type_c, double pay, String activity)
   {
     super(ci, name, last_name, birth_date, gender, dir, phone);

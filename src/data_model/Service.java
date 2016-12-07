@@ -1,7 +1,5 @@
 package data_model;
 
-import javax.persistence.*;
-import java.io.Serializable;
 import java.sql.Date;
 
 enum service_type {Mensual, Quincenal, Diario}
@@ -9,31 +7,32 @@ enum service_type {Mensual, Quincenal, Diario}
 /**
  * Created by juancho on 04/12/16.
  */
-@Entity
-public class Service implements Serializable
+
+public class Service
 {
-  @EmbeddedId private ServiceId id;
-  @Enumerated(EnumType.STRING) private service_type type_s;
+  private long earning_id;
+  private service_type type_s;
   private Date init_date;
+  private String customer_ci;
   
   public Service( ) {}
   
-  public Service(ServiceId id, service_type type_s, Date init_date)
+  public Service(long earning_id, service_type type_s, Date init_date, String customer_ci)
   {
-    this.id = id;
+    this.earning_id = earning_id;
     this.type_s = type_s;
     this.init_date = init_date;
+    this.customer_ci = customer_ci;
   }
   
-  public ServiceId getId( )
+  public long getEarning_id( )
   {
-    return id;
+    return earning_id;
   }
   
-  public Service setId(ServiceId id)
+  public void setEarning_id(long earning_id)
   {
-    this.id = id;
-    return this;
+    this.earning_id = earning_id;
   }
   
   public service_type getType_s( )
@@ -41,10 +40,9 @@ public class Service implements Serializable
     return type_s;
   }
   
-  public Service setType_s(service_type type_s)
+  public void setType_s(service_type type_s)
   {
     this.type_s = type_s;
-    return this;
   }
   
   public Date getInit_date( )
@@ -52,51 +50,25 @@ public class Service implements Serializable
     return init_date;
   }
   
-  public Service setInit_date(Date init_date)
+  public void setInit_date(Date init_date)
   {
     this.init_date = init_date;
-    return this;
+  }
+  
+  public String getCustomer_ci( )
+  {
+    return customer_ci;
+  }
+  
+  public void setCustomer_ci(String customer_ci)
+  {
+    this.customer_ci = customer_ci;
   }
   
   @Override
   public String toString( )
   {
-    return "Service{" + "id=" + id + ", type_s=" + type_s + ", init_date=" + init_date + '}';
+    return "Service{" + "earning_id=" + earning_id + ", type_s=" + type_s + ", init_date=" + init_date + ", customer_ci='" + customer_ci + '\'' + '}';
   }
 }
 
-@Embeddable
-class ServiceId {
-  int earningId;
-  String ci_customer;
-  
-  public ServiceId( ) {}
-  
-  public int getEarningId( )
-  {
-    return earningId;
-  }
-  
-  public ServiceId setEarningId(int earningId)
-  {
-    this.earningId = earningId;
-    return this;
-  }
-  
-  public String getCi_customer( )
-  {
-    return ci_customer;
-  }
-  
-  public ServiceId setCi_customer(String ci_customer)
-  {
-    this.ci_customer = ci_customer;
-    return this;
-  }
-  
-  @Override
-  public String toString( )
-  {
-    return "ServiceId{" + "earningId=" + earningId + ", ci_customer='" + ci_customer + '\'' + '}';
-  }
-}

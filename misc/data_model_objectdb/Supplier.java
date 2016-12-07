@@ -1,13 +1,16 @@
 package data_model;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * Created by juancho on 04/12/16.
  */
-
+@Entity
 public class Supplier
 {
-  private String id;
+  @Id private String rif;
   private String name;
   private String phone;
   private String dir;
@@ -15,23 +18,23 @@ public class Supplier
   
   public Supplier() {}
   
-  public Supplier(String id, String name, String phone, String dir, String product_desc)
+  public Supplier(String rif, String name, String phone, String dir, String product_desc)
   {
-    this.id = id;
+    this.rif = rif;
     this.name = name;
     this.phone = phone;
     this.dir = dir;
     this.product_desc = product_desc;
   }
   
-  public String getId( )
+  public String getRif( )
   {
-    return id;
+    return rif;
   }
   
-  public void setId(String id)
+  public void setRif(String rif)
   {
-    this.id = id;
+    this.rif = rif;
   }
   
   public String getName( )
@@ -77,7 +80,7 @@ public class Supplier
   @Override
   public String toString( )
   {
-    return "Supplier{" + "id='" + id + '\'' + ", name='" + name + '\'' + ", phone='" + phone + '\'' + ", dir='" + dir + '\'' + ", product_desc='" + product_desc + '\'' + '}';
+    return "Supplier{" + "rif='" + rif + '\'' + ", name='" + name + '\'' + ", phone='" + phone + '\'' + ", dir='" + dir + '\'' + ", product_desc='" + product_desc + '\'' + '}';
   }
 }
 

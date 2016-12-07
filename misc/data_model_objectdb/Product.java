@@ -7,9 +7,10 @@ import javax.persistence.Id;
 /**
  * Created by juancho on 04/12/16.
  */
+@Entity
 public class Product
 {
-  private long id;
+  @Id @GeneratedValue private long id;
   private String desc;
   private double price;
   private long quantity_available;
@@ -26,11 +27,6 @@ public class Product
   public long getId( )
   {
     return id;
-  }
-  
-  public void setId(long id)
-  {
-    this.id = id;
   }
   
   public String getDesc( )
@@ -58,9 +54,9 @@ public class Product
     return quantity_available;
   }
   
-  public void setQuantity_available(long quantity_available)
+  public void setQuantity_available(long quantity)
   {
-    this.quantity_available = quantity_available;
+    this.quantity_available = quantity;
   }
   
   @Override

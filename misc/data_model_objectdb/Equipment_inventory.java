@@ -1,5 +1,6 @@
 package data_model;
 
+import javax.persistence.*;
 import java.sql.Date;
 
 enum Estate {Activo, Inactivo}
@@ -7,33 +8,25 @@ enum Estate {Activo, Inactivo}
 /**
  * Created by juancho on 04/12/16.
  */
-
+@Entity
 public class Equipment_inventory
 {
-  private long id;
+  @Id @GeneratedValue private long id;
   private String name;
   private String model;
   private Date ad_date;
   private double cost;
-  private int quantity;
-  private Estate state;
+  @Enumerated(EnumType.STRING) private Estate state;
   
   public Equipment_inventory() {}
   
-  public Equipment_inventory(long id, String name, String model, Date ad_date, double cost, int quantity, Estate state)
+  public Equipment_inventory(String name, String model, Date ad_date, double cost, Estate state)
   {
-    this.id = id;
     this.name = name;
     this.model = model;
     this.ad_date = ad_date;
     this.cost = cost;
-    this.quantity = quantity;
     this.state = state;
-  }
-  
-  public void setId(long id)
-  {
-    this.id = id;
   }
   
   public long getId( )
@@ -91,20 +84,10 @@ public class Equipment_inventory
     this.state = state;
   }
   
-  public int getQuantity( )
-  {
-    return quantity;
-  }
-  
-  public void setQuantity(int quantity)
-  {
-    this.quantity = quantity;
-  }
-  
   @Override
   public String toString( )
   {
-    return "Equipment_inventory{" + "id=" + id + ", name='" + name + '\'' + ", model='" + model + '\'' + ", ad_date=" + ad_date + ", cost=" + cost + ", quantity=" + quantity + ", state=" + state + '}';
+    return "Equipment_inventory{" + "id=" + id + ", name='" + name + '\'' + ", model='" + model + '\'' + ", ad_date=" + ad_date + ", cost=" + cost + ", state=" + state + '}';
   }
 }
 

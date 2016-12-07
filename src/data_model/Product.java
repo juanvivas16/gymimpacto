@@ -1,8 +1,5 @@
 package data_model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 /**
  * Created by juancho on 04/12/16.

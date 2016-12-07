@@ -207,6 +207,6 @@ public class main_io_controller implements Initializable
     }
     
     @FXML
-    protected void handle_exit_buttom_action(ActionEvent event) {System.exit(0);}
+    protected void handle_exit_button_action(ActionEvent event) {System.exit(0);}
 
 }

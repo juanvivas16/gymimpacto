@@ -2,12 +2,6 @@ package data_model;
 
 import java.sql.Date;
 
-/**
- * Created by juancho on 05/12/16.
- */
-
-enum Egender {Masculino, Femenino}
-
 public class Person
 {
   private String ci;

@@ -44,7 +44,7 @@ public class Earnings_product
   @Override
   public String toString( )
   {
-    return "Earnings_product{" + "id=" + id + ", quantity=" + quantity + '}';
+    return "Income_product{" + "id=" + id + ", quantity=" + quantity + '}';
   }
 }
 

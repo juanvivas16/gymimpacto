@@ -63,7 +63,7 @@ public class Staff extends Person
   @Override
   public String toString( )
   {
-    return super.toString() + "Staff{" + "type_c=" + type_c + ", pay=" + pay + ", activity='" + activity + '\'' + "} ";
+    return super.toString() + "Employee{" + "type_c=" + type_c + ", pay=" + pay + ", activity='" + activity + '\'' + "} ";
   }
 }
 

@@ -4,19 +4,19 @@ package data_model;
 /**
  * Created by juancho on 04/12/16.
  */
-public class Earnings_product
+public class Income_product
 {
   private long quantity;
-  private long earning_id;
+  private long income_id;
   private long product_id;
   
   
-  public Earnings_product( ) {}
+  public Income_product( ) {}
   
-  public Earnings_product(long quantity, long earning_id, long product_id)
+  public Income_product(long quantity, long income_id, long product_id)
   {
     this.quantity = quantity;
-    this.earning_id = earning_id;
+    this.income_id = income_id;
     this.product_id = product_id;
   }
   
@@ -30,14 +30,14 @@ public class Earnings_product
     this.quantity = quantity;
   }
   
-  public long getEarning_id( )
+  public long getIncome_id( )
   {
-    return earning_id;
+    return income_id;
   }
   
-  public void setEarning_id(long earning_id)
+  public void setIncome_id(long income_id)
   {
-    this.earning_id = earning_id;
+    this.income_id = income_id;
   }
   
   public long getProduct_id( )
@@ -53,7 +53,7 @@ public class Earnings_product
   @Override
   public String toString( )
   {
-    return "Earnings_product{" + "quantity=" + quantity + ", earning_id=" + earning_id + ", product_id=" + product_id + '}';
+    return "Income_product{" + "quantity=" + quantity + ", income_id=" + income_id + ", product_id=" + product_id + '}';
   }
 }
 

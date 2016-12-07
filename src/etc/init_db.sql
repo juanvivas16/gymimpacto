@@ -18,8 +18,49 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-DROP TABLE IF EXISTS `earnings`;
-CREATE TABLE `earnings` (
+DROP TABLE IF EXISTS `employee`;
+CREATE TABLE `employee` (
+  `employee_ci` varchar(10) NOT NULL,
+  `type_c` enum('Tiempo_completo','Medio_tiempo','Por_horas') NOT NULL,
+  `pay` double NOT NULL,
+  `activity` varchar(30) NOT NULL,
+  PRIMARY KEY (`employee_ci`),
+  CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`employee_ci`) REFERENCES `person` (`ci`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `equipment_inventory`;
+CREATE TABLE `equipment_inventory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `model` varchar(20) NOT NULL,
+  `desc` varchar(50) NOT NULL,
+  `ad_date` date NOT NULL,
+  `cost` double NOT NULL,
+  `state` enum('Activo','Inactivo') NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `user_id` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `equipment_inventory_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `expenses`;
+CREATE TABLE `expenses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `desc` varchar(50) NOT NULL,
+  `date` date NOT NULL,
+  `total` double unsigned NOT NULL,
+  `user_id` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `expenses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `income`;
+CREATE TABLE `income` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `desc` varchar(50) NOT NULL,
   `customer_id` varchar(10) NOT NULL,
@@ -31,14 +72,14 @@ CREATE TABLE `earnings` (
   PRIMARY KEY (`id`),
   KEY `customer_id` (`customer_id`),
   KEY `user_id` (`user_id`),
-  CONSTRAINT `earnings_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`ci`),
-  CONSTRAINT `earnings_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `income_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`ci`),
+  CONSTRAINT `income_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 
 DELIMITER ;;
 
-CREATE TRIGGER `sub_total_bi` BEFORE INSERT ON `earnings` FOR EACH ROW
+CREATE TRIGGER `sub_total_bi` BEFORE INSERT ON `income` FOR EACH ROW
   BEGIN
     IF NEW.sub_total > 0 THEN
       SET @sub_total = -(NEW.sub_total);
@@ -47,50 +88,22 @@ CREATE TRIGGER `sub_total_bi` BEFORE INSERT ON `earnings` FOR EACH ROW
 
 DELIMITER ;
 
-DROP TABLE IF EXISTS `earning_product`;
-CREATE TABLE `earning_product` (
-  `earning_id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `income_product`;
+CREATE TABLE `income_product` (
+  `income_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `quantity` int(10) unsigned NOT NULL DEFAULT '1',
-  KEY `earning_id` (`earning_id`),
+  `quantity` int(10) unsigned NOT NULL,
+  KEY `income_id` (`income_id`),
   KEY `product_id` (`product_id`),
-  CONSTRAINT `earning_product_ibfk_1` FOREIGN KEY (`earning_id`) REFERENCES `earnings` (`id`),
-  CONSTRAINT `earning_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-DROP TABLE IF EXISTS `equipment_inventory`;
-CREATE TABLE `equipment_inventory` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `desc` varchar(20) NOT NULL,
-  `model` varchar(20) NOT NULL,
-  `ad_date` date NOT NULL,
-  `cost` double NOT NULL,
-  `estado` enum('Activo','Inactivo') NOT NULL,
-  `user_id` varchar(15) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `equipment_inventory_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-DROP TABLE IF EXISTS `expenses`;
-CREATE TABLE `expenses` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `desc` varchar(20) NOT NULL,
-  `date` date NOT NULL,
-  `total` double unsigned NOT NULL,
-  `user_id` varchar(15) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `expenses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`)
+  CONSTRAINT `income_product_ibfk_1` FOREIGN KEY (`income_id`) REFERENCES `income` (`id`),
+  CONSTRAINT `income_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `person`;
 CREATE TABLE `person` (
   `ci` varchar(10) NOT NULL,
-  `desc` varchar(20) NOT NULL,
+  `name` varchar(20) NOT NULL,
   `last_name` varchar(20) NOT NULL,
   `birth_date` date NOT NULL,
   `gender` enum('Masculino','Femenino') NOT NULL,
@@ -103,41 +116,30 @@ CREATE TABLE `person` (
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `desc` varchar(20) NOT NULL,
+  `desc` varchar(50) NOT NULL,
   `price` double unsigned NOT NULL,
   `quantity_available` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `service`;
 CREATE TABLE `service` (
   `type_s` enum('Mensual','Quincenal','Diario') NOT NULL,
   `init_date` date NOT NULL,
-  `earning_id` int(11) NOT NULL,
+  `income_id` int(11) NOT NULL,
   `customer_id` varchar(10) NOT NULL,
-  PRIMARY KEY (`earning_id`,`customer_id`),
+  PRIMARY KEY (`income_id`,`customer_id`),
   KEY `customer_id` (`customer_id`),
-  CONSTRAINT `service_ibfk_1` FOREIGN KEY (`earning_id`) REFERENCES `earnings` (`id`),
-  CONSTRAINT `service_ibfk_2` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`ci`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-DROP TABLE IF EXISTS `staff`;
-CREATE TABLE `staff` (
-  `staff_ci` varchar(10) NOT NULL,
-  `type_c` enum('Tiempo_completo','Medio_tiempo','Por_horas') NOT NULL,
-  `pay` double NOT NULL,
-  `activity` varchar(30) NOT NULL,
-  PRIMARY KEY (`staff_ci`),
-  CONSTRAINT `staff_ibfk_1` FOREIGN KEY (`staff_ci`) REFERENCES `person` (`ci`)
+  CONSTRAINT `service_ibfk_2` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`ci`),
+  CONSTRAINT `service_ibfk_3` FOREIGN KEY (`income_id`) REFERENCES `income` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `supplier`;
 CREATE TABLE `supplier` (
   `id` varchar(10) NOT NULL,
-  `desc` varchar(20) NOT NULL,
+  `name` varchar(20) NOT NULL,
   `phone` varchar(12) NOT NULL,
   `dir` varchar(100) NOT NULL,
   `product_desc` varchar(20) NOT NULL,
@@ -171,4 +173,4 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- 2016-12-06 22:02:55
+-- 2016-12-07 03:02:12

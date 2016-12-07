@@ -5,7 +5,7 @@ import java.sql.Date;
 /**
  * Created by juancho on 04/12/16.
  */
-public class Earnings extends Customer
+public class Income extends Customer
 {
   private long id;
   private String desc;
@@ -16,9 +16,9 @@ public class Earnings extends Customer
   private String customer_id;
   private String user_id;
   
-  public Earnings( ) {}
+  public Income( ) {}
   
-  public Earnings(String desc, Date date, double sub_total, double iva, double total, String customer_id, String user_id)
+  public Income(String desc, Date date, double sub_total, double iva, double total, String customer_id, String user_id)
   {
     this.desc = desc;
     this.date = date;
@@ -113,6 +113,6 @@ public class Earnings extends Customer
   @Override
   public String toString( )
   {
-    return "Earnings{" + "id=" + id + ", desc='" + desc + '\'' + ", date=" + date + ", sub_total=" + sub_total + ", iva=" + iva + ", total=" + total + ", customer_id='" + customer_id + '\'' + ", user_id='" + user_id + '\'' + '}';
+    return "Income{" + "id=" + id + ", desc='" + desc + '\'' + ", date=" + date + ", sub_total=" + sub_total + ", iva=" + iva + ", total=" + total + ", customer_id='" + customer_id + '\'' + ", user_id='" + user_id + '\'' + '}';
   }
 }

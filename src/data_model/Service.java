@@ -10,29 +10,29 @@ enum service_type {Mensual, Quincenal, Diario}
 
 public class Service
 {
-  private long earning_id;
+  private long income_id;
   private service_type type_s;
   private Date init_date;
   private String customer_ci;
   
   public Service( ) {}
   
-  public Service(long earning_id, service_type type_s, Date init_date, String customer_ci)
+  public Service(long income_id, service_type type_s, Date init_date, String customer_ci)
   {
-    this.earning_id = earning_id;
+    this.income_id = income_id;
     this.type_s = type_s;
     this.init_date = init_date;
     this.customer_ci = customer_ci;
   }
   
-  public long getEarning_id( )
+  public long getIncome_id( )
   {
-    return earning_id;
+    return income_id;
   }
   
-  public void setEarning_id(long earning_id)
+  public void setIncome_id(long income_id)
   {
-    this.earning_id = earning_id;
+    this.income_id = income_id;
   }
   
   public service_type getType_s( )
@@ -68,7 +68,7 @@ public class Service
   @Override
   public String toString( )
   {
-    return "Service{" + "earning_id=" + earning_id + ", type_s=" + type_s + ", init_date=" + init_date + ", customer_ci='" + customer_ci + '\'' + '}';
+    return "Service{" + "income_id=" + income_id + ", type_s=" + type_s + ", init_date=" + init_date + ", customer_ci='" + customer_ci + '\'' + '}';
   }
 }
 

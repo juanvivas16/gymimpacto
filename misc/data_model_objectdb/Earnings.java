@@ -112,6 +112,6 @@ public class Earnings
   @Override
   public String toString( )
   {
-    return "Earnings{" + "id=" + id + ", desc='" + desc + '\'' + ", date=" + date + ", sub_total=" + sub_total + ", iva=" + iva + ", total=" + total + ", customer_id='" + customer_id + '\'' + ", user_id='" + user_id + '\'' + '}';
+    return "Income{" + "id=" + id + ", desc='" + desc + '\'' + ", date=" + date + ", sub_total=" + sub_total + ", iva=" + iva + ", total=" + total + ", customer_id='" + customer_id + '\'' + ", user_id='" + user_id + '\'' + '}';
   }
 }

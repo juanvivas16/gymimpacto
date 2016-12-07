@@ -2,7 +2,6 @@ package data_model;
 
 import java.sql.Date;
 
-enum type_contract { Tiempo_completo, Medio_tiempo, Por_horas }
 /**
  * Created by juancho on 04/12/16.
  */

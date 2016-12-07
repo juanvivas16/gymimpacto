@@ -2,8 +2,6 @@ package data_model;
 
 import java.sql.Date;
 
-enum service_type {Mensual, Quincenal, Diario}
-
 /**
  * Created by juancho on 04/12/16.
  */

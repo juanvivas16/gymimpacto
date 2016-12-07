@@ -172,7 +172,7 @@ public class Db_connection
       return null;
     }
 
-/* EJEMPLO MUDAFAR GALENO
+/* EJEMPLO MUDAFAR
     public Person get_person_by_id(String id) throws SQLException
     {
         ResultSet rs = this.execute_query("select * from Person where Person.id=" + id);

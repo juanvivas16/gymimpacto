@@ -12,7 +12,7 @@ USE `testgym`;
 DROP TABLE IF EXISTS `customer`;
 CREATE TABLE `customer` (
   `ci` varchar(10) NOT NULL,
-  `ingress_date` date NOT NULL,
+  `init_date` date NOT NULL,
   PRIMARY KEY (`ci`),
   CONSTRAINT `customer_ibfk_3` FOREIGN KEY (`ci`) REFERENCES `person` (`ci`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -62,8 +62,8 @@ CREATE TABLE `expenses` (
 DROP TABLE IF EXISTS `income`;
 CREATE TABLE `income` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `desc` varchar(50) NOT NULL,
   `customer_id` varchar(10) NOT NULL,
+  `desc` varchar(50) NOT NULL,
   `date` date NOT NULL,
   `sub_total` double unsigned NOT NULL,
   `iva` double unsigned NOT NULL DEFAULT '0.12',
@@ -107,7 +107,7 @@ CREATE TABLE `person` (
   `last_name` varchar(20) NOT NULL,
   `birth_date` date NOT NULL,
   `gender` enum('Masculino','Femenino') NOT NULL,
-  `dir` varchar(100) NOT NULL,
+  `dir` varchar(50) NOT NULL,
   `phone` varchar(12) NOT NULL,
   PRIMARY KEY (`ci`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -125,10 +125,10 @@ CREATE TABLE `product` (
 
 DROP TABLE IF EXISTS `service`;
 CREATE TABLE `service` (
+  `customer_id` varchar(10) NOT NULL,
   `type_s` enum('Mensual','Quincenal','Diario') NOT NULL,
   `init_date` date NOT NULL,
   `income_id` int(11) NOT NULL,
-  `customer_id` varchar(10) NOT NULL,
   PRIMARY KEY (`income_id`,`customer_id`),
   KEY `customer_id` (`customer_id`),
   CONSTRAINT `service_ibfk_2` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`ci`),
@@ -138,11 +138,11 @@ CREATE TABLE `service` (
 
 DROP TABLE IF EXISTS `supplier`;
 CREATE TABLE `supplier` (
-  `id` varchar(10) NOT NULL,
+  `id` varchar(11) NOT NULL,
   `name` varchar(20) NOT NULL,
   `phone` varchar(12) NOT NULL,
-  `dir` varchar(100) NOT NULL,
-  `product_desc` varchar(20) NOT NULL,
+  `dir` varchar(50) NOT NULL,
+  `product_desc` varchar(30) NOT NULL,
   `user_id` varchar(15) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
@@ -165,7 +165,7 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `username` varchar(15) NOT NULL,
   `pass` varchar(15) NOT NULL,
-  `rol` enum('Recepcion','Administrador') NOT NULL,
+  `rol` enum('Recepcion','Administrador','Gerente') NOT NULL,
   `user_ci` varchar(10) NOT NULL,
   PRIMARY KEY (`username`),
   KEY `user_ci` (`user_ci`),
@@ -173,4 +173,4 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- 2016-12-07 03:02:12
+-- 2016-12-10 04:27:32

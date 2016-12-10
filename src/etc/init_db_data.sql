@@ -12,17 +12,17 @@ USE `testgym`;
 DROP TABLE IF EXISTS `customer`;
 CREATE TABLE `customer` (
   `ci` varchar(10) NOT NULL,
-  `ingress_date` date NOT NULL,
+  `init_date` date NOT NULL,
   PRIMARY KEY (`ci`),
   CONSTRAINT `customer_ibfk_3` FOREIGN KEY (`ci`) REFERENCES `person` (`ci`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `customer` (`ci`, `ingress_date`) VALUES
+INSERT INTO `customer` (`ci`, `init_date`) VALUES
   ('V-20431975',	'2016-11-29'),
   ('V-23942234',	'2016-12-06'),
   ('V-3245623',	'2016-12-06'),
   ('V-7421344',	'2016-12-06')
-ON DUPLICATE KEY UPDATE `ci` = VALUES(`ci`), `ingress_date` = VALUES(`ingress_date`);
+ON DUPLICATE KEY UPDATE `ci` = VALUES(`ci`), `init_date` = VALUES(`init_date`);
 
 DROP TABLE IF EXISTS `employee`;
 CREATE TABLE `employee` (
@@ -85,8 +85,8 @@ ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `desc` = VALUES(`desc`), `date` = V
 DROP TABLE IF EXISTS `income`;
 CREATE TABLE `income` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `desc` varchar(50) NOT NULL,
   `customer_id` varchar(10) NOT NULL,
+  `desc` varchar(50) NOT NULL,
   `date` date NOT NULL,
   `sub_total` double unsigned NOT NULL,
   `iva` double unsigned NOT NULL DEFAULT '0.12',
@@ -99,10 +99,10 @@ CREATE TABLE `income` (
   CONSTRAINT `income_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
-INSERT INTO `income` (`id`, `desc`, `customer_id`, `date`, `sub_total`, `iva`, `total`, `user_id`) VALUES
-  (1,	'Mensualidad',	'V-23942234',	'2016-12-06',	2000,	0.12,	2240,	'paovera'),
-  (2,	'Mensualidad + Gatorade',	'V-3245623',	'2016-12-06',	3000,	0.12,	3360,	'paovera')
-ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `desc` = VALUES(`desc`), `customer_id` = VALUES(`customer_id`), `date` = VALUES(`date`), `sub_total` = VALUES(`sub_total`), `iva` = VALUES(`iva`), `total` = VALUES(`total`), `user_id` = VALUES(`user_id`);
+INSERT INTO `income` (`id`, `customer_id`, `desc`, `date`, `sub_total`, `iva`, `total`, `user_id`) VALUES
+  (1,	'V-23942234',	'Mensualidad',	'2016-12-06',	2000,	0.12,	2240,	'paovera'),
+  (2,	'V-3245623',	'Mensualidad + Gatorade',	'2016-12-06',	3000,	0.12,	3360,	'paovera')
+ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `customer_id` = VALUES(`customer_id`), `desc` = VALUES(`desc`), `date` = VALUES(`date`), `sub_total` = VALUES(`sub_total`), `iva` = VALUES(`iva`), `total` = VALUES(`total`), `user_id` = VALUES(`user_id`);
 
 DELIMITER ;;
 
@@ -137,7 +137,7 @@ CREATE TABLE `person` (
   `last_name` varchar(20) NOT NULL,
   `birth_date` date NOT NULL,
   `gender` enum('Masculino','Femenino') NOT NULL,
-  `dir` varchar(100) NOT NULL,
+  `dir` varchar(50) NOT NULL,
   `phone` varchar(12) NOT NULL,
   PRIMARY KEY (`ci`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -174,28 +174,28 @@ ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `desc` = VALUES(`desc`), `price` = 
 
 DROP TABLE IF EXISTS `service`;
 CREATE TABLE `service` (
+  `customer_id` varchar(10) NOT NULL,
   `type_s` enum('Mensual','Quincenal','Diario') NOT NULL,
   `init_date` date NOT NULL,
   `income_id` int(11) NOT NULL,
-  `customer_id` varchar(10) NOT NULL,
   PRIMARY KEY (`income_id`,`customer_id`),
   KEY `customer_id` (`customer_id`),
   CONSTRAINT `service_ibfk_2` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`ci`),
   CONSTRAINT `service_ibfk_3` FOREIGN KEY (`income_id`) REFERENCES `income` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `service` (`type_s`, `init_date`, `income_id`, `customer_id`) VALUES
-  ('Mensual',	'2016-12-06',	1,	'V-23942234'),
-  ('Mensual',	'2016-12-06',	2,	'V-3245623')
-ON DUPLICATE KEY UPDATE `type_s` = VALUES(`type_s`), `init_date` = VALUES(`init_date`), `income_id` = VALUES(`income_id`), `customer_id` = VALUES(`customer_id`);
+INSERT INTO `service` (`customer_id`, `type_s`, `init_date`, `income_id`) VALUES
+  ('V-23942234',	'Mensual',	'2016-12-06',	1),
+  ('V-3245623',	'Mensual',	'2016-12-06',	2)
+ON DUPLICATE KEY UPDATE `customer_id` = VALUES(`customer_id`), `type_s` = VALUES(`type_s`), `init_date` = VALUES(`init_date`), `income_id` = VALUES(`income_id`);
 
 DROP TABLE IF EXISTS `supplier`;
 CREATE TABLE `supplier` (
-  `id` varchar(10) NOT NULL,
+  `id` varchar(11) NOT NULL,
   `name` varchar(20) NOT NULL,
   `phone` varchar(12) NOT NULL,
-  `dir` varchar(100) NOT NULL,
-  `product_desc` varchar(20) NOT NULL,
+  `dir` varchar(50) NOT NULL,
+  `product_desc` varchar(30) NOT NULL,
   `user_id` varchar(15) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
@@ -231,7 +231,7 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `username` varchar(15) NOT NULL,
   `pass` varchar(15) NOT NULL,
-  `rol` enum('Recepcion','Administrador') NOT NULL,
+  `rol` enum('Recepcion','Administrador','Gerente') NOT NULL,
   `user_ci` varchar(10) NOT NULL,
   PRIMARY KEY (`username`),
   KEY `user_ci` (`user_ci`),
@@ -243,4 +243,4 @@ INSERT INTO `user` (`username`, `pass`, `rol`, `user_ci`) VALUES
   ('paovera',	'7110eda4d09e062',	'Recepcion',	'V-20435560')
 ON DUPLICATE KEY UPDATE `username` = VALUES(`username`), `pass` = VALUES(`pass`), `rol` = VALUES(`rol`), `user_ci` = VALUES(`user_ci`);
 
--- 2016-12-07 03:01:59
+-- 2016-12-10 04:27:58

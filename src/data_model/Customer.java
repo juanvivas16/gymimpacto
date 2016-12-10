@@ -7,30 +7,30 @@ import java.sql.Date;
  */
 public class Customer extends Person
 {
-  private Date income_date;
+  private Date init_date;
   
   public Customer( ) {}
   
   public Customer(String ci, String name, String last_name, Date birth_date, Engender gender, String dir, String phone,
-                  Date income_date)
+                  Date init_date)
   {
     super(ci, name, last_name, birth_date, gender, dir, phone);
-    this.income_date = income_date;
+    this.init_date = init_date;
   }
   
-  public Date getIncome_date( )
+  public Date getInit_date( )
   {
-    return income_date;
+    return init_date;
   }
   
-  public void setIncome_date(Date income_date)
+  public void setInit_date(Date init_date)
   {
-    this.income_date = income_date;
+    this.init_date = init_date;
   }
   
   @Override
   public String toString( )
   {
-    return super.toString() + "Customer{" + "income_date=" + income_date + "} ";
+    return super.toString() + "Customer{" + "init_date=" + init_date + "} ";
   }
 }

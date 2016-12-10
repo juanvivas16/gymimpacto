@@ -16,11 +16,12 @@ public class Equipment_inventory
   private double cost;
   private int quantity;
   private Enstate state;
+  private String user_id;
   
   public Equipment_inventory() {}
   
   public Equipment_inventory(long id, String name, String model, String desc, Date ad_date, double cost, int quantity,
-                             Enstate state)
+                             Enstate state, String user_id)
   {
     this.id = id;
     this.name = name;
@@ -30,6 +31,7 @@ public class Equipment_inventory
     this.cost = cost;
     this.quantity = quantity;
     this.state = state;
+    this.user_id = user_id;
   }
   
   public long getId( )
@@ -111,11 +113,28 @@ public class Equipment_inventory
   {
     this.state = state;
   }
-  
+
+  public String getUser_id() {
+    return user_id;
+  }
+
+  public void setUser_id(String user_id) {
+    this.user_id = user_id;
+  }
+
   @Override
-  public String toString( )
-  {
-    return "Equipment_inventory{" + "id=" + id + ", name='" + name + '\'' + ", model='" + model + '\'' + ", desc='" + desc + '\'' + ", ad_date=" + ad_date + ", cost=" + cost + ", quantity=" + quantity + ", state=" + state + '}';
+  public String toString() {
+    return "Equipment_inventory{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", model='" + model + '\'' +
+            ", desc='" + desc + '\'' +
+            ", ad_date=" + ad_date +
+            ", cost=" + cost +
+            ", quantity=" + quantity +
+            ", state=" + state +
+            ", user_id='" + user_id + '\'' +
+            '}';
   }
 }
 

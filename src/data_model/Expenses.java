@@ -12,14 +12,16 @@ public class Expenses
   private String desc;
   private Date date;
   private double total;
+  private String user_id;
   
   public Expenses() {}
   
-  public Expenses(String desc, Date date, double total)
+  public Expenses(String desc, Date date, double total, String user_id)
   {
     this.desc = desc;
     this.date = date;
     this.total = total;
+    this.user_id = user_id;
   }
   
   public long getId( )
@@ -61,10 +63,23 @@ public class Expenses
   {
     this.total = total;
   }
-  
+
+  public String getUser_id() {
+    return user_id;
+  }
+
+  public void setUser_id(String user_id) {
+    this.user_id = user_id;
+  }
+
   @Override
-  public String toString( )
-  {
-    return "Expenses{" + "id=" + id + ", desc='" + desc + '\'' + ", date=" + date + ", total=" + total + '}';
+  public String toString() {
+    return "Expenses{" +
+            "id=" + id +
+            ", desc='" + desc + '\'' +
+            ", date=" + date +
+            ", total=" + total +
+            ", user_id='" + user_id + '\'' +
+            '}';
   }
 }

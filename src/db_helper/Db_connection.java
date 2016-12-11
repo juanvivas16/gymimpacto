@@ -1,10 +1,7 @@
 package db_helper;
 
 
-import data_model.Employee;
-import data_model.Engender;
-import data_model.Person;
-import data_model.Type_contract;
+import data_model.*;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -186,9 +183,9 @@ public class Db_connection
       Date birth_date = rs.getDate("birth_date");
       Engender gender = Engender.Masculino;
       
-      if(rs.getString("gender").equals("Masculino"))
+      if(rs.getString("gender").equals(Engender.Masculino))
         gender = Engender.Masculino;
-      else if(rs.getString("gender").equals("Femenino"))
+      else if(rs.getString("gender").equals(Engender.Femenino))
         gender = Engender.Femenino;
       
       String dir = rs.getString("dir");
@@ -211,29 +208,27 @@ public class Db_connection
     return null;
   }
 
-/* EJEMPLO MUDAFAR
-    public Person get_person_by_id(String id) throws SQLException
+  public User get_user_by_username(String id) throws SQLException
+  {
+    ResultSet rs = this.execute_query("SELECT username, pass, rol FROM user WHERE username =" + id);
+
+    if(rs.next())
     {
-        ResultSet rs = this.execute_query("select * from Person where Person.id=" + id);
+      String username = rs.getString("username");
+      String pass = rs.getString("pass");
+      Enrol rol = Enrol.Administrador;
 
-        if (rs.next())
-        {
-            Long id_long = rs.getLong("id");
-            String name = rs.getString("name");
-            String lname = rs.getString("last_name");
-            String gender = rs.getString("gender");
-            Date bdate = rs.getDate("birth_date");
-            Date rdate = rs.getDate("reg_date");
-            String direction = rs.getString("direction");
-            String phone_num = rs.getString("phone_num");
+      if(rs.getString("rol").equals(Enrol.Administrador))
+        rol = Enrol.Administrador;
+      else if(rs.getString("rol").equals(Enrol.Gerente))
+        rol = Enrol.Gerente;
+      else if(rs.getString("rol").equals(Enrol.Recepcion))
+        rol = Enrol.Recepcion;
 
-            return new Person(id_long, name, lname, gender, bdate, rdate , direction, phone_num);
-
-        }
-
-
-        return null;
-
+      return new User(username, pass, rol);
     }
-*/
+
+    return null;
+  }
+
 }

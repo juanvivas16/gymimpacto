@@ -21,6 +21,13 @@ public class User extends Person
     this.password = password;
     this.rol = rol;
   }
+
+  public User(String username, String pass, Enrol rol)
+  {
+    this.username = username;
+    this.password = pass;
+    this.rol = rol;
+  }
   
   public String getUsername( )
   {

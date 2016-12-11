@@ -8,7 +8,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Status_controller">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -31,8 +31,8 @@
                   <Image url="@images/logo2.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="search_buttom" layoutX="188.0" layoutY="306.0" mnemonicParsing="false" onAction="#handle_search_action" prefHeight="40.0" prefWidth="73.0" text="Buscar" />
-            <Button fx:id="back_buttom" layoutX="379.0" layoutY="306.0" mnemonicParsing="false" onAction="#handle_back_buttom" prefHeight="40.0" prefWidth="73.0" text="Atras" />
+            <Button fx:id="search_button" layoutX="188.0" layoutY="306.0" mnemonicParsing="false" onAction="#handle_search_action" prefHeight="40.0" prefWidth="73.0" text="Buscar" />
+            <Button fx:id="back_button" layoutX="379.0" layoutY="306.0" mnemonicParsing="false" onAction="#handle_back_action" prefHeight="40.0" prefWidth="73.0" text="Atras" />
             <Label layoutX="216.0" layoutY="129.0" text="CI:" />
             <TextField fx:id="search_textfield" layoutX="235.0" layoutY="124.0" />
             <Label layoutX="207.0" layoutY="218.0" text="Estado:" />
@@ -41,6 +41,8 @@
                   <Font size="30.0" />
                </font>
             </Label>
+            <Label layoutX="464.0" layoutY="14.0" text="Usuario:" />
+            <Label fx:id="username_label" layoutX="518.0" layoutY="14.0" text="__" />
          </children>
     </AnchorPane>
   </children>

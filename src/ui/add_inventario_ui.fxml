@@ -24,25 +24,31 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="480.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+    <AnchorPane fx:id="model_textfield" maxHeight="-1.0" maxWidth="-1.0" prefHeight="480.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
          <children>
             <ImageView fitHeight="90.0" fitWidth="306.0" layoutX="188.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/logo2.jpg" />
                </image>
             </ImageView>
-            <Button layoutX="355.0" layoutY="353.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="97.0" text="Salir" />
-            <Button layoutX="198.0" layoutY="353.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="97.0" text="Guardar" />
-            <Label layoutX="202.0" layoutY="116.0" text="Codigo:" />
-            <TextField layoutX="256.0" layoutY="111.0" />
-            <TextField layoutX="256.0" layoutY="156.0" />
-            <Label layoutX="198.0" layoutY="160.0" text="Nombre:" />
-            <Label layoutX="134.0" layoutY="205.0" text="Fecha de compra:" />
-            <TextField layoutX="256.0" layoutY="240.0" />
-            <Label layoutX="206.0" layoutY="245.0" text="Costo:" />
-            <ComboBox layoutX="256.0" layoutY="287.0" prefHeight="25.0" prefWidth="171.0" />
-            <Label layoutX="200.0" layoutY="292.0" text="En uso:" />
-            <DatePicker layoutX="256.0" layoutY="200.0" prefHeight="25.0" prefWidth="171.0" />
+            <Button fx:id="exit_buttom" layoutX="406.0" layoutY="389.0" mnemonicParsing="false" onAction="#handle_exit_activity" prefHeight="38.0" prefWidth="97.0" text="Salir" />
+            <Button fx:id="safe_buttom" layoutX="136.0" layoutY="389.0" mnemonicParsing="false" onAction="#handle_safe_activity" prefHeight="38.0" prefWidth="97.0" text="Guardar" />
+            <TextField fx:id="name_textfield" layoutX="235.0" layoutY="105.0" />
+            <Label layoutX="176.0" layoutY="110.0" text="Nombre:" />
+            <Label layoutX="116.0" layoutY="210.0" text="Fecha de compra:" />
+            <TextField fx:id="cost_textfield" layoutX="235.0" layoutY="237.0" />
+            <Label layoutX="191.0" layoutY="242.0" text="Costo:" />
+            <ComboBox fx:id="state_combobox" layoutX="235.0" layoutY="269.0" prefHeight="25.0" prefWidth="171.0" />
+            <Label layoutX="184.0" layoutY="275.0" text="En uso:" />
+            <DatePicker fx:id="ad_date_datefield" layoutX="235.0" layoutY="205.0" prefHeight="25.0" prefWidth="171.0" />
+            <Label layoutX="182.0" layoutY="145.0" text="Modelo:" />
+            <Label layoutX="153.0" layoutY="300.0" text="Descripcion:" />
+            <Label layoutX="171.0" layoutY="178.0" text="Cantidad:" />
+            <Label layoutX="474.0" layoutY="14.0" text="Usuario:" />
+            <Label fx:id="username_label" layoutX="528.0" layoutY="14.0" text="__" />
+            <TextField fx:id="model_textfield" layoutX="235.0" layoutY="140.0" />
+            <TextField fx:id="quantity_textfield" layoutX="235.0" layoutY="173.0" />
+            <TextArea fx:id="desc_textarea" layoutX="235.0" layoutY="299.0" prefHeight="90.0" prefWidth="171.0" />
          </children>
     </AnchorPane>
   </children>

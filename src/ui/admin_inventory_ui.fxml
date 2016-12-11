@@ -31,19 +31,22 @@
                   <Image url="@images/logo2.jpg" />
                </image>
             </ImageView>
-            <Button layoutX="32.0" layoutY="106.0" mnemonicParsing="false" text="Agregar Activo" />
-            <Button layoutX="160.0" layoutY="106.0" mnemonicParsing="false" text="Editar " />
-            <Button layoutX="533.0" layoutY="400.0" mnemonicParsing="false" text="Salir" />
+            <Button fx:id="add_inventory_buttom" layoutX="18.0" layoutY="106.0" mnemonicParsing="false" onAction="#handle_add_inventory_action" text="Agregar Maquina" />
+            <Button fx:id="edit_buttom" layoutX="162.0" layoutY="106.0" mnemonicParsing="false" onAction="#handle_edit_inventory_activity" text="Editar " />
+            <Button fx:id="exit_buttom" layoutX="562.0" layoutY="400.0" mnemonicParsing="false" onAction="#handle_exit_activity" text="Salir" />
             <TableView layoutX="18.0" layoutY="141.0" prefHeight="249.0" prefWidth="591.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Codigo" />
-                <TableColumn prefWidth="75.0" text="Nombre" />
-                  <TableColumn prefWidth="75.0" text="Modelo" />
-                  <TableColumn prefWidth="144.0" text="Fecha de compra" />
-                  <TableColumn prefWidth="75.0" text="Costo" />
-                  <TableColumn prefWidth="75.0" text="En uso" />
+                <TableColumn prefWidth="58.0" text="Codigo" />
+                <TableColumn prefWidth="72.0" text="Nombre" />
+                  <TableColumn prefWidth="66.0" text="Modelo" />
+                  <TableColumn prefWidth="137.0" text="Descripcion" />
+                  <TableColumn prefWidth="60.0" text="Costo" />
+                  <TableColumn prefWidth="73.0" text="Cantidad" />
+                  <TableColumn prefWidth="65.0" text="Estado" />
+                  <TableColumn prefWidth="52.0" text="User" />
               </columns>
             </TableView>
+            <Button fx:id="delete_buttom" layoutX="240.0" layoutY="106.0" mnemonicParsing="false" onAction="#handle_delete_activity" text="Eliminar" />
          </children>
     </AnchorPane>
   </children>

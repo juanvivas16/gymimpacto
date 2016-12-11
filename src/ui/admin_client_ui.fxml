@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Archivo">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Salir" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Ayuda">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Acerca" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="480.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+         <children>
+            <ImageView fitHeight="90.0" fitWidth="306.0" layoutX="188.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo2.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="add_client_buttom" layoutX="18.0" layoutY="106.0" mnemonicParsing="false" onAction="#handle_add_client_action" text="Agregar Cliente" />
+            <Button fx:id="edit_buttom" layoutX="147.0" layoutY="106.0" mnemonicParsing="false" onAction="#handle_edit_inventory_activity" text="Editar " />
+            <Button fx:id="exit_buttom" layoutX="562.0" layoutY="400.0" mnemonicParsing="false" onAction="#handle_exit_activity" text="Salir" />
+            <TableView layoutX="18.0" layoutY="141.0" prefHeight="249.0" prefWidth="591.0">
+              <columns>
+                <TableColumn fx:id="ci_table_column" prefWidth="58.0" text="CI" />
+                <TableColumn fx:id="name_tableC" prefWidth="72.0" text="Nombre" />
+                  <TableColumn fx:id="last_nameC" prefWidth="66.0" text="Apellido" />
+                  <TableColumn fx:id="birth_date_tableC" prefWidth="92.0" text="Fecha Nac." />
+                  <TableColumn fx:id="gender_tableC" prefWidth="57.0" text="Sexo" />
+                  <TableColumn fx:id="dir_tableC" prefWidth="77.0" text="Direccion" />
+                  <TableColumn fx:id="phone_tableC" prefWidth="76.0" text="Estado" />
+                  <TableColumn fx:id="init_date_tableC" prefWidth="85.0" text="Fecha Reg" />
+              </columns>
+            </TableView>
+            <Button fx:id="delete_buttom" layoutX="218.0" layoutY="106.0" mnemonicParsing="false" onAction="#handle_delete_activity" text="Eliminar" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

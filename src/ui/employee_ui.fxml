@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Reception_controller">
+   <children>
+      <ImageView fitHeight="100.0" fitWidth="342.0" layoutX="172.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logo2.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="29.0" prefWidth="640.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Archivo">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handle_menu_item_exit_action" text="Salir" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Ayuda">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Acerca" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Label layoutX="58.0" layoutY="149.0" text="Cedula:" />
+      <Label layoutX="44.0" layoutY="181.0" text="Nombres:" />
+      <TextField fx:id="id_text_field" layoutX="108.0" layoutY="142.0" onInputMethodTextChanged="#handle_id_text_changed_action" prefHeight="29.0" prefWidth="163.0" />
+      <TextField fx:id="name_text_field" disable="true" layoutX="108.0" layoutY="174.0" onInputMethodTextChanged="#handle_name_text_changed_action" prefHeight="29.0" prefWidth="163.0" />
+      <TextField fx:id="last_name_text_field" disable="true" layoutX="108.0" layoutY="207.0" prefHeight="29.0" prefWidth="163.0" />
+      <DatePicker fx:id="birth_date_date_picker" disable="true" layoutX="108.0" layoutY="241.0" prefHeight="29.0" prefWidth="163.0" />
+      <TextField fx:id="telephone_text_field" disable="true" layoutX="108.0" layoutY="275.0" prefHeight="29.0" prefWidth="163.0" />
+      <ComboBox fx:id="gender_combo_box" layoutX="108.0" layoutY="306.0" prefHeight="25.0" prefWidth="163.0" />
+      <TextArea fx:id="direction_text_field" layoutX="108.0" layoutY="337.0" prefHeight="78.0" prefWidth="163.0" />
+      <Button fx:id="save_employee_data_button" disable="true" layoutX="377.0" layoutY="430.0" mnemonicParsing="false" onAction="#handle_save_employee_data_button_action" text="Guardar" />
+      <Button defaultButton="true" layoutX="310.0" layoutY="133.0" mnemonicParsing="false" onAction="#handle_search_button_action" prefHeight="62.0" prefWidth="71.0" text="Buscar" />
+      <Button fx:id="new_employee_data_button" disable="true" layoutX="113.0" layoutY="430.0" mnemonicParsing="false" onAction="#handle_new_employee_button_action" text="Nuevo Empleado" />
+      <Button fx:id="edit_employee_data_button" disable="true" layoutX="259.0" layoutY="430.0" mnemonicParsing="false" onAction="#handle_edit_employee_data_button_action" text="Editar Datos" />
+      <Label layoutX="44.0" layoutY="214.0" text="Apellidos:" />
+      <Label layoutX="24.0" layoutY="248.0" text="Fecha Naci.:" />
+      <Label layoutX="45.0" layoutY="282.0" text="Telefono:" />
+      <Label layoutX="42.0" layoutY="337.0" text="Direccion:" />
+      <Label layoutX="72.0" layoutY="311.0" text="Sexo:" />
+      <Label layoutX="483.0" layoutY="96.0" text="Estado:" />
+      <Label fx:id="status_label" layoutX="539.0" layoutY="96.0" text="___" />
+      <Button fx:id="cancel_button" cancelButton="true" layoutX="539.0" layoutY="441.0" mnemonicParsing="false" onAction="#handle_cancel_button_action" prefHeight="25.0" prefWidth="71.0" text="Salir" />
+      <Label layoutX="478.0" layoutY="36.0" text="Usuario:" />
+      <Label fx:id="user_name_label" layoutX="533.0" layoutY="36.0" text="__" />
+      <Button fx:id="back_buttom" layoutX="481.0" layoutY="441.0" mnemonicParsing="false" onAction="#handle_back_buttom_action" text="Atras" />
+      <Label layoutX="357.0" layoutY="248.0" text="Sueldo:" />
+      <Label layoutX="345.0" layoutY="282.0" text="Actividad:" />
+      <Label layoutX="288.0" layoutY="214.0" text="Tipo de Contrato:" />
+      <TextField fx:id="pay_textfield" layoutX="410.0" layoutY="243.0" prefHeight="25.0" prefWidth="163.0" />
+      <ComboBox fx:id="contract_type_combobox" layoutX="408.0" layoutY="209.0" prefHeight="25.0" prefWidth="163.0" />
+      <TextArea fx:id="activity_textarea" layoutX="413.0" layoutY="277.0" prefHeight="135.0" prefWidth="163.0" />
+   </children>
+</Pane>

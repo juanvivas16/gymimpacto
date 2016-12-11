@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Archivo">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Salir" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Ayuda">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Acerca" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane fx:id="model_textfield" maxHeight="-1.0" maxWidth="-1.0" prefHeight="480.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+         <children>
+            <ImageView fitHeight="90.0" fitWidth="306.0" layoutX="188.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo2.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="back_buttom" layoutX="439.0" layoutY="378.0" mnemonicParsing="false" onAction="#handle_back_activity" prefHeight="38.0" prefWidth="97.0" text="Atras" />
+            <TextField fx:id="desc_textfield" layoutX="235.0" layoutY="148.0" />
+            <Label layoutX="151.0" layoutY="153.0" text="Descripcion:" />
+            <Label layoutX="162.0" layoutY="250.0" text="Proveedor:" />
+            <ComboBox fx:id="supplier_combobox" layoutX="235.0" layoutY="245.0" prefHeight="25.0" prefWidth="171.0" />
+            <Label layoutX="186.0" layoutY="186.0" text="Precio:" />
+            <Label layoutX="170.0" layoutY="218.0" text="Cantidad:" />
+            <Label layoutX="474.0" layoutY="14.0" text="Usuario:" />
+            <Label fx:id="username_label" layoutX="528.0" layoutY="14.0" text="__" />
+            <TextField fx:id="price_textfield" layoutX="235.0" layoutY="181.0" />
+            <TextField fx:id="quantity_textfield" layoutX="235.0" layoutY="213.0" />
+            <Label layoutX="183.0" layoutY="117.0" text="Codigo:" />
+            <TextField fx:id="code_textfield" layoutX="235.0" layoutY="112.0" />
+            <Button fx:id="search_code_buttom" layoutX="426.0" layoutY="113.0" mnemonicParsing="false" onAction="#handle_search_code_action" prefHeight="48.0" prefWidth="122.0" text="Buscar Codigo" />
+            <Button fx:id="new_product_buttom" layoutX="162.0" layoutY="290.0" mnemonicParsing="false" onAction="#handle_new_product_action" text="Nuevo Producto" />
+            <Button fx:id="edit_product_buttom" layoutX="307.0" layoutY="290.0" mnemonicParsing="false" onAction="#handle_edit_product_action" text="Editar Producto" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

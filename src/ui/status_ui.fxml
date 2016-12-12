@@ -1,49 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Status_controller">
-  <children>
-    <MenuBar VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="Archivo">
-          <items>
-            <MenuItem mnemonicParsing="false" onAction="#handle_menu_item_exit_action" text="Salir" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Ayuda">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Acerca" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="480.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
-         <children>
-            <ImageView fitHeight="90.0" fitWidth="306.0" layoutX="188.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/logo2.jpg" />
-               </image>
-            </ImageView>
-            <Button fx:id="search_button" layoutX="188.0" layoutY="306.0" mnemonicParsing="false" onAction="#handle_search_action" prefHeight="40.0" prefWidth="73.0" text="Buscar" />
-            <Button fx:id="back_button" layoutX="379.0" layoutY="306.0" mnemonicParsing="false" onAction="#handle_back_action" prefHeight="40.0" prefWidth="73.0" text="Atras" />
-            <Label layoutX="216.0" layoutY="129.0" text="CI:" />
-            <TextField fx:id="search_textfield" layoutX="235.0" layoutY="124.0" />
-            <Label layoutX="207.0" layoutY="218.0" text="Estado:" />
-            <Label fx:id="status_label" layoutX="261.0" layoutY="218.0" text="__">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Label>
-            <Label layoutX="464.0" layoutY="14.0" text="Usuario:" />
-            <Label fx:id="username_label" layoutX="518.0" layoutY="14.0" text="__" />
-         </children>
-    </AnchorPane>
-  </children>
-</VBox>
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Status_controller">
+   <children>
+      <ImageView fitHeight="104.0" fitWidth="388.0" layoutX="150.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logo2.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="29.0" prefWidth="640.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handle_menu_item_exit_action" text="Salir" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Acerca" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label fx:id="username_label" layoutX="509.0" layoutY="56.0" text="__" />
+      <Label layoutX="455.0" layoutY="56.0" text="Usuario:" />
+      <Label fx:id="status_label" layoutX="252.0" layoutY="260.0" text="__">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="198.0" layoutY="260.0" text="Estado:" />
+      <TextField fx:id="search_textfield" layoutX="226.0" layoutY="166.0" />
+      <Label layoutX="207.0" layoutY="171.0" text="CI:" />
+      <Button fx:id="back_button" layoutX="370.0" layoutY="348.0" mnemonicParsing="false" onAction="#handle_back_action" prefHeight="40.0" prefWidth="73.0" text="Atras" />
+      <Button fx:id="search_button" layoutX="179.0" layoutY="348.0" mnemonicParsing="false" onAction="#handle_search_action" prefHeight="40.0" prefWidth="73.0" text="Buscar" />
+   </children>
+</Pane>

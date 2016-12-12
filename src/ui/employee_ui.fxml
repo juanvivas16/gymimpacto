@@ -6,7 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Reception_controller">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Employee_controller">
    <children>
       <ImageView fitHeight="100.0" fitWidth="342.0" layoutX="172.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -45,12 +45,12 @@
       <Label layoutX="45.0" layoutY="282.0" text="Telefono:" />
       <Label layoutX="42.0" layoutY="337.0" text="Direccion:" />
       <Label layoutX="72.0" layoutY="311.0" text="Sexo:" />
-      <Label layoutX="483.0" layoutY="96.0" text="Estado:" />
-      <Label fx:id="status_label" layoutX="539.0" layoutY="96.0" text="___" />
+      <Label layoutX="413.0" layoutY="142.0" text="Estado:" />
+      <Label fx:id="status_label" layoutX="462.0" layoutY="141.0" text="___" />
       <Button fx:id="cancel_button" cancelButton="true" layoutX="539.0" layoutY="441.0" mnemonicParsing="false" onAction="#handle_cancel_button_action" prefHeight="25.0" prefWidth="71.0" text="Salir" />
-      <Label layoutX="478.0" layoutY="36.0" text="Usuario:" />
-      <Label fx:id="user_name_label" layoutX="533.0" layoutY="36.0" text="__" />
-      <Button fx:id="back_buttom" layoutX="481.0" layoutY="441.0" mnemonicParsing="false" onAction="#handle_back_buttom_action" text="Atras" />
+      <Label layoutX="468.0" layoutY="44.0" text="Usuario:" />
+      <Label fx:id="username_label" layoutX="521.0" layoutY="42.0" text="__" />
+      <Button fx:id="back_button" layoutX="481.0" layoutY="441.0" mnemonicParsing="false" onAction="#handle_back_button_action" text="Atras" />
       <Label layoutX="357.0" layoutY="248.0" text="Sueldo:" />
       <Label layoutX="345.0" layoutY="282.0" text="Actividad:" />
       <Label layoutX="288.0" layoutY="214.0" text="Tipo de Contrato:" />

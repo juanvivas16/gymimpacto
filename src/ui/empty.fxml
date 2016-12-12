@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller">
+   <children>
+      <ImageView fitHeight="104.0" fitWidth="388.0" layoutX="150.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logo2.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="29.0" prefWidth="640.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handle_menu_item_exit_action" text="Salir" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Acerca" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="456.0" layoutY="58.0" text="Usuario:" />
+      <Label fx:id="username_label" layoutX="510.0" layoutY="58.0" text="__" />
+   </children>
+</Pane>

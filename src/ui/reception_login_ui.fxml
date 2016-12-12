@@ -1,44 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
 <?import javafx.scene.control.*?>
+<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Reception_login_controller">
-  <children>
-    <MenuBar VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="Archivo">
-          <items>
-            <MenuItem mnemonicParsing="false" onAction="#handle_menu_item_exit_action" text="Salir" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Ayuda">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Acerca" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="480.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
-         <children>
-            <ImageView fitHeight="90.0" fitWidth="306.0" layoutX="188.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/logo2.jpg" />
-               </image>
-            </ImageView>
-            <Button fx:id="create_client_button" layoutX="249.0" layoutY="108.0" mnemonicParsing="false" onAction="#handle_create_client_action" prefHeight="48.0" prefWidth="142.0" text="Crear Cliente" />
-            <Button fx:id="check_status_button" layoutX="249.0" layoutY="178.0" mnemonicParsing="false" onAction="#handle_check_status_action" prefHeight="48.0" prefWidth="142.0" text="Verificar Estado" />
-            <Button fx:id="income_service_button" layoutX="249.0" layoutY="249.0" mnemonicParsing="false" onAction="#handle_income_service_action" prefHeight="48.0" prefWidth="142.0" text="Facturar Servicio" />
-            <Button fx:id="exit_button" layoutX="531.0" layoutY="391.0" mnemonicParsing="false" onAction="#handle_exit_button_action" text="Salir" />
-            <Label layoutX="465.0" layoutY="23.0" text="Usuario:" />
-            <Button fx:id="income_product_button" layoutX="249.0" layoutY="318.0" mnemonicParsing="false" onAction="#handle_income_product_action" prefHeight="48.0" prefWidth="142.0" text="Facturar Productos" />
-            <Label fx:id="username_label" layoutX="519.0" layoutY="23.0" text="__" />
-         </children>
-    </AnchorPane>
-  </children>
-</VBox>
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Reception_login_controller">
+   <children>
+      <ImageView fitHeight="104.0" fitWidth="388.0" layoutX="150.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logo2.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="29.0" prefWidth="640.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handle_menu_item_exit_action" text="Salir" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Acerca" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="create_client_button" layoutX="249.0" layoutY="153.0" mnemonicParsing="false" onAction="#handle_create_client_action" prefHeight="48.0" prefWidth="142.0" text="Crear Cliente" />
+      <Label fx:id="username_label" layoutX="510.0" layoutY="50.0" text="__" />
+      <Button fx:id="income_product_button" layoutX="249.0" layoutY="340.0" mnemonicParsing="false" onAction="#handle_income_product_action" prefHeight="48.0" prefWidth="142.0" text="Facturar Productos" />
+      <Label layoutX="456.0" layoutY="50.0" text="Usuario:" />
+      <Button fx:id="exit_button" layoutX="510.0" layoutY="388.0" mnemonicParsing="false" onAction="#handle_exit_button_action" prefHeight="38.0" prefWidth="70.0" text="Salir" />
+      <Button fx:id="income_service_button" layoutX="249.0" layoutY="278.0" mnemonicParsing="false" onAction="#handle_income_service_action" prefHeight="48.0" prefWidth="142.0" text="Facturar Servicio" />
+      <Button fx:id="check_status_button" layoutX="249.0" layoutY="216.0" mnemonicParsing="false" onAction="#handle_check_status_action" prefHeight="48.0" prefWidth="142.0" text="Verificar Estado" />
+   </children>
+</Pane>

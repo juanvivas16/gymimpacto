@@ -1,11 +1,17 @@
 package controller;
 
-import data_model.Enrol;
+import data_model.Employee;
+import data_model.Supplier;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import main.Main;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -14,72 +20,170 @@ import java.util.ResourceBundle;
  */
 public class Manager_login_controller implements Initializable
 {
-    @FXML private Label username_label;
-    @FXML private String username = new String("vacio");
+  @FXML private Label username_label;
+  @FXML private Pane pane;
+  @FXML private String username = new String("vacio");
 
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources)
-    {
+  @Override
+  public void initialize(URL location, ResourceBundle resources)
+  {
+    username_label.setText(getUsername());
 
-    }
+  }
 
-    @FXML protected void handle_client_action(ActionEvent event)
-    {
+  @FXML protected void handle_client_action(ActionEvent event) throws IOException
+  {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/client_ui.fxml"));
 
-    }
+    Parent root = (Parent)fxmlLoader.load();
+    Client_controller controller = fxmlLoader.<Client_controller>getController();
+    controller.setUsername(getUsername());
+    controller.initialize(null, null);
 
-    @FXML protected void handle_check_status_action(ActionEvent event)
-    {
+    Main.primary_stage.setTitle("Clientes | Gimnasio Impacto (C) 2016");
+    pane.getChildren().setAll(root);
+  }
 
-    }
+  @FXML protected void handle_check_status_action(ActionEvent event) throws IOException
+  {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/status_ui.fxml"));
 
-    @FXML protected void handle_income_service_action(ActionEvent event)
-    {
+    Parent root = (Parent)fxmlLoader.load();
+    Status_controller controller = fxmlLoader.<Status_controller>getController();
+    controller.setUsername(getUsername());
+    controller.initialize(null, null);
 
-    }
+    Main.primary_stage.setTitle("Estado de Servicio | Gimnasio Impacto (C) 2016");
 
-    @FXML protected void handle_income_product_action(ActionEvent event)
-    {
+    pane.getChildren().setAll(root);
+  }
 
-    }
+  @FXML protected void handle_income_service_action(ActionEvent event) throws IOException
+  {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/invoice_service_ui.fxml"));
 
-    @FXML protected void handle_expense_action(ActionEvent event)
-    {
+    Parent root = fxmlLoader.load();
 
-    }
-    @FXML protected void handle_inventory_action(ActionEvent event)
-    {
+    Invoice_service_controller controller = fxmlLoader.<Invoice_service_controller>getController();
+    controller.setUsername(getUsername());
+    controller.initialize(null,null);
 
-    }
+    Main.primary_stage.setTitle("Cobrar Servicio | Gimnasio Impacto (C) 2016");
+    pane.getChildren().setAll(root);
 
-    @FXML protected void handle_supplier_action(ActionEvent event)
-    {
+  }
 
-    }
+  @FXML protected void handle_income_product_action(ActionEvent event) throws IOException
+  {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/invoice_product_ui.fxml"));
 
-    @FXML protected void handle_employee_action(ActionEvent event)
-    {
+    Parent root = fxmlLoader.load();
+    Invoice_product_controller controller = fxmlLoader.<Invoice_product_controller>getController();
+    controller.setUsername(getUsername());
+    controller.initialize(null,null);
 
-    }
+    Main.primary_stage.setTitle("Cobrar Servicio | Gimnasio Impacto (C) 2016");
+    pane.getChildren().setAll(root);
 
-    @FXML protected void handle_income_action(ActionEvent event)
-    {
+  }
 
-    }
+  @FXML protected void handle_expense_action(ActionEvent event) throws IOException
+  {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/expenses_ui.fxml"));
 
-    @FXML protected void handle_menu_item_exit_action(ActionEvent e)
-    {
-        System.exit(0);
-    }
+    Parent root = fxmlLoader.load();
+    Expenses_controller controller = fxmlLoader.<Expenses_controller>getController();
+    controller.setUsername(getUsername());
+    controller.initialize(null,null);
 
-    @FXML protected void handle_exit_button_action(ActionEvent event) {System.exit(0);}
+    Main.primary_stage.setTitle("Egresos | Gimnasio Impacto (C) 2016");
+    pane.getChildren().setAll(root);
 
-    public String getUsername() {
-        return username;
-    }
+  }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+  @FXML protected void handle_inventory_action(ActionEvent event) throws IOException
+  {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/admin_inventory_ui.fxml"));
+
+    Parent root = fxmlLoader.load();
+    Inventory_controller controller = fxmlLoader.<Inventory_controller>getController();
+    controller.setUsername(getUsername());
+    controller.initialize(null,null);
+
+    Main.primary_stage.setTitle("Inventario | Gimnasio Impacto (C) 2016");
+    pane.getChildren().setAll(root);
+
+
+  }
+
+  @FXML protected void handle_supplier_action(ActionEvent event) throws IOException
+  {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/supplier_ui.fxml"));
+
+    Parent root = fxmlLoader.load();
+    Supplier_controller controller = fxmlLoader.<Supplier_controller>getController();
+    controller.setUsername(getUsername());
+    controller.initialize(null,null);
+
+    Main.primary_stage.setTitle("Agregar Proveedores | Gimnasio Impacto (C) 2016");
+    pane.getChildren().setAll(root);
+
+  }
+
+  @FXML protected void handle_employee_action(ActionEvent event) throws IOException
+  {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/employee_ui.fxml"));
+
+    Parent root = fxmlLoader.load();
+    Employee_controller controller = fxmlLoader.<Employee_controller>getController();
+    controller.setUsername(getUsername());
+    controller.initialize(null,null);
+
+    Main.primary_stage.setTitle("Agregar Empleados | Gimnasio Impacto (C) 2016");
+    pane.getChildren().setAll(root);
+
+  }
+
+  @FXML protected void handle_income_action(ActionEvent event) throws IOException
+  {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/manager_income_ui.fxml"));
+
+    Parent root = fxmlLoader.load();
+    Manager_income_controller controller = fxmlLoader.<Manager_income_controller>getController();
+    controller.setUsername(getUsername());
+    controller.initialize(null,null);
+
+    Main.primary_stage.setTitle("Lista de Ingresos | Gimnasio Impacto (C) 2016");
+    pane.getChildren().setAll(root);
+
+  }
+
+  @FXML protected void handle_product_action(ActionEvent event) throws IOException
+  {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/manager_add_product_ui.fxml"));
+
+    Parent root = fxmlLoader.load();
+    Manager_add_product_controller controller = fxmlLoader.<Manager_add_product_controller>getController();
+    controller.setUsername(getUsername());
+    controller.initialize(null,null);
+
+    Main.primary_stage.setTitle("Agregar Productos | Gimnasio Impacto (C) 2016");
+    pane.getChildren().setAll(root);
+  }
+
+  @FXML protected void handle_menu_item_exit_action(ActionEvent e)
+  {
+    System.exit(0);
+  }
+
+  @FXML protected void handle_exit_button_action(ActionEvent event) {System.exit(0);}
+
+  public String getUsername() {
+    return username;
+  }
+
+  public void setUsername(String username) {
+    this.username = username;
+  }
 }

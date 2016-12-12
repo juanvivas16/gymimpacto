@@ -1,48 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.web.*?>
 <?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
 <?import javafx.scene.control.*?>
+<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-  <children>
-    <MenuBar VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="Archivo">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Salir" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Ayuda">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Acerca" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="480.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
-         <children>
-            <ImageView fitHeight="90.0" fitWidth="306.0" layoutX="188.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/logo2.jpg" />
-               </image>
-            </ImageView>
-            <Button fx:id="exit_buttom" layoutX="354.0" layoutY="285.0" mnemonicParsing="false" onAction="#handle_exit_buttom" prefHeight="41.0" prefWidth="98.0" text="Salir" />
-            <Button fx:id="safe_buttom" layoutX="188.0" layoutY="285.0" mnemonicParsing="false" onAction="#handle_safe_activity" prefHeight="41.0" prefWidth="98.0" text="Guardar" />
-            <Label layoutX="143.0" layoutY="102.0" text="Descripcion:" />
-            <Label layoutX="183.0" layoutY="220.0" text="Fecha:" />
-            <TextField fx:id="total_textfield" layoutX="227.0" layoutY="251.0" prefHeight="25.0" prefWidth="186.0" />
-            <Label layoutX="182.0" layoutY="256.0" text="Monto:" />
-            <DatePicker fx:id="date_datepicker" layoutX="227.0" layoutY="213.0" prefHeight="25.0" prefWidth="186.0" />
-            <TextArea fx:id="desc_textarea" layoutX="227.0" layoutY="100.0" prefHeight="100.0" prefWidth="186.0" />
-            <Label layoutX="474.0" layoutY="14.0" text="Usuario:" />
-            <Label fx:id="username_label" layoutX="533.0" layoutY="14.0" text="__" />
-         </children>
-    </AnchorPane>
-  </children>
-</VBox>
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Expenses_controller">
+   <children>
+      <ImageView fitHeight="104.0" fitWidth="388.0" layoutX="150.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logo2.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="29.0" prefWidth="640.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handle_menu_item_exit_action" text="Salir" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Acerca" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="456.0" layoutY="58.0" text="Usuario:" />
+      <Label fx:id="username_label" layoutX="510.0" layoutY="58.0" text="__" />
+      <TextArea fx:id="desc_textarea" layoutX="232.0" layoutY="171.0" prefHeight="100.0" prefWidth="186.0" />
+      <DatePicker fx:id="date_datepicker" layoutX="232.0" layoutY="284.0" prefHeight="25.0" prefWidth="186.0" />
+      <Label layoutX="187.0" layoutY="327.0" text="Monto:" />
+      <TextField fx:id="total_textfield" layoutX="232.0" layoutY="322.0" prefHeight="25.0" prefWidth="186.0" />
+      <Label layoutX="188.0" layoutY="291.0" text="Fecha:" />
+      <Label layoutX="148.0" layoutY="173.0" text="Descripcion:" />
+      <Button fx:id="safe_button" layoutX="193.0" layoutY="356.0" mnemonicParsing="false" onAction="#handle_safe_activity" prefHeight="41.0" prefWidth="98.0" text="Guardar" />
+      <Button fx:id="exit_button" layoutX="359.0" layoutY="356.0" mnemonicParsing="false" onAction="#handle_exit_activity" prefHeight="41.0" prefWidth="98.0" text="Salir" />
+   </children>
+</Pane>

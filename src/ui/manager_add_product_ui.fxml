@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Manager_add_product_controller">
+   <children>
+      <ImageView fitHeight="104.0" fitWidth="388.0" layoutX="150.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/logo2.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="29.0" prefWidth="640.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handle_menu_item_exit_action" text="Salir" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Acerca" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="456.0" layoutY="58.0" text="Usuario:" />
+      <Label fx:id="username_label" layoutX="510.0" layoutY="58.0" text="__" />
+      <Button fx:id="edit_product_buttom" layoutX="306.0" layoutY="340.0" mnemonicParsing="false" onAction="#handle_edit_product_action" text="Editar Producto" />
+      <Button fx:id="new_product_buttom" layoutX="161.0" layoutY="340.0" mnemonicParsing="false" onAction="#handle_new_product_action" text="Nuevo Producto" />
+      <Button fx:id="search_code_buttom" layoutX="425.0" layoutY="163.0" mnemonicParsing="false" onAction="#handle_search_code_action" prefHeight="48.0" prefWidth="122.0" text="Buscar Codigo" />
+      <TextField fx:id="code_textfield" layoutX="234.0" layoutY="162.0" />
+      <Label layoutX="182.0" layoutY="167.0" text="Codigo:" />
+      <TextField fx:id="quantity_textfield" layoutX="234.0" layoutY="263.0" />
+      <TextField fx:id="price_textfield" layoutX="234.0" layoutY="231.0" />
+      <Label layoutX="169.0" layoutY="268.0" text="Cantidad:" />
+      <Label layoutX="185.0" layoutY="236.0" text="Precio:" />
+      <ComboBox fx:id="supplier_combobox" layoutX="234.0" layoutY="295.0" prefHeight="25.0" prefWidth="171.0" />
+      <Label layoutX="161.0" layoutY="300.0" text="Proveedor:" />
+      <Label layoutX="150.0" layoutY="203.0" text="Descripcion:" />
+      <TextField fx:id="desc_textfield" layoutX="234.0" layoutY="198.0" />
+      <Button fx:id="back_buttom" layoutX="438.0" layoutY="428.0" mnemonicParsing="false" onAction="#handle_back_action" prefHeight="38.0" prefWidth="97.0" text="Atras" />
+   </children>
+</Pane>

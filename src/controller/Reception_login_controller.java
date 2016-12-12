@@ -29,7 +29,6 @@ public class Reception_login_controller implements Initializable
 
     @FXML private String username = new String("vacio");
 
-
     @FXML private Pane pane;
     @FXML private Db_connection db = new Db_connection();
 
@@ -43,18 +42,15 @@ public class Reception_login_controller implements Initializable
 
     @FXML protected void handle_create_client_action(ActionEvent event) throws IOException
     {
-
-
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/client_ui.fxml"));
 
-        Parent root = (Parent) fxmlLoader.load();
+        Parent root = (Parent)fxmlLoader.load();
         Client_controller controller = fxmlLoader.<Client_controller>getController();
-        //controller.setUsername(getUsername());
+        controller.setUsername(getUsername());
         controller.initialize(null, null);
 
         Main.primary_stage.setTitle("Clientes | Gimnasio Impacto (C) 2016");
         pane.getChildren().setAll(root);
-
     }
 
     @FXML protected void handle_check_status_action(ActionEvent event)
@@ -76,13 +72,32 @@ public class Reception_login_controller implements Initializable
         }
     }
 
-    @FXML protected void handle_income_service_action(ActionEvent event)
+    @FXML protected void handle_income_service_action(ActionEvent event) throws IOException
     {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/invoice_service_ui.fxml"));
+
+        Parent root = fxmlLoader.load();
+
+        Invoice_service_controller controller = fxmlLoader.<Invoice_service_controller>getController();
+        controller.setUsername(getUsername());
+        controller.initialize(null,null);
+
+        Main.primary_stage.setTitle("Cobrar Servicio | Gimnasio Impacto (C) 2016");
+        pane.getChildren().setAll(root);
 
     }
 
-    @FXML protected void handle_income_product_action(ActionEvent event)
+    @FXML protected void handle_income_product_action(ActionEvent event) throws IOException
     {
+      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/invoice_product_ui.fxml"));
+
+      Parent root = fxmlLoader.load();
+      Invoice_product_controller controller = fxmlLoader.<Invoice_product_controller>getController();
+      controller.setUsername(getUsername());
+      controller.initialize(null,null);
+
+      Main.primary_stage.setTitle("Cobrar Servicio | Gimnasio Impacto (C) 2016");
+      pane.getChildren().setAll(root);
 
     }
 

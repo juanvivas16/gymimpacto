@@ -70,8 +70,8 @@ public class Customer_controller implements Initializable
     direction_text_area.addEventFilter(KeyEvent.KEY_TYPED, direction_Validation(50));
 
 
-    id_tooltip.setText("La cedula debe tener \n" +
-        "almenos 6 numeros y maximo 11\n" );
+    id_tooltip.setText("La cedula debe tener empeza con V,E y debe tener \n" +
+        "almenos 6 numeros y maximo 8\n" );
 
     id_text_field.setTooltip(id_tooltip);
 
@@ -114,7 +114,7 @@ public class Customer_controller implements Initializable
     this.customer.setBirth_date(Date.valueOf(birth_date_date_picker.getValue()));
 
     String temp_gender = this.gender_combo_box.getSelectionModel().getSelectedItem().toString();
-      Engender gender = Engender.valueOf(temp_gender);
+    Engender gender = Engender.valueOf(temp_gender);
     if(temp_gender.equals("Masculino"))
       this.customer.setGender(gender);
     else if (temp_gender.equals("Femenino"))
@@ -125,22 +125,16 @@ public class Customer_controller implements Initializable
       if(checkCI(id_text_field.getText()))
         this.customer.setCi(id_text_field.getText());
 
-      this.customer.setInit_date(new Date(new java.util.Date().getTime() ));
+      this.customer.setInit_date(Date.valueOf(LocalDate.now()));
 
-      String query = "INSERT INTO customer VALUES (" + customer.getCi() + "" +
-          ", '" + customer.getName() + "'" +
-          ", '" + customer.getLast_name() + "'" +
-          ", '" + customer.getGender() + "'" +
-          ", '" + customer.getBirth_date() + "'" +
-          ", '" + customer.getInit_date() + "'" +
-          ", '" + customer.getDir() + "'" +
-          ", '" + customer.getPhone() + "'" +
-          ")";
+      if(customer.getPhone().isEmpty() || customer.getPhone() == null)
+        System.out.println(customer.getCi() +" "+ customer.getName() +" "+ customer.getLast_name() +" "+ customer.getGender() +" "+ customer.getBirth_date() +" "+ customer.getDir() +" "+ customer.getPhone() +" "+ customer.getInit_date());
 
-      int a = db.execute_update(query);
+      if(db.set_customer_sql(customer.getCi(), customer.getName(), customer.getLast_name(), customer.getBirth_date(), customer.getGender(), customer.getDir(), "0274-2443283", customer.getInit_date()))
+        System.out.println("Inserto ok");
 
       if(checkPhone(telephone_text_field.getText()) && checkAlpha(name_text_field.getText()) && checkAlpha(last_name_text_field.getText()) && checkCI(id_text_field.getText()))
-        this.status_label.setText("¡Pacietne gaurdado con éxito!");
+        this.status_label.setText("¡Cliente guardado con éxito!");
       else
         this.status_label.setText("Error al guardar. Verificar campos");
 
@@ -227,7 +221,7 @@ public class Customer_controller implements Initializable
         this.telephone_text_field.clear();
         this.gender_combo_box.getSelectionModel().clearSelection();
 
-        this.status_label.setText("Paciente no existe!");
+        this.status_label.setText("Cliente no existe!");
         this.new_customer_data_button.setDisable(false);
         this.edit_customer_data_button.setDisable(true);
 
@@ -326,7 +320,7 @@ public class Customer_controller implements Initializable
       {
         e.consume();
       }
-      if(e.getCharacter().matches("[V E J 0-9 -/]"))
+      if(e.getCharacter().matches("[A-Za-z 0-9/-]"))
       {
       }
       else
@@ -344,7 +338,7 @@ public class Customer_controller implements Initializable
       {
         e.consume();
       }
-      if(e.getCharacter().matches("[A-Za-z 0-9/]"))
+      if(e.getCharacter().matches("[0-9/-]"))
       {
       }
       else

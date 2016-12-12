@@ -8,7 +8,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.*;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.*;
+import java.util.logging.Logger;
 
 
 public class Db_connection {
@@ -212,7 +214,7 @@ public class Db_connection {
       double total = rs.getDouble("total");
       String user_id = rs.getString("user_id");
 
-  //public Income(long id, String desc, Date date, double sub_total, double iva, double total, String customer_id, String user_id)
+      //public Income(long id, String desc, Date date, double sub_total, double iva, double total, String customer_id, String user_id)
 
       return new Income(id, desc, date, sub_total, iva, total, customer_id, user_id);
     }
@@ -276,6 +278,66 @@ public class Db_connection {
 
     return null;
   }
+
+  //  public Person(String ci, String name, String last_name, Date birth_date, Engender gender, String dir, String phone)
+
+  public boolean set_person_sql(String ci, String name, String last_name, Date birth_date, Engender gender, String dir, String phone)
+  {
+    try
+    {
+      _con.setAutoCommit(false);
+      PreparedStatement statement;
+
+      statement = _con.prepareStatement("insert into persona (ci, name, last_name, birth_date, gender, dir, phone) " + "values ('" + ci + "','" + name + "','" + last_name + "', '" + birth_date + "', '" + gender.toString() + "','" + dir + "', '" + phone + "')");
+
+      statement.executeUpdate();
+
+      _con.commit();
+    } catch(SQLException ex) {
+      try
+      {
+        _con.rollback();
+      }catch(SQLException ex1){
+        System.err.println("Transaction failed");
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  public boolean set_customer_sql(String ci, String name, String last_name, Date birth_date, Engender gender, String dir, String phone, Date init_date)
+  {
+    try {
+      _con.setAutoCommit(false);
+      PreparedStatement statement;
+      System.out.println("Antes de commit1");
+      statement = _con.prepareStatement("insert into person (ci, name, last_name, birth_date, gender, dir, phone)  values ('"+ci+"', '"+ name+"', '"+ last_name+"', '"+ birth_date+"','"+ gender.toString()+"' , '"+ dir+"', '"+ phone+ "')");
+
+
+      statement.executeUpdate();
+      System.out.println("Antes de commit2");
+
+      statement = _con.prepareStatement("insert into customer (ci, init_date) values "
+          +"('"+ci+"','"+init_date+"')");
+
+      statement.executeUpdate();
+
+      System.out.println("Antes de commit3");
+      _con.commit();
+    } catch (SQLException ex) {
+      try {
+        _con.rollback();
+      } catch (SQLException ex1) {
+        System.err.println("Transaction failed");
+        return false;
+      }
+
+      System.out.println(ex.getMessage());
+    }
+    return true;
+  }
+
 
 }
 

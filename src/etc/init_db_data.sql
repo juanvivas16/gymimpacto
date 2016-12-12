@@ -147,6 +147,7 @@ INSERT INTO `person` (`ci`, `name`, `last_name`, `birth_date`, `gender`, `dir`, 
   ('V-20321312',	'Luisa',	'Ruiz',	'1992-04-12',	'Femenino',	'Los proceres',	'0424-2423423'),
   ('V-20431975',	'Juan Andres',	'Vivas Contreras',	'1992-09-16',	'Masculino',	'Santa Maria Sur',	'0424-7804473'),
   ('V-20435560',	'Paola',	'Vera',	'1991-06-20',	'Femenino',	'El trapiche',	'0424-7005096'),
+  ('V-21365922',	'Javier',	'Solsona',	'1993-07-07',	'Masculino',	'Paseo la fera',	'0416-4786475'),
   ('V-23453464',	'Fabiola',	'Araque',	'1995-10-10',	'Femenino',	'Cardenal Quintero',	'0412-2323453'),
   ('V-23497463',	'Mudafar',	'El Halabi',	'1989-07-17',	'Masculino',	'La joya',	'0416-0466440'),
   ('V-23942234',	'Carlos',	'Rojas',	'1976-04-03',	'Masculino',	'Centro',	'0274-2342144'),
@@ -239,8 +240,9 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `user` (`username`, `pass`, `rol`, `user_ci`) VALUES
-  ('juanvivas',	'7110eda4d09e062',	'Administrador',	'V-20431975'),
-  ('paovera',	'7110eda4d09e062',	'Recepcion',	'V-20435560')
+  ('javiers',	'1234',	'Gerente',	'V-21365922'),
+  ('juanvivas',	'1234',	'Administrador',	'V-20431975'),
+  ('paovera',	'1234',	'Recepcion',	'V-20435560')
 ON DUPLICATE KEY UPDATE `username` = VALUES(`username`), `pass` = VALUES(`pass`), `rol` = VALUES(`rol`), `user_ci` = VALUES(`user_ci`);
 
--- 2016-12-10 04:27:58
+-- 2016-12-12 02:53:08

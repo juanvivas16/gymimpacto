@@ -195,28 +195,31 @@ public class Db_connection {
     return null;
   }
 
-// obtener facturas por id de clientes
+  // obtener facturas por id de clientes
 
-  public Income get_income_by_Customer(int id) throws SQLException {
-    ResultSet rs = this.execute_query("SELECT * FROM income WHERE customer_id =" + id);
+  public Income get_income_by_Customer(String ci) throws SQLException
+  {
+    ResultSet rs = this.execute_query("SELECT * FROM income WHERE customer_id ='" + ci + "'");
 
-    if (rs.next()) {
-      int id1 = rs.getInt("id1");
-      String desc = rs.getString("desc");
+    if (rs.next())
+    {
+      long id = rs.getLong("id");
       String customer_id = rs.getString("customer_id");
+      String desc = rs.getString("desc");
       Date date = rs.getDate("date");
-      String user_id = rs.getString("user_id");
       double sub_total = rs.getDouble("sub_total");
       double iva = rs.getDouble("iva");
       double total = rs.getDouble("total");
+      String user_id = rs.getString("user_id");
 
+  //public Income(long id, String desc, Date date, double sub_total, double iva, double total, String customer_id, String user_id)
 
-      // return new Income(id, desc, customer_id, date, sub_total, iva, total, user_id);
+      return new Income(id, desc, date, sub_total, iva, total, customer_id, user_id);
     }
 
     return null;
   }
-
+/*
   //obtener ingresos por ci de persona
   public Income get_income_by_ci(int ci) throws SQLException {
     ResultSet rs = this.execute_query("SELECT i.customer_id, p.name, p.last_name, i.total FROM income i JOIN person p ON p.ci = i.customer_id WHERE i.customer_id =" + ci);
@@ -228,7 +231,7 @@ public class Db_connection {
       double total = rs.getDouble("total");
 
 
-      //return new Income(customer_id, name, last_name, total);
+      return new Income(customer_id, name, last_name, total);
     }
 
     return null;
@@ -236,49 +239,29 @@ public class Db_connection {
 
 
   // obtener inventario de maquinas por id
-  /*public Equipment_inventory get_Equipment_by_id(int id) throws SQLException {
+  public Equipment_inventory get_Equipment_by_id(int id) throws SQLException {
     ResultSet rs = this.execute_query("select * from equipment_inventory where id=" + id);
 
     if (rs.next()) {
 
-
-      int id2 = rs.getInt("id2");
-      String name = rs.getString("name");
-      String model = rs.getString("model");
-      String desc = rs.getString("desc");
-      Date ad_date = rs.getDate("ad_date");
-      double cost = rs.getDouble("cost");
-      //enum state =
-      int quantity = rs.getInt("quantity");
-      String user_id = rs.getString("user_id");
-
-      //return new Income(id, name, model, desc, ad_date, cost, state, quantity, user_id);
-
-
-    }*/
-
-  //obtener informacion de proveedores a traves de la descripcion de productos
-
-  public Supplier get_Supplier_by_product_desc(String product_desc) throws SQLException {
-    ResultSet rs = this.execute_query("select * from supplier where product_desc = " + product_desc);
-
-    if (rs.next()) {
-      String id = rs.getString("id");
-      String name = rs.getString("name");
-      String phone = rs.getString("phone");
-      String dir = rs.getString("dir");
-      String product_desc1 = rs.getString("product_desc1");
-      String user_id = rs.getString("user_id");
-
-
-      return new Supplier(id, name, phone, dir, product_desc, user_id);
     }
+    int id2 = rs.getInt("id2");
+    String name = rs.getString("name");
+    String model = rs.getString("model");
+    String desc = rs.getString("desc");
+    Date ad_date = rs.getDate("ad_date");
+    double cost = rs.getDouble("cost");
+    //enum state =
+    int quantity = rs.getInt("quantity");
+    String user_id= rs.getString("user_id");
 
-    return null;
+    return new Income(id, name, model, desc, ad_date, cost, state, quantity, user_id);
   }
-
+*/
 
 
 
 }
+
+
 

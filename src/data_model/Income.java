@@ -17,9 +17,10 @@ public class Income
   private String user_id;
   
   public Income( ) {}
-  
-  public Income(String desc, Date date, double sub_total, double iva, double total, String customer_id, String user_id)
+
+  public Income(long id, String desc, Date date, double sub_total, double iva, double total, String customer_id, String user_id)
   {
+    this.id = id;
     this.desc = desc;
     this.date = date;
     this.sub_total = sub_total;
@@ -28,7 +29,7 @@ public class Income
     this.customer_id = customer_id;
     this.user_id = user_id;
   }
-  
+
   public long getId( )
   {
     return id;
@@ -109,9 +110,9 @@ public class Income
   {
     this.user_id = user_id;
   }
-  
+
   @Override
-  public String toString( )
+  public String toString()
   {
     return "Income{" + "id=" + id + ", desc='" + desc + '\'' + ", date=" + date + ", sub_total=" + sub_total + ", iva=" + iva + ", total=" + total + ", customer_id='" + customer_id + '\'' + ", user_id='" + user_id + '\'' + '}';
   }

@@ -219,7 +219,7 @@ public class Db_connection {
 
     return null;
   }
-/*
+
   //obtener ingresos por ci de persona
   public Income get_income_by_ci(int ci) throws SQLException {
     ResultSet rs = this.execute_query("SELECT i.customer_id, p.name, p.last_name, i.total FROM income i JOIN person p ON p.ci = i.customer_id WHERE i.customer_id =" + ci);
@@ -251,13 +251,21 @@ public class Db_connection {
     String desc = rs.getString("desc");
     Date ad_date = rs.getDate("ad_date");
     double cost = rs.getDouble("cost");
-    //enum state =
+    Enstate state = Enstate.Activo;
+
+    if (rs.getString("state").equals(Enstate.Activo))
+      state = Enstate.Activo;
+    else if (rs.getString("state").equals(Enstate.Inactivo))
+      state = Enstate.Inactivo;
+
     int quantity = rs.getInt("quantity");
     String user_id= rs.getString("user_id");
 
-    return new Income(id, name, model, desc, ad_date, cost, state, quantity, user_id);
+
+
+    return new Equipment_inventory(name, model, desc, ad_date, cost, quantity, state, user_id);
   }
-*/
+
 
 
 

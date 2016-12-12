@@ -31,8 +31,8 @@ public class main_io_controller implements Initializable
     {
         // todo temp setting to expedite login process.
         //this.user_text_field.setText("javiers"); //gerente
-        //this.user_text_field.setText("paovera"); //recepcion
-        this.user_text_field.setText("juanvivas"); //administrador
+        this.user_text_field.setText("paovera"); //recepcion
+        //this.user_text_field.setText("juanvivas"); //administrador
         this.pass_text_field.setText("1234");
     }
 

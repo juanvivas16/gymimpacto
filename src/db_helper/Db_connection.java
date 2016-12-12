@@ -220,53 +220,32 @@ public class Db_connection {
     return null;
   }
 
-  //obtener ingresos por ci de persona
-  public Income get_income_by_ci(int ci) throws SQLException {
-    ResultSet rs = this.execute_query("SELECT i.customer_id, p.name, p.last_name, i.total FROM income i JOIN person p ON p.ci = i.customer_id WHERE i.customer_id =" + ci);
+  // obtener inventario de maquinas por id
+  public Equipment_inventory get_Equipment_by_id(int id) throws SQLException
+  {
+    ResultSet rs = this.execute_query("select * from equipment_inventory where id=" + id);
 
-    if (rs.next()) {
-      String customer_id = rs.getString("customer_id");
+    if(rs.next())
+    {
+      int id2 = rs.getInt("id");
       String name = rs.getString("name");
-      String last_name = rs.getString("last_name");
-      double total = rs.getDouble("total");
+      String model = rs.getString("model");
+      String desc = rs.getString("desc");
+      Date ad_date = rs.getDate("ad_date");
+      double cost = rs.getDouble("cost");
+      Enstate state = Enstate.Activo;
 
+      if(rs.getString("state").equals(Enstate.Activo)) state = Enstate.Activo;
+      else if(rs.getString("state").equals(Enstate.Inactivo)) state = Enstate.Inactivo;
 
-      return new Income(customer_id, name, last_name, total);
+      int quantity = rs.getInt("quantity");
+      String user_id = rs.getString("user_id");
+
+      return new Equipment_inventory(id2, name, model, desc, ad_date, cost, quantity, state, user_id);
     }
 
     return null;
   }
-
-
-  // obtener inventario de maquinas por id
-  public Equipment_inventory get_Equipment_by_id(int id) throws SQLException {
-    ResultSet rs = this.execute_query("select * from equipment_inventory where id=" + id);
-
-    if (rs.next()) {
-
-    }
-    int id2 = rs.getInt("id2");
-    String name = rs.getString("name");
-    String model = rs.getString("model");
-    String desc = rs.getString("desc");
-    Date ad_date = rs.getDate("ad_date");
-    double cost = rs.getDouble("cost");
-    Enstate state = Enstate.Activo;
-
-    if (rs.getString("state").equals(Enstate.Activo))
-      state = Enstate.Activo;
-    else if (rs.getString("state").equals(Enstate.Inactivo))
-      state = Enstate.Inactivo;
-
-    int quantity = rs.getInt("quantity");
-    String user_id= rs.getString("user_id");
-
-
-
-    return new Equipment_inventory(id,name, model, desc, ad_date, cost, quantity, state, user_id);
-  }
-
-
 
 
 }

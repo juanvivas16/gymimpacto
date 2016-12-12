@@ -263,7 +263,7 @@ public class Db_connection {
 
 
 
-    return new Equipment_inventory(name, model, desc, ad_date, cost, quantity, state, user_id);
+    return new Equipment_inventory(id,name, model, desc, ad_date, cost, quantity, state, user_id);
   }
 
 

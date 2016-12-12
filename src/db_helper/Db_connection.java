@@ -247,6 +247,35 @@ public class Db_connection {
     return null;
   }
 
+  //obtener cliente por id
+
+  public Customer get_Customer_by_id(String ci) throws SQLException
+  {
+    ResultSet rs = this.execute_query("select p.ci, p.name, p.last_name, p.birth_date, p.gender, p.dir, p.phone, c.init_date from customer c join person p on c.ci = p.ci where c.ci = '" + ci + "'");
+
+    if (rs.next())
+    {
+      String ci1 = rs.getString("ci1");
+      String name =rs.getString("name");
+      String last_name = rs.getString("last_name");
+      Date birth_date = rs.getDate("birth_date");
+      Engender gender = Engender.Masculino;
+
+      if (rs.getString("gender").equals(Engender.Masculino))
+        gender = Engender.Masculino;
+      else if (rs.getString("gender").equals(Engender.Femenino))
+        gender = Engender.Femenino;
+
+      String dir = rs.getString("dir");
+      String phone = rs.getString("phone");
+      Date init_date = rs.getDate("init_date");
+
+
+      return new Customer(ci1, name, last_name, birth_date, gender, dir, phone, init_date);
+    }
+
+    return null;
+  }
 
 }
 

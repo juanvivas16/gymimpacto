@@ -1,7 +1,5 @@
 package controller;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-import data_model.Enrol;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +30,7 @@ public class Admin_login_controller implements Initializable
 
   @FXML protected void handle_client_action(ActionEvent event) throws IOException
   {
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/admin_client_ui.fxml"));
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/admin_customer_ui.fxml"));
 
     Parent root = (Parent)fxmlLoader.load();
     Admin_client_controller controller = fxmlLoader.<Admin_client_controller>getController();

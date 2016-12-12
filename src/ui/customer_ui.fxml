@@ -6,7 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Client_controller">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Customer_controller">
    <children>
       <ImageView fitHeight="100.0" fitWidth="342.0" layoutX="172.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -36,10 +36,10 @@
       <TextField fx:id="telephone_text_field" disable="true" layoutX="222.0" layoutY="275.0" prefHeight="29.0" prefWidth="163.0" />
       <ComboBox fx:id="gender_combo_box" layoutX="222.0" layoutY="313.0" prefHeight="25.0" prefWidth="163.0" />
       <TextArea fx:id="direction_text_area" layoutX="222.0" layoutY="343.0" prefHeight="78.0" prefWidth="163.0" />
-      <Button fx:id="save_client_data_button" disable="true" layoutX="377.0" layoutY="430.0" mnemonicParsing="false" onAction="#handle_save_client_data_button_action" text="Guardar" />
+      <Button fx:id="save_customer_data_button" disable="true" layoutX="377.0" layoutY="430.0" mnemonicParsing="false" onAction="#handle_save_client_data_button_action" text="Guardar" />
       <Button fx:id="search_button" defaultButton="true" layoutX="413.0" layoutY="133.0" mnemonicParsing="false" onAction="#handle_search_button_action" prefHeight="62.0" prefWidth="71.0" text="Buscar" />
-      <Button fx:id="new_client_data_button" disable="true" layoutX="134.0" layoutY="430.0" mnemonicParsing="false" onAction="#handle_new_client_button_action" text="Nuevo Cliente" />
-      <Button fx:id="edit_client_data_button" disable="true" layoutX="259.0" layoutY="430.0" mnemonicParsing="false" onAction="#handle_edit_client_data_button_action" text="Editar Datos" />
+      <Button fx:id="new_customer_data_button" disable="true" layoutX="134.0" layoutY="430.0" mnemonicParsing="false" onAction="#handle_new_client_button_action" text="Nuevo Cliente" />
+      <Button fx:id="edit_customer_data_button" disable="true" layoutX="259.0" layoutY="430.0" mnemonicParsing="false" onAction="#handle_edit_client_data_button_action" text="Editar Datos" />
       <Label layoutX="157.0" layoutY="214.0" text="Apellidos:" />
       <Label layoutX="138.0" layoutY="247.0" text="Fecha Naci.:" />
       <Label layoutX="158.0" layoutY="282.0" text="Telefono:" />

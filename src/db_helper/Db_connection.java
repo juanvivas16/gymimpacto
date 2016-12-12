@@ -255,7 +255,7 @@ public class Db_connection {
 
     if (rs.next())
     {
-      String ci1 = rs.getString("ci1");
+      String ci1 = rs.getString("ci");
       String name =rs.getString("name");
       String last_name = rs.getString("last_name");
       Date birth_date = rs.getDate("birth_date");

@@ -42,10 +42,10 @@ public class Reception_login_controller implements Initializable
 
     @FXML protected void handle_create_client_action(ActionEvent event) throws IOException
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/client_ui.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/customer_ui.fxml"));
 
         Parent root = (Parent)fxmlLoader.load();
-        Client_controller controller = fxmlLoader.<Client_controller>getController();
+        Customer_controller controller = fxmlLoader.<Customer_controller>getController();
         controller.setUsername(getUsername());
         controller.initialize(null, null);
 

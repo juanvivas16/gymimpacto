@@ -1,15 +1,19 @@
 package controller;
 
+import data_model.Customer;
 import data_model.Engender;
 import data_model.Person;
 import db_helper.Db_connection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 
+import java.io.IOException;
 import java.net.URL;
-import java.sql.ResultSet;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -19,19 +23,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
+import main.Main;
 
 
 /**
  * Created by juancho on 11/12/16.
  */
-public class Client_controller implements Initializable
+public class Customer_controller implements Initializable
 {
   @FXML private Label username_label;
   @FXML private Label status_label;
   @FXML private Button search_button;
-  @FXML private Button new_client_data_button;
-  @FXML private Button edit_client_data_button;
-  @FXML private Button save_client_data_button;
+  @FXML private Button new_customer_data_button;
+  @FXML private Button edit_customer_data_button;
+  @FXML private Button save_customer_data_button;
   @FXML private Button back_button;
   @FXML private TextField id_text_field;
   @FXML private TextField name_text_field;
@@ -42,16 +47,15 @@ public class Client_controller implements Initializable
   @FXML private TextArea direction_text_area;
   @FXML private Db_connection db = new Db_connection();
 
-
   @FXML private Pane pane;
   @FXML private String username = new String("vacio");
 
-  private static Person person = new Person();
+  private Customer customer = new Customer();
   private boolean is_id = true;
   private boolean is_name = false;
+  private boolean is_new_customer = false;
 
   final Tooltip id_tooltip = new Tooltip();
-
 
   @Override
   public void initialize(URL location, ResourceBundle resources)
@@ -90,6 +94,94 @@ public class Client_controller implements Initializable
   protected void handle_save_client_data_button_action(ActionEvent event)
   {
 
+    if(checkAlpha(name_text_field.getText()))
+      this.customer.setName(name_text_field.getText());
+    else
+      this.status_label.setText("¡Error en nombre!");
+
+    if(checkAlpha(last_name_text_field.getText()))
+      this.customer.setLast_name(last_name_text_field.getText());
+    else
+      this.status_label.setText("¡Error en Apellido!");
+
+    this.customer.setDir(direction_text_area.getText());
+
+    if(checkPhone(telephone_text_field.getText()))
+      this.customer.setPhone(telephone_text_field.getText());
+    else
+      this.status_label.setText("¡Error en Telefono!");
+
+    this.customer.setBirth_date(Date.valueOf(birth_date_date_picker.getValue()));
+
+    String temp_gender = this.gender_combo_box.getSelectionModel().getSelectedItem().toString();
+      Engender gender = Engender.valueOf(temp_gender);
+    if(temp_gender.equals("Masculino"))
+      this.customer.setGender(gender);
+    else if (temp_gender.equals("Femenino"))
+      this.customer.setGender(gender);
+
+    if (this.is_new_customer)
+    {
+      if(checkCI(id_text_field.getText()))
+        this.customer.setCi(id_text_field.getText());
+
+      this.customer.setInit_date(new Date(new java.util.Date().getTime() ));
+
+      String query = "INSERT INTO customer VALUES (" + customer.getCi() + "" +
+          ", '" + customer.getName() + "'" +
+          ", '" + customer.getLast_name() + "'" +
+          ", '" + customer.getGender() + "'" +
+          ", '" + customer.getBirth_date() + "'" +
+          ", '" + customer.getInit_date() + "'" +
+          ", '" + customer.getDir() + "'" +
+          ", '" + customer.getPhone() + "'" +
+          ")";
+
+      int a = db.execute_update(query);
+
+      if(checkPhone(telephone_text_field.getText()) && checkAlpha(name_text_field.getText()) && checkAlpha(last_name_text_field.getText()) && checkCI(id_text_field.getText()))
+        this.status_label.setText("¡Pacietne gaurdado con éxito!");
+      else
+        this.status_label.setText("Error al guardar. Verificar campos");
+
+
+      //disable camps
+      this.name_text_field.setDisable(true);
+      this.last_name_text_field.setDisable(true);
+      this.direction_text_area.setDisable(true);
+      this.telephone_text_field.setDisable(true);
+      this.birth_date_date_picker.setDisable(true);
+      this.gender_combo_box.setDisable(true);
+      this.save_customer_data_button.setDisable(true);
+      this.new_customer_data_button.setDisable(true);
+      this.edit_customer_data_button.setDisable(false);
+
+
+
+    }
+    else
+    {
+      String query = "UPDATE customer SET id=" + id_text_field.getText() +
+          ", name='" + customer.getName() + "'" +
+          ", last_name='" + customer.getLast_name() + "'" +
+          ", gender = '" + customer.getGender() + "'" +
+          ", birth_date = '" + customer.getBirth_date() + "'" +
+          ", direction = '" + customer.getDir() + "'" +
+          ", phone_num = '" + customer.getPhone() + "'" +
+          "WHERE customer.id=" + customer.getCi();
+
+      int a = db.execute_update(query);
+
+      if(checkCI(id_text_field.getText()))
+        this.customer.setCi(id_text_field.getText());
+
+      if(checkPhone(telephone_text_field.getText()) && checkAlpha(name_text_field.getText()) && checkAlpha(last_name_text_field.getText()) && checkCI(id_text_field.getText()))
+        this.status_label.setText("¡Editado con éxito!");
+      else
+        this.status_label.setText("Error al editar. Verificar campos");
+    }
+
+    this.id_text_field.setDisable(false);
   }
 
   @FXML
@@ -101,28 +193,29 @@ public class Client_controller implements Initializable
     else if (is_id)
     {
       String id = id_text_field.getText();
-      Person tmp_person = db.get_person_by_id(id);
+      Customer tmp_customer = new Customer();
+      tmp_customer = db.get_Customer_by_id(id);
 
-      if (tmp_person != null)
+      if (tmp_customer != null)
       {
-        this.person = tmp_person;
-        this.name_text_field.setText(person.getName());
-        this.last_name_text_field.setText(person.getLast_name());
-        this.direction_text_area.setText(person.getDir());
+        this.customer = tmp_customer;
+        this.name_text_field.setText(customer.getName());
+        this.last_name_text_field.setText(customer.getLast_name());
+        this.direction_text_area.setText(customer.getDir());
 
-        Engender gender = person.getGender();
+        Engender gender = customer.getGender();
 
         if(gender.equals(Engender.Masculino))
           this.gender_combo_box.getSelectionModel().selectFirst();
         else if (gender.equals(Engender.Femenino))
           this.gender_combo_box.getSelectionModel().selectLast();
 
-        this.birth_date_date_picker.setValue(LocalDate.parse(person.getBirth_date().toString()));
-        this.telephone_text_field.setText(person.getPhone());
+        this.birth_date_date_picker.setValue(LocalDate.parse(customer.getBirth_date().toString()));
+        this.telephone_text_field.setText(customer.getPhone());
 
         this.status_label.setText("");
-        this.edit_client_data_button.setDisable(false);
-        this.new_client_data_button.setDisable(true);
+        this.edit_customer_data_button.setDisable(false);
+        this.new_customer_data_button.setDisable(true);
 
       }
       else
@@ -135,8 +228,8 @@ public class Client_controller implements Initializable
         this.gender_combo_box.getSelectionModel().clearSelection();
 
         this.status_label.setText("Paciente no existe!");
-        this.new_client_data_button.setDisable(false);
-        this.edit_client_data_button.setDisable(true);
+        this.new_customer_data_button.setDisable(false);
+        this.edit_customer_data_button.setDisable(true);
 
       }
     }
@@ -145,19 +238,39 @@ public class Client_controller implements Initializable
   @FXML
   protected void handle_new_client_button_action(ActionEvent event)
   {
-
+    this.is_new_customer = true;
+    this.gender_combo_box.getSelectionModel().selectFirst();
+    this.handle_edit_client_data_button_action(new ActionEvent());
+    this.new_customer_data_button.setDisable(true);
+    this.edit_customer_data_button.setDisable(true);
+    this.id_text_field.setDisable(true);
   }
 
   @FXML
   protected void handle_edit_client_data_button_action(ActionEvent event)
   {
-
+    this.name_text_field.setDisable(false);
+    this.last_name_text_field.setDisable(false);
+    this.direction_text_area.setDisable(false);
+    this.telephone_text_field.setDisable(false);
+    this.birth_date_date_picker.setDisable(false);
+    this.gender_combo_box.setDisable(false);
+    this.save_customer_data_button.setDisable(false);
   }
 
   @FXML
-  protected void handle_back_button_action(ActionEvent event)
+  protected void handle_back_button_action(ActionEvent event) throws IOException
   {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/reception_login_ui.fxml"));
 
+    Parent root = (Parent)fxmlLoader.load();
+    Reception_login_controller controller = fxmlLoader.<Reception_login_controller>getController();
+    controller.setUsername(getUsername());
+    controller.initialize(null, null);
+
+    Main.primary_stage.setTitle("Recepcion | Gimnasio Impacto (C) 2016");
+
+    pane.getChildren().setAll(root);
   }
 
   @FXML protected  void handle_id_text_changed_action(ActionEvent event)
@@ -298,7 +411,27 @@ public class Client_controller implements Initializable
   {
     boolean respuesta = false;
 
-    if (str.matches("([V-]|[0-9]| | \\s)+"))
+    if (str.matches("^[V|E|J]+[-]+\\d+\\d+\\d+\\d+\\d+\\d+\\d+\\d$"))
+      respuesta = true;
+
+    return respuesta;
+  }
+
+  public static boolean checkAlpha(String str)
+  {
+    boolean respuesta = false;
+
+    if (str.matches("([a-z]|[A-Z]| | \\s)+"))
+      respuesta = true;
+
+    return respuesta;
+  }
+
+  public static boolean checkPhone(String str)
+  {
+    boolean respuesta = false;
+
+    if (str.matches("^\\d+\\d+\\d+\\d+[-]+\\d+\\d+\\d+\\d+\\d+\\d+\\d$"))
       respuesta = true;
 
     return respuesta;

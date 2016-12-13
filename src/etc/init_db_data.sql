@@ -18,7 +18,9 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `customer` (`ci`, `init_date`) VALUES
+  ('E-12345678',	'2016-12-12'),
   ('V-20431975',	'2016-11-29'),
+  ('V-22435987',	'2016-12-12'),
   ('V-23942234',	'2016-12-06'),
   ('V-3245623',	'2016-12-06'),
   ('V-7421344',	'2016-12-06')
@@ -54,13 +56,15 @@ CREATE TABLE `equipment_inventory` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `equipment_inventory_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 INSERT INTO `equipment_inventory` (`id`, `name`, `model`, `description`, `ad_date`, `cost`, `state`, `quantity`, `user_id`) VALUES
   (6,	'Multifuerza',	'Unico',	'En buen estado',	'1999-12-01',	760,	'Activo',	1,	'juanvivas'),
   (7,	'Bicicleta',	'SB2',	'Pedal a medio funcionar',	'2001-04-05',	2000,	'Activo',	10,	'juanvivas'),
   (8,	'Mancuerna',	'20kg',	'Decolor negro todas',	'2002-04-11',	600,	'Activo',	20,	'juanvivas'),
-  (9,	'Plato',	'2kg',	'desfigurados',	'2002-05-12',	200,	'Activo',	30,	'juanvivas')
+  (9,	'Plato',	'2kg',	'desfigurados',	'2002-05-12',	200,	'Activo',	30,	'juanvivas'),
+  (10,	'Silla turca',	'Unico',	'De color blanco',	'2016-03-05',	24500,	'Activo',	2,	'javiers'),
+  (11,	'Platos 3kg',	'Unico',	'Negros',	'2011-12-09',	2500,	'Activo',	10,	'javiers')
 ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `name` = VALUES(`name`), `model` = VALUES(`model`), `description` = VALUES(`description`), `ad_date` = VALUES(`ad_date`), `cost` = VALUES(`cost`), `state` = VALUES(`state`), `quantity` = VALUES(`quantity`), `user_id` = VALUES(`user_id`);
 
 DROP TABLE IF EXISTS `expenses`;
@@ -73,13 +77,17 @@ CREATE TABLE `expenses` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `expenses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 INSERT INTO `expenses` (`id`, `description`, `date`, `total`, `user_id`) VALUES
   (1,	'Arreglo mueble',	'2016-12-06',	20000,	'paovera'),
   (2,	'Pago nomina total mes de diciembre',	'2016-12-06',	345000,	'paovera'),
   (4,	'Compra gatorade cafetin',	'2016-12-06',	45000,	'juanvivas'),
-  (5,	'Compra yogurt varios sabores',	'2016-12-06',	30000,	'juanvivas')
+  (5,	'Compra yogurt varios sabores',	'2016-12-06',	30000,	'juanvivas'),
+  (6,	'Prueba de engreso insertadoooo',	'2016-10-02',	13450.56,	'javiers'),
+  (7,	'Prueba de engreso insertadoooo22',	'2016-10-02',	13450.56,	'javiers'),
+  (8,	'Compra de cloro',	'2016-12-02',	2000,	'javiers'),
+  (9,	'Compra de mancuerta',	'2016-12-31',	2500,	'javiers')
 ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `description` = VALUES(`description`), `date` = VALUES(`date`), `total` = VALUES(`total`), `user_id` = VALUES(`user_id`);
 
 DROP TABLE IF EXISTS `income`;
@@ -143,11 +151,13 @@ CREATE TABLE `person` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `person` (`ci`, `name`, `last_name`, `birth_date`, `gender`, `dir`, `phone`) VALUES
+  ('E-12345678',	'Jorge',	'Coll',	'1998-12-11',	'Masculino',	'La joya',	'0424-7804473'),
   ('V-19895266',	'Julian',	'Lacruz',	'1991-03-05',	'Masculino',	'Ejido',	'0416-2739235'),
   ('V-20321312',	'Luisa',	'Ruiz',	'1992-04-12',	'Femenino',	'Los proceres',	'0424-2423423'),
   ('V-20431975',	'Juan Andres',	'Vivas Contreras',	'1992-09-16',	'Masculino',	'Santa Maria Sur',	'0424-7804473'),
   ('V-20435560',	'Paola',	'Vera',	'1991-06-20',	'Femenino',	'El trapiche',	'0424-7005096'),
   ('V-21365922',	'Javier',	'Solsona',	'1993-07-07',	'Masculino',	'Paseo la fera',	'0416-4786475'),
+  ('V-22435987',	'David',	'Garrido',	'1992-10-07',	'Masculino',	'Las Gonzales',	'0274-2443283'),
   ('V-23453464',	'Fabiola',	'Araque',	'1995-10-10',	'Femenino',	'Cardenal Quintero',	'0412-2323453'),
   ('V-23497463',	'Mudafar',	'El Halabi',	'1989-07-17',	'Masculino',	'La joya',	'0416-0466440'),
   ('V-23942234',	'Carlos',	'Rojas',	'1976-04-03',	'Masculino',	'Centro',	'0274-2342144'),
@@ -245,4 +255,4 @@ INSERT INTO `user` (`username`, `pass`, `rol`, `user_ci`) VALUES
   ('paovera',	'1234',	'Recepcion',	'V-20435560')
 ON DUPLICATE KEY UPDATE `username` = VALUES(`username`), `pass` = VALUES(`pass`), `rol` = VALUES(`rol`), `user_ci` = VALUES(`user_ci`);
 
--- 2016-12-12 02:53:08
+-- 2016-12-13 05:42:33

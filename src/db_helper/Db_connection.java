@@ -168,10 +168,11 @@ public class Db_connection
       String last_name = rs.getString("last_name");
       Date birth_date = rs.getDate("birth_date");
       Engender gender = Engender.Masculino;
-      
-      if(rs.getString("gender").equals("Masculino"))
+      String g = rs.getString("gender");
+  
+      if(g.equals("Masculino"))
         gender = Engender.Masculino;
-      else if(rs.getString("gender").equals("Femenino"))
+      else if(g.equals("Femenino"))
         gender = Engender.Femenino;
       
       String dir = rs.getString("dir");
@@ -194,10 +195,11 @@ public class Db_connection
       String last_name = rs.getString("last_name");
       Date birth_date = rs.getDate("birth_date");
       Engender gender = Engender.Masculino;
-      
-      if(rs.getString("gender").equals(Engender.Masculino))
+      String g = rs.getString("gender");
+  
+      if(g.equals("Masculino"))
         gender = Engender.Masculino;
-      else if(rs.getString("gender").equals(Engender.Femenino))
+      else if(g.equals("Femenino"))
         gender = Engender.Femenino;
       
       String dir = rs.getString("dir");
@@ -230,11 +232,11 @@ public class Db_connection
       String pass = rs.getString("pass");
       Enrol rol = Enrol.Administrador;
       
-      if(rs.getString("rol").equals(Enrol.Administrador))
+      if(rs.getString("rol").equals("Administrador"))
         rol = Enrol.Administrador;
-      else if(rs.getString("rol").equals(Enrol.Gerente))
+      else if(rs.getString("rol").equals("Gerente"))
         rol = Enrol.Gerente;
-      else if(rs.getString("rol").equals(Enrol.Recepcion))
+      else if(rs.getString("rol").equals("Recepcion"))
         rol = Enrol.Recepcion;
       
       return new User(username, pass, rol);
@@ -283,9 +285,9 @@ public class Db_connection
       double cost = rs.getDouble("cost");
       Enstate state = Enstate.Activo;
       
-      if(rs.getString("state").equals(Enstate.Activo))
+      if(rs.getString("state").equals("Activo"))
         state = Enstate.Activo;
-      else if(rs.getString("state").equals(Enstate.Inactivo))
+      else if(rs.getString("state").equals("Inactivo"))
         state = Enstate.Inactivo;
       
       int quantity = rs.getInt("quantity");
@@ -311,10 +313,11 @@ public class Db_connection
       String last_name = rs.getString("last_name");
       Date birth_date = rs.getDate("birth_date");
       Engender gender = Engender.Masculino;
+      //String g = rs.getString("gender");
       
-      if(rs.getString("gender").equals(Engender.Masculino))
+      if(rs.getString("gender").equals("Masculino"))
         gender = Engender.Masculino;
-      else if(rs.getString("gender").equals(Engender.Femenino))
+      else if(rs.getString("gender").equals("Femenino"))
         gender = Engender.Femenino;
       
       String dir = rs.getString("dir");
@@ -459,7 +462,28 @@ public class Db_connection
   }
   
   
+  public Service search_service_by_customer_id(String ci) throws SQLException
+  {
+    ResultSet rs = this.execute_query("SELECT * FROM service WHERE customer_id ='" + ci + "'" + "ORDER BY income_id LIMIT 1");
+    
+    
+    if(rs.next())
+    {
+      long id = rs.getLong("income_id");
+      Date init_date = rs.getDate("init_date");
+      String customer_id = rs.getString("customer_id");
+      Service_type type_s = Service_type.Quincenal;
+  
+      if(rs.getString("type_s").equals("Diario"))
+        type_s = Service_type.Diario;
+      else if(rs.getString("type_s").equals("Mensual"))
+        type_s = Service_type.Mensual;
+      else if(rs.getString("type_s").equals("Quincenal"))
+        type_s = Service_type.Quincenal;
+  
+      return new Service(id, type_s, init_date, customer_id);
+    }
+    return null;
+  }
+  
 }
-
-
-

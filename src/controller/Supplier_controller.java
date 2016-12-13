@@ -6,7 +6,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import main.Main;
 
@@ -20,20 +23,51 @@ import java.util.ResourceBundle;
 public class Supplier_controller implements Initializable
 {
   @FXML private Label username_label;
+  @FXML private Label status_label;
   @FXML private Pane pane;
   @FXML private String username = new String("vacio");
   @FXML private Enrol rol;
-
+  @FXML private TextField rif_text_field;
+  @FXML private TextField name_text_field;
+  @FXML private TextField phone_text_field;
+  @FXML private TextArea dir_text_area;
+  @FXML private TextArea desc_text_area;
+  @FXML private Button new_supplier_data_button;
+  @FXML private Button edit_supplier_data_button;
+  @FXML private Button save_button;
+  
   @Override
   public void initialize(URL location, ResourceBundle resources)
   {
     username_label.setText(getUsername());
+    status_label.setText(" ");
+    new_supplier_data_button.setDisable(true);
+    edit_supplier_data_button.setDisable(true);
+    save_button.setDisable(true);
   }
 
   @FXML
   protected void handle_save_action(ActionEvent event)
   {
+    
 
+  }
+  
+  @FXML
+  protected void handle_search_action(ActionEvent event)
+  {
+    
+  }
+  @FXML
+  protected void handle_new_supplier_button_action(ActionEvent event)
+  {
+    
+  }
+  
+  @FXML
+  protected void handle_edit_supplier_data_button_action(ActionEvent event)
+  {
+    
   }
 
   @FXML

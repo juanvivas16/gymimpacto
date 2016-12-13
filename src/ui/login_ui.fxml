@@ -26,8 +26,8 @@
           </Menu>
         </menus>
       </MenuBar>
-       <TextField fx:id="user_text_field" layoutX="223.0" layoutY="211.0" />
-        <PasswordField fx:id="pass_text_field" layoutX="223.0" layoutY="253.0" />
+       <TextField fx:id="user_text_field" layoutX="223.0" layoutY="211.0" promptText="NombreUsuario" />
+        <PasswordField fx:id="pass_text_field" layoutX="223.0" layoutY="253.0" promptText="Contrasena" />
       <Label layoutX="169.0" layoutY="216.0" text="Usuario:" />
       <Label layoutX="182.0" layoutY="258.0" text="Clave:" />
       <CheckBox layoutX="223.0" layoutY="337.0" mnemonicParsing="false" text="Recordar" />

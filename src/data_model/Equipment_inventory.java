@@ -11,7 +11,7 @@ public class Equipment_inventory
   private long id;
   private String name;
   private String model;
-  private String desc;
+  private String description;
   private Date ad_date;
   private double cost;
   private int quantity;
@@ -20,13 +20,13 @@ public class Equipment_inventory
   
   public Equipment_inventory() {}
   
-  public Equipment_inventory(long id, String name, String model, String desc, Date ad_date, double cost, int quantity,
+  public Equipment_inventory(long id, String name, String model, String description, Date ad_date, double cost, int quantity,
                              Enstate state, String user_id)
   {
     this.id = id;
     this.name = name;
     this.model = model;
-    this.desc = desc;
+    this.description = description;
     this.ad_date = ad_date;
     this.cost = cost;
     this.quantity = quantity;
@@ -64,14 +64,14 @@ public class Equipment_inventory
     this.model = model;
   }
   
-  public String getDesc( )
+  public String getDescription( )
   {
-    return desc;
+    return description;
   }
   
-  public void setDesc(String desc)
+  public void setDescription(String description)
   {
-    this.desc = desc;
+    this.description = description;
   }
   
   public Date getAd_date( )
@@ -128,7 +128,7 @@ public class Equipment_inventory
             "id=" + id +
             ", name='" + name + '\'' +
             ", model='" + model + '\'' +
-            ", desc='" + desc + '\'' +
+            ", description='" + description + '\'' +
             ", ad_date=" + ad_date +
             ", cost=" + cost +
             ", quantity=" + quantity +

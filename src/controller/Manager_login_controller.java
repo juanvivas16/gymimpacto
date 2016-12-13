@@ -1,5 +1,6 @@
 package controller;
 
+import data_model.Enrol;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +22,7 @@ public class Manager_login_controller implements Initializable
   @FXML private Label username_label;
   @FXML private Pane pane;
   @FXML private String username = new String("vacio");
+  @FXML private Enrol rol;
 
 
   @Override
@@ -37,6 +39,7 @@ public class Manager_login_controller implements Initializable
     Parent root = (Parent)fxmlLoader.load();
     Customer_controller controller = fxmlLoader.<Customer_controller>getController();
     controller.setUsername(getUsername());
+    controller.setRol(rol);
     controller.initialize(null, null);
 
     Main.primary_stage.setTitle("Clientes | Gimnasio Impacto (C) 2016");
@@ -50,6 +53,7 @@ public class Manager_login_controller implements Initializable
     Parent root = (Parent)fxmlLoader.load();
     Status_controller controller = fxmlLoader.<Status_controller>getController();
     controller.setUsername(getUsername());
+    controller.setRol(rol);
     controller.initialize(null, null);
 
     Main.primary_stage.setTitle("Estado de Servicio | Gimnasio Impacto (C) 2016");
@@ -65,6 +69,7 @@ public class Manager_login_controller implements Initializable
 
     Invoice_service_controller controller = fxmlLoader.<Invoice_service_controller>getController();
     controller.setUsername(getUsername());
+    controller.setRol(rol);
     controller.initialize(null,null);
 
     Main.primary_stage.setTitle("Cobrar Servicio | Gimnasio Impacto (C) 2016");
@@ -79,6 +84,7 @@ public class Manager_login_controller implements Initializable
     Parent root = fxmlLoader.load();
     Invoice_product_controller controller = fxmlLoader.<Invoice_product_controller>getController();
     controller.setUsername(getUsername());
+    controller.setRol(rol);
     controller.initialize(null,null);
 
     Main.primary_stage.setTitle("Cobrar Servicio | Gimnasio Impacto (C) 2016");
@@ -93,6 +99,7 @@ public class Manager_login_controller implements Initializable
     Parent root = fxmlLoader.load();
     Expenses_controller controller = fxmlLoader.<Expenses_controller>getController();
     controller.setUsername(getUsername());
+    controller.setRol(rol);
     controller.initialize(null,null);
 
     Main.primary_stage.setTitle("Egresos | Gimnasio Impacto (C) 2016");
@@ -107,12 +114,12 @@ public class Manager_login_controller implements Initializable
     Parent root = fxmlLoader.load();
     Inventory_controller controller = fxmlLoader.<Inventory_controller>getController();
     controller.setUsername(getUsername());
+    controller.setRol(rol);
     controller.initialize(null,null);
 
     Main.primary_stage.setTitle("Inventario | Gimnasio Impacto (C) 2016");
     pane.getChildren().setAll(root);
-
-
+    
   }
 
   @FXML protected void handle_supplier_action(ActionEvent event) throws IOException
@@ -122,6 +129,7 @@ public class Manager_login_controller implements Initializable
     Parent root = fxmlLoader.load();
     Supplier_controller controller = fxmlLoader.<Supplier_controller>getController();
     controller.setUsername(getUsername());
+    controller.setRol(rol);
     controller.initialize(null,null);
 
     Main.primary_stage.setTitle("Agregar Proveedores | Gimnasio Impacto (C) 2016");
@@ -136,6 +144,7 @@ public class Manager_login_controller implements Initializable
     Parent root = fxmlLoader.load();
     Employee_controller controller = fxmlLoader.<Employee_controller>getController();
     controller.setUsername(getUsername());
+    controller.setRol(rol);
     controller.initialize(null,null);
 
     Main.primary_stage.setTitle("Agregar Empleados | Gimnasio Impacto (C) 2016");
@@ -150,6 +159,7 @@ public class Manager_login_controller implements Initializable
     Parent root = fxmlLoader.load();
     Manager_income_controller controller = fxmlLoader.<Manager_income_controller>getController();
     controller.setUsername(getUsername());
+    controller.setRol(rol);
     controller.initialize(null,null);
 
     Main.primary_stage.setTitle("Lista de Ingresos | Gimnasio Impacto (C) 2016");
@@ -164,6 +174,7 @@ public class Manager_login_controller implements Initializable
     Parent root = fxmlLoader.load();
     Manager_add_product_controller controller = fxmlLoader.<Manager_add_product_controller>getController();
     controller.setUsername(getUsername());
+    controller.setRol(rol);
     controller.initialize(null,null);
 
     Main.primary_stage.setTitle("Agregar Productos | Gimnasio Impacto (C) 2016");
@@ -183,5 +194,15 @@ public class Manager_login_controller implements Initializable
 
   public void setUsername(String username) {
     this.username = username;
+  }
+  
+  public Enrol getRol( )
+  {
+    return rol;
+  }
+  
+  public void setRol(Enrol rol)
+  {
+    this.rol = rol;
   }
 }

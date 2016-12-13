@@ -4,14 +4,14 @@
  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <servlet>
-    <servlet-desc>spring</servlet-desc>
+    <servlet-description>spring</servlet-description>
     <servlet-class>
       org.springframework.web.servlet.DispatcherServlet
     </servlet-class>
     <load-on-startup>2</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-desc>spring</servlet-desc>
+    <servlet-description>spring</servlet-description>
     <url-pattern>*.html</url-pattern>
   </servlet-mapping>
     <session-config>

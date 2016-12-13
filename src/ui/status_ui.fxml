@@ -29,15 +29,19 @@
       </MenuBar>
       <Label fx:id="username_label" layoutX="509.0" layoutY="56.0" text="__" />
       <Label layoutX="455.0" layoutY="56.0" text="Usuario:" />
-      <Label fx:id="status_label" layoutX="252.0" layoutY="260.0" text="__">
+      <Label fx:id="status_label" layoutX="237.0" layoutY="296.0" text="__">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="198.0" layoutY="260.0" text="Estado:" />
+      <Label layoutX="183.0" layoutY="306.0" text="Estado:" />
       <TextField fx:id="search_textfield" layoutX="226.0" layoutY="166.0" />
       <Label layoutX="207.0" layoutY="171.0" text="CI:" />
       <Button fx:id="back_button" layoutX="370.0" layoutY="348.0" mnemonicParsing="false" onAction="#handle_back_action" prefHeight="40.0" prefWidth="73.0" text="Atras" />
       <Button fx:id="search_button" layoutX="179.0" layoutY="348.0" mnemonicParsing="false" onAction="#handle_search_action" prefHeight="40.0" prefWidth="73.0" text="Buscar" />
+      <DatePicker fx:id="init_datepicker" layoutX="226.0" layoutY="203.0" prefHeight="25.0" prefWidth="170.0" />
+      <DatePicker fx:id="end_datepicker" layoutX="226.0" layoutY="241.0" prefHeight="25.0" prefWidth="170.0" />
+      <Label layoutX="142.0" layoutY="208.0" text="Fecha Inicio:" />
+      <Label layoutX="95.0" layoutY="246.0" text="Fecha Vencimiento:" />
    </children>
 </Pane>

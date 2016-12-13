@@ -9,16 +9,17 @@ import java.sql.Date;
 public class Expenses
 {
   private long id;
-  private String desc;
+  private String description;
   private Date date;
   private double total;
   private String user_id;
   
   public Expenses() {}
   
-  public Expenses(String desc, Date date, double total, String user_id)
+  public Expenses(long id, String description, Date date, double total, String user_id)
   {
-    this.desc = desc;
+    this.id = id;
+    this.description = description;
     this.date = date;
     this.total = total;
     this.user_id = user_id;
@@ -34,14 +35,14 @@ public class Expenses
     this.id = id;
   }
   
-  public String getDesc( )
+  public String getDescription( )
   {
-    return desc;
+    return description;
   }
   
-  public void setDesc(String desc)
+  public void setDescription(String description)
   {
-    this.desc = desc;
+    this.description = description;
   }
   
   public Date getDate( )
@@ -76,7 +77,7 @@ public class Expenses
   public String toString() {
     return "Expenses{" +
             "id=" + id +
-            ", desc='" + desc + '\'' +
+            ", description='" + description + '\'' +
             ", date=" + date +
             ", total=" + total +
             ", user_id='" + user_id + '\'' +

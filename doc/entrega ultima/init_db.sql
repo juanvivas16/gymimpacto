@@ -34,7 +34,7 @@ CREATE TABLE `equipment_inventory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `model` varchar(20) NOT NULL,
-  `desc` varchar(50) NOT NULL,
+  `description` varchar(50) NOT NULL,
   `ad_date` date NOT NULL,
   `cost` double NOT NULL,
   `state` enum('Activo','Inactivo') NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE `equipment_inventory` (
 DROP TABLE IF EXISTS `expenses`;
 CREATE TABLE `expenses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `desc` varchar(50) NOT NULL,
+  `description` varchar(50) NOT NULL,
   `date` date NOT NULL,
   `total` double unsigned NOT NULL,
   `user_id` varchar(15) NOT NULL,
@@ -63,7 +63,7 @@ DROP TABLE IF EXISTS `income`;
 CREATE TABLE `income` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` varchar(10) NOT NULL,
-  `desc` varchar(50) NOT NULL,
+  `description` varchar(50) NOT NULL,
   `date` date NOT NULL,
   `sub_total` double unsigned NOT NULL,
   `iva` double unsigned NOT NULL DEFAULT '0.12',
@@ -116,7 +116,7 @@ CREATE TABLE `person` (
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `desc` varchar(50) NOT NULL,
+  `description` varchar(50) NOT NULL,
   `price` double unsigned NOT NULL,
   `quantity_available` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)

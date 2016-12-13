@@ -39,7 +39,7 @@
             <TableColumn fx:id="init_date_tableC" prefWidth="85.0" text="Fecha Reg" />
          </columns>
       </TableView>
-      <Button fx:id="exit_button" layoutX="558.0" layoutY="441.0" mnemonicParsing="false" onAction="#handle_exit_action" text="Salir" />
+      <Button fx:id="exit_button" layoutX="534.0" layoutY="437.0" mnemonicParsing="false" onAction="#handle_exit_action" prefHeight="29.0" prefWidth="71.0" text="Atras" />
       <Button fx:id="edit_button" layoutX="143.0" layoutY="147.0" mnemonicParsing="false" onAction="#handle_edit_client_action" text="Editar " />
       <Button fx:id="add_client_button" layoutX="14.0" layoutY="147.0" mnemonicParsing="false" onAction="#handle_add_client_action" text="Agregar Cliente" />
       <Label layoutX="456.0" layoutY="52.0" text="Usuario:" />

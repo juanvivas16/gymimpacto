@@ -7,15 +7,15 @@ package data_model;
 public class Product
 {
   private long id;
-  private String desc;
+  private String description;
   private double price;
   private long quantity_available;
   
   public Product( ) {}
   
-  public Product(String desc, double price, long quantity_available)
+  public Product(String description, double price, long quantity_available)
   {
-    this.desc = desc;
+    this.description = description;
     this.price = price;
     this.quantity_available = quantity_available;
   }
@@ -30,14 +30,14 @@ public class Product
     this.id = id;
   }
   
-  public String getDesc( )
+  public String getDescription( )
   {
-    return desc;
+    return description;
   }
   
-  public void setDesc(String desc)
+  public void setDescription(String description)
   {
-    this.desc = desc;
+    this.description = description;
   }
   
   public double getPrice( )
@@ -63,6 +63,6 @@ public class Product
   @Override
   public String toString( )
   {
-    return "Product{" + "id=" + id + ", desc='" + desc + '\'' + ", price=" + price + ", quantity=" + quantity_available + '}';
+    return "Product{" + "id=" + id + ", description='" + description + '\'' + ", price=" + price + ", quantity=" + quantity_available + '}';
   }
 }

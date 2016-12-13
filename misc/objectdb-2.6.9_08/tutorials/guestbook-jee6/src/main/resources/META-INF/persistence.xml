@@ -4,12 +4,12 @@
  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
  http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
  
-  <persistence-unit desc="GuestbookPU" transaction-type="JTA">
+  <persistence-unit description="GuestbookPU" transaction-type="JTA">
     <provider>com.objectdb.jpa.Provider</provider>
     <properties>
-      <property desc="javax.persistence.jdbc.url" value="$objectdb/db/guests.odb"/>
-      <property desc="javax.persistence.jdbc.user" value="admin"/>
-      <property desc="javax.persistence.jdbc.password" value="admin"/>
+      <property description="javax.persistence.jdbc.url" value="$objectdb/db/guests.odb"/>
+      <property description="javax.persistence.jdbc.user" value="admin"/>
+      <property description="javax.persistence.jdbc.password" value="admin"/>
     </properties>
   </persistence-unit>
  

@@ -13,7 +13,7 @@
  
     <body>
         <form method="POST" action="guest.html">
-            Name: <input type="text" desc="desc" />
+            Name: <input type="text" description="description" />
             <input type="submit" value="Add" />
         </form>
  

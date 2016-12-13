@@ -45,7 +45,7 @@ CREATE TABLE `equipment_inventory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `model` varchar(20) NOT NULL,
-  `desc` varchar(50) NOT NULL,
+  `description` varchar(50) NOT NULL,
   `ad_date` date NOT NULL,
   `cost` double NOT NULL,
   `state` enum('Activo','Inactivo') NOT NULL,
@@ -56,17 +56,17 @@ CREATE TABLE `equipment_inventory` (
   CONSTRAINT `equipment_inventory_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
-INSERT INTO `equipment_inventory` (`id`, `name`, `model`, `desc`, `ad_date`, `cost`, `state`, `quantity`, `user_id`) VALUES
+INSERT INTO `equipment_inventory` (`id`, `name`, `model`, `description`, `ad_date`, `cost`, `state`, `quantity`, `user_id`) VALUES
   (6,	'Multifuerza',	'Unico',	'En buen estado',	'1999-12-01',	760,	'Activo',	1,	'juanvivas'),
   (7,	'Bicicleta',	'SB2',	'Pedal a medio funcionar',	'2001-04-05',	2000,	'Activo',	10,	'juanvivas'),
   (8,	'Mancuerna',	'20kg',	'Decolor negro todas',	'2002-04-11',	600,	'Activo',	20,	'juanvivas'),
   (9,	'Plato',	'2kg',	'desfigurados',	'2002-05-12',	200,	'Activo',	30,	'juanvivas')
-ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `name` = VALUES(`name`), `model` = VALUES(`model`), `desc` = VALUES(`desc`), `ad_date` = VALUES(`ad_date`), `cost` = VALUES(`cost`), `state` = VALUES(`state`), `quantity` = VALUES(`quantity`), `user_id` = VALUES(`user_id`);
+ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `name` = VALUES(`name`), `model` = VALUES(`model`), `description` = VALUES(`description`), `ad_date` = VALUES(`ad_date`), `cost` = VALUES(`cost`), `state` = VALUES(`state`), `quantity` = VALUES(`quantity`), `user_id` = VALUES(`user_id`);
 
 DROP TABLE IF EXISTS `expenses`;
 CREATE TABLE `expenses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `desc` varchar(50) NOT NULL,
+  `description` varchar(50) NOT NULL,
   `date` date NOT NULL,
   `total` double unsigned NOT NULL,
   `user_id` varchar(15) NOT NULL,
@@ -75,18 +75,18 @@ CREATE TABLE `expenses` (
   CONSTRAINT `expenses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
-INSERT INTO `expenses` (`id`, `desc`, `date`, `total`, `user_id`) VALUES
+INSERT INTO `expenses` (`id`, `description`, `date`, `total`, `user_id`) VALUES
   (1,	'Arreglo mueble',	'2016-12-06',	20000,	'paovera'),
   (2,	'Pago nomina total mes de diciembre',	'2016-12-06',	345000,	'paovera'),
   (4,	'Compra gatorade cafetin',	'2016-12-06',	45000,	'juanvivas'),
   (5,	'Compra yogurt varios sabores',	'2016-12-06',	30000,	'juanvivas')
-ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `desc` = VALUES(`desc`), `date` = VALUES(`date`), `total` = VALUES(`total`), `user_id` = VALUES(`user_id`);
+ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `description` = VALUES(`description`), `date` = VALUES(`date`), `total` = VALUES(`total`), `user_id` = VALUES(`user_id`);
 
 DROP TABLE IF EXISTS `income`;
 CREATE TABLE `income` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` varchar(10) NOT NULL,
-  `desc` varchar(50) NOT NULL,
+  `description` varchar(50) NOT NULL,
   `date` date NOT NULL,
   `sub_total` double unsigned NOT NULL,
   `iva` double unsigned NOT NULL DEFAULT '0.12',
@@ -99,10 +99,10 @@ CREATE TABLE `income` (
   CONSTRAINT `income_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
-INSERT INTO `income` (`id`, `customer_id`, `desc`, `date`, `sub_total`, `iva`, `total`, `user_id`) VALUES
+INSERT INTO `income` (`id`, `customer_id`, `description`, `date`, `sub_total`, `iva`, `total`, `user_id`) VALUES
   (1,	'V-23942234',	'Mensualidad',	'2016-12-06',	2000,	0.12,	2240,	'paovera'),
   (2,	'V-3245623',	'Mensualidad + Gatorade',	'2016-12-06',	3000,	0.12,	3360,	'paovera')
-ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `customer_id` = VALUES(`customer_id`), `desc` = VALUES(`desc`), `date` = VALUES(`date`), `sub_total` = VALUES(`sub_total`), `iva` = VALUES(`iva`), `total` = VALUES(`total`), `user_id` = VALUES(`user_id`);
+ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `customer_id` = VALUES(`customer_id`), `description` = VALUES(`description`), `date` = VALUES(`date`), `sub_total` = VALUES(`sub_total`), `iva` = VALUES(`iva`), `total` = VALUES(`total`), `user_id` = VALUES(`user_id`);
 
 DELIMITER ;;
 
@@ -158,20 +158,20 @@ ON DUPLICATE KEY UPDATE `ci` = VALUES(`ci`), `name` = VALUES(`name`), `last_name
 DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `desc` varchar(50) NOT NULL,
+  `description` varchar(50) NOT NULL,
   `price` double unsigned NOT NULL,
   `quantity_available` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
-INSERT INTO `product` (`id`, `desc`, `price`, `quantity_available`) VALUES
+INSERT INTO `product` (`id`, `description`, `price`, `quantity_available`) VALUES
   (2,	'Gatorade',	1000,	100),
   (3,	'Yogurt Fresa',	750,	15),
   (4,	'Yogurt Mora',	750,	15),
   (5,	'Refresco',	450,	30),
   (6,	'Galleta de avena',	500,	50),
   (7,	'Galleta de mantequilla grande',	800,	10)
-ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `desc` = VALUES(`desc`), `price` = VALUES(`price`), `quantity_available` = VALUES(`quantity_available`);
+ON DUPLICATE KEY UPDATE `id` = VALUES(`id`), `description` = VALUES(`description`), `price` = VALUES(`price`), `quantity_available` = VALUES(`quantity_available`);
 
 DROP TABLE IF EXISTS `service`;
 CREATE TABLE `service` (

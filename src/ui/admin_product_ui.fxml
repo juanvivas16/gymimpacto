@@ -38,7 +38,7 @@
             <TableColumn fx:id="supplier_tableC" minWidth="0.0" prefWidth="110.0" text="Proveedor" />
          </columns>
       </TableView>
-      <Button fx:id="exit_button" layoutX="551.0" layoutY="441.0" mnemonicParsing="false" onAction="#handle_exit_action" text="Salir" />
+      <Button fx:id="exit_button" layoutX="527.0" layoutY="437.0" mnemonicParsing="false" onAction="#handle_exit_action" prefHeight="29.0" prefWidth="71.0" text="Atras" />
       <Button fx:id="edit_button" layoutX="151.0" layoutY="147.0" mnemonicParsing="false" onAction="#handle_edit_product_action" text="Editar " />
       <Button fx:id="add_product_button" layoutX="7.0" layoutY="147.0" mnemonicParsing="false" onAction="#handle_add_product_action" text="Agregar Productos" />
    </children>

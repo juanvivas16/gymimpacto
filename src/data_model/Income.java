@@ -8,7 +8,7 @@ import java.sql.Date;
 public class Income
 {
   private long id;
-  private String desc;
+  private String description;
   private Date date;
   private double sub_total;
   private double iva;
@@ -18,10 +18,10 @@ public class Income
   
   public Income( ) {}
 
-  public Income(long id, String desc, Date date, double sub_total, double iva, double total, String customer_id, String user_id)
+  public Income(long id, String description, Date date, double sub_total, double iva, double total, String customer_id, String user_id)
   {
     this.id = id;
-    this.desc = desc;
+    this.description = description;
     this.date = date;
     this.sub_total = sub_total;
     this.iva = iva;
@@ -40,14 +40,14 @@ public class Income
     this.id = id;
   }
   
-  public String getDesc( )
+  public String getDescription( )
   {
-    return desc;
+    return description;
   }
   
-  public void setDesc(String desc)
+  public void setDescription(String description)
   {
-    this.desc = desc;
+    this.description = description;
   }
   
   public Date getDate( )
@@ -114,6 +114,6 @@ public class Income
   @Override
   public String toString()
   {
-    return "Income{" + "id=" + id + ", desc='" + desc + '\'' + ", date=" + date + ", sub_total=" + sub_total + ", iva=" + iva + ", total=" + total + ", customer_id='" + customer_id + '\'' + ", user_id='" + user_id + '\'' + '}';
+    return "Income{" + "id=" + id + ", description='" + description + '\'' + ", date=" + date + ", sub_total=" + sub_total + ", iva=" + iva + ", total=" + total + ", customer_id='" + customer_id + '\'' + ", user_id='" + user_id + '\'' + '}';
   }
 }

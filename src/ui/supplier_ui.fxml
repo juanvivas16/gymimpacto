@@ -39,6 +39,6 @@
       <TextField fx:id="rif_text_field" layoutX="245.0" layoutY="146.0" />
       <Label layoutX="221.0" layoutY="151.0" text="RIF:" />
       <Button fx:id="save_button" layoutX="180.0" layoutY="428.0" mnemonicParsing="false" onAction="#handle_save_action" prefHeight="38.0" prefWidth="97.0" text="Guardar" />
-      <Button fx:id="exit_button" layoutX="344.0" layoutY="428.0" mnemonicParsing="false" onAction="#handle_exit_button" prefHeight="38.0" prefWidth="97.0" text="Salir" />
+      <Button fx:id="exit_button" layoutX="344.0" layoutY="428.0" mnemonicParsing="false" onAction="#handle_exit_button" prefHeight="38.0" prefWidth="97.0" text="Atras" />
    </children>
 </Pane>

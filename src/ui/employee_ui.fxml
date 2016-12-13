@@ -47,10 +47,9 @@
       <Label layoutX="72.0" layoutY="311.0" text="Sexo:" />
       <Label layoutX="413.0" layoutY="142.0" text="Estado:" />
       <Label fx:id="status_label" layoutX="462.0" layoutY="141.0" text="___" />
-      <Button fx:id="cancel_button" cancelButton="true" layoutX="539.0" layoutY="441.0" mnemonicParsing="false" onAction="#handle_cancel_button_action" prefHeight="25.0" prefWidth="71.0" text="Salir" />
+      <Button fx:id="cancel_button" cancelButton="true" layoutX="496.0" layoutY="430.0" mnemonicParsing="false" onAction="#handle_cancel_button_action" prefHeight="25.0" prefWidth="89.0" text="Cancelar" />
       <Label layoutX="468.0" layoutY="44.0" text="Usuario:" />
       <Label fx:id="username_label" layoutX="521.0" layoutY="42.0" text="__" />
-      <Button fx:id="back_button" layoutX="481.0" layoutY="441.0" mnemonicParsing="false" onAction="#handle_back_button_action" text="Atras" />
       <Label layoutX="357.0" layoutY="248.0" text="Sueldo:" />
       <Label layoutX="345.0" layoutY="282.0" text="Actividad:" />
       <Label layoutX="288.0" layoutY="214.0" text="Tipo de Contrato:" />

@@ -40,7 +40,7 @@
             <TableColumn prefWidth="90.0" text="ci_usuario" />
          </columns>
       </TableView>
-      <Button fx:id="exit_button" layoutX="569.0" layoutY="436.0" mnemonicParsing="false" onAction="#handle_exit_activity" text="Salir" />
+      <Button fx:id="exit_button" layoutX="532.0" layoutY="432.0" mnemonicParsing="false" onAction="#handle_exit_activity" prefHeight="29.0" prefWidth="84.0" text="Atras" />
       <Button fx:id="view_income_button" layoutX="25.0" layoutY="142.0" mnemonicParsing="false" onAction="#handle_view_income_activity" text="Ver Ingreso" />
    </children>
 </Pane>

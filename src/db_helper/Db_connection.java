@@ -340,7 +340,7 @@ public class Db_connection
       PreparedStatement statement;
       
       statement = _con.prepareStatement(
-          "insert into persona (ci, name, last_name, birth_date, gender, dir, phone) " + "values ('" + ci + "','" + name + "','" + last_name + "', '" + birth_date + "', '" + gender
+          "insert into person (ci, name, last_name, birth_date, gender, dir, phone) " + "values ('" + ci + "','" + name + "','" + last_name + "', '" + birth_date + "', '" + gender
               .toString() + "','" + dir + "', '" + phone + "')");
       
       statement.executeUpdate();
@@ -485,5 +485,187 @@ public class Db_connection
     }
     return null;
   }
-  
+
+  public boolean set_product_sql(long id, String description, double price, long quantity_available )
+  {
+    try
+    {
+      _con.setAutoCommit(false);
+      PreparedStatement statement;
+
+      statement = _con.prepareStatement(
+              "insert into product (id, description, price, quantity_available) " + "values ('" + id +"'','" + description + "','" + price + "','" + quantity_available + "')");
+
+      statement.executeUpdate();
+
+      _con.commit();
+    } catch(SQLException ex)
+    {
+      try
+      {
+        _con.rollback();
+      } catch(SQLException ex1)
+      {
+        System.err.println("Transaction failed");
+        return false;
+      }
+    }
+
+    return true;
+  }
+  public boolean set_supplier_sql(String id, String name, String phone, String dir, String product_desc, String user_id)
+  {
+    try
+    {
+      _con.setAutoCommit(false);
+      PreparedStatement statement;
+
+      statement = _con.prepareStatement(
+              "insert into product (id, name, phone, dir, product_desc, user_id) " + "values ('" + id + "','" + name + "','" + phone + "','"+ dir +"','"+ product_desc + "','" + user_id +"')");
+
+      statement.executeUpdate();
+
+      _con.commit();
+    } catch(SQLException ex)
+    {
+      try
+      {
+        _con.rollback();
+      } catch(SQLException ex1)
+      {
+        System.err.println("Transaction failed");
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+
+  public boolean set_employee_sql(String ci, String name, String last_name, Date birth_date, Engender gender, String dir, String phone,
+                                  Type_contract type_c, double pay, String activity)
+  {
+    try
+    {
+      _con.setAutoCommit(false);
+      PreparedStatement statement;
+      System.out.println("Antes de commit1");
+      statement = _con.prepareStatement(
+              "insert into person (ci, name, last_name, birth_date, gender, dir, phone)  values ('" + ci + "', '" + name + "', '" + last_name + "', '" + birth_date + "','" + gender
+                      .toString() + "' , '" + dir + "', '" + phone + "')");
+
+
+      statement.executeUpdate();
+      System.out.println("Antes de commit2");
+
+      statement =
+              _con.prepareStatement("insert into employee (type_c, pay, activity) values " + "('" + type_c + "','" + pay + "','" + activity + "')");
+
+      statement.executeUpdate();
+
+      System.out.println("Antes de commit3");
+      _con.commit();
+    } catch(SQLException ex)
+    {
+      try
+      {
+        _con.rollback();
+      } catch(SQLException ex1)
+      {
+        System.err.println("Transaction failed");
+        return false;
+      }
+
+      System.out.println(ex.getMessage());
+    }
+    return true;
+  }
+
+  public boolean set_user_sql(String ci, String name, String last_name, Date birth_date, Engender gender, String dir, String phone,
+                              String username, String password, Enrol rol, String user_ci)
+  {
+    try
+    {
+      _con.setAutoCommit(false);
+      PreparedStatement statement;
+      System.out.println("Antes de commit1");
+      statement = _con.prepareStatement(
+              "insert into person (ci, name, last_name, birth_date, gender, dir, phone)  values ('" + ci + "', '" + name + "', '" + last_name + "', '" + birth_date + "','" + gender
+                      .toString() + "' , '" + dir + "', '" + phone + "')");
+
+
+      statement.executeUpdate();
+      System.out.println("Antes de commit2");
+
+      statement =
+              _con.prepareStatement("insert into user (username, password, rol, user_ci) values " + "('" + username + "','" + password + "','" + rol + "','" + user_ci + "')");
+
+      statement.executeUpdate();
+
+      System.out.println("Antes de commit3");
+      _con.commit();
+    } catch(SQLException ex)
+    {
+      try
+      {
+        _con.rollback();
+      } catch(SQLException ex1)
+      {
+        System.err.println("Transaction failed");
+        return false;
+      }
+
+      System.out.println(ex.getMessage());
+    }
+    return true;
+  }
+
+  public User get_user_by_ci(String ci) throws SQLException
+  {
+
+    ResultSet rs = this.execute_query(
+            "select p.ci, p.name, p.last_name, p.birth_date, p.gender, p.dir, p.phone, u.username, u.pass, u.rol, u.user_ci from user u join person p on u.user_ci = p.ci where u.user_ci = '" + ci + "'");
+
+    if(rs.next())
+    {
+      String ci1 = rs.getString("ci");
+      String name = rs.getString("name");
+      String last_name = rs.getString("last_name");
+      Date birth_date = rs.getDate("birth_date");
+      Engender gender = Engender.Masculino;
+     // String g = rs.getString("gender");
+
+      if(rs.getString("gender").equals("Masculino"))
+        gender = Engender.Masculino;
+      else if(rs.getString("gender").equals("Femenino"))
+        gender = Engender.Femenino;
+
+      String dir = rs.getString("dir");
+      String phone = rs.getString("phone");
+
+      String username = rs.getString("username");
+      String pass = rs.getString("pass");
+      Enrol rol = Enrol.Administrador;
+
+      if(rs.getString("rol").equals("Administrador"))
+        rol = Enrol.Administrador;
+      else if(rs.getString("rol").equals("Gerente"))
+        rol = Enrol.Gerente;
+      else if(rs.getString("rol").equals("Recepcion"))
+        rol = Enrol.Recepcion;
+
+      String user_ci = rs.getString("user_ci");
+
+      return new User(ci1, name, last_name, birth_date, gender, dir, phone, username, pass, rol, user_ci);
+
+    }
+
+    return null;
+  }
+
+
+
+
+
+
 }

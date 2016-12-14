@@ -70,7 +70,7 @@ public class Customer_controller implements Initializable
     telephone_text_field.addEventFilter(KeyEvent.KEY_TYPED, phone_Validation(12));
     direction_text_area.addEventFilter(KeyEvent.KEY_TYPED, direction_Validation(50));
     
-    id_tooltip.setText("La cedula debe tener empeza con V,E y debe tener \n" + "almenos 6 numeros y maximo 8\n" );
+    id_tooltip.setText("La cedula debe empezar con V,E seguido de un - y 8 caracteres numericos.\n" );
     id_text_field.setTooltip(id_tooltip);
     
     gender_combo_box.getItems().setAll(Engender.values());

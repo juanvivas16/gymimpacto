@@ -3,6 +3,7 @@ package controller;
 import data_model.*;
 import db_helper.Db_connection;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -60,6 +61,10 @@ public class Invoice_service_controller implements Initializable
     
     service_combobox.getItems().setAll(Service_type.values());
     service_combobox.getSelectionModel().selectFirst();
+  
+    ci_textfield.addEventFilter(KeyEvent.KEY_TYPED, ci_Validation(10));
+    price_textfield.addEventFilter(KeyEvent.KEY_TYPED, num_Validation(10));
+  
   }
   
   @FXML
@@ -146,18 +151,20 @@ public class Invoice_service_controller implements Initializable
     
     Service tmp_service = new Service();
     tmp_service = db.get_service_active_by_customer_id(ci);
-    
     LocalDate end = LocalDate.now();
     
-    if(tmp_service.getType_s().equals(Service_type.Quincenal))
-      end = tmp_service.getInit_date().toLocalDate().plusDays(15);
-    
-    else if(tmp_service.getType_s().equals(Service_type.Mensual))
-      end = tmp_service.getInit_date().toLocalDate().plusDays(30);
-    
-    else if(tmp_service.getType_s().equals(Service_type.Diario))
-      end = tmp_service.getInit_date().toLocalDate().plusDays(1);
-    
+    if(tmp_service != null)
+    {
+      if(tmp_service.getType_s().equals(Service_type.Quincenal))
+        end = tmp_service.getInit_date().toLocalDate().plusDays(15);
+  
+      else if(tmp_service.getType_s().equals(Service_type.Mensual))
+        end = tmp_service.getInit_date().toLocalDate().plusDays(30);
+  
+      else if(tmp_service.getType_s().equals(Service_type.Diario))
+        end = tmp_service.getInit_date().toLocalDate().plusDays(1);
+    } else
+      end = LocalDate.of(1992,9,16);
     
     if(tmp_customer != null && end.isBefore(LocalDate.now()))
     {
@@ -175,7 +182,8 @@ public class Invoice_service_controller implements Initializable
       
     } else
     {
-      status_label.setText("Servicio aun activo.");
+      //this.customer_label.setText(customer.getCi() + " " + customer.getName() + " " + customer.getLast_name());
+      this.status_label.setText("Servicio aun activo.");
     }
     
   }
@@ -195,6 +203,41 @@ public class Invoice_service_controller implements Initializable
     
   }
   
+  public EventHandler<KeyEvent> ci_Validation(final Integer max_Lengh)
+  {
+    return e -> {
+      TextField txt_TextField = (TextField) e.getSource();
+      if (txt_TextField.getText().length() >= max_Lengh)
+      {
+        e.consume();
+      }
+      if(e.getCharacter().matches("[V E 0-9-]"))
+      {
+      }
+      else
+      {
+        e.consume();
+      }
+    };
+  }
+  
+  public EventHandler<KeyEvent> num_Validation(final Integer max_Lengh)
+  {
+    return e -> {
+      TextField txt_TextField = (TextField) e.getSource();
+      if (txt_TextField.getText().length() >= max_Lengh)
+      {
+        e.consume();
+      }
+      if(e.getCharacter().matches("[0-9]"))
+      {
+      }
+      else
+      {
+        e.consume();
+      }
+    };
+  }
   
   @FXML
   protected void handle_menu_item_exit_action(ActionEvent e)

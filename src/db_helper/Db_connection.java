@@ -723,11 +723,50 @@ public class Db_connection
     return null;
   }
   
+  public int get_last_income_id() throws SQLException
+  {
+    ResultSet rs = this.execute_query("(SELECT id FROM income ORDER BY id DESC LIMIT 1)");
   
+    if(rs.next())
+    {
+      int id = rs.getInt("id");
+      return new Integer(id);
+    }
+    return 0;
+  }
   
-  
-  
-  
-  
-  
+  public boolean set_income_service_sql(String description, Date date, double sub_total, double iva, double total, String customer_id, String user_id, Date init_date, Service_type type_s)
+  {
+    try
+    {
+      _con.setAutoCommit(false);
+      PreparedStatement statement;
+      
+      statement = _con.prepareStatement(
+          "insert into income (description, date, sub_total, iva, total, customer_id, user_id) values" + "('" + description + "','" + date + "','" + sub_total + "','" + iva + "','" + total + "','" + customer_id + "','" + user_id +"')");
+      
+      statement.executeUpdate();
+      
+      int id = get_last_income_id();
+      
+      statement = _con.prepareStatement("INSERT INTO service (customer_id, type_s, init_date, income_id) VALUES " + "('"+ customer_id + "','" + type_s.toString() + "','" + init_date + "','" + id +"')");
+      
+      statement.executeUpdate();
+      
+      _con.commit();
+      
+    } catch(SQLException ex)
+    {
+      try
+      {
+        _con.rollback();
+        return false;
+      } catch(SQLException ex1)
+      {
+        System.err.println("Transaction failed");
+      }
+    }
+    
+    return true;
+  }
 }

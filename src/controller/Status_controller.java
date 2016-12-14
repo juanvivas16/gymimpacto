@@ -75,7 +75,9 @@ public class Status_controller implements Initializable
           
           Period period = Period.between(LocalDate.now(), end);
           
-          if(period.getDays() > 0)
+          if(LocalDate.now().isBefore(service.getInit_date().toLocalDate()))
+            this.status_label.setText("Servicio aun no comienza");
+          else if(period.getDays() > 0)
             this.status_label.setText("Quedan " + period.getDays() +"para culminar el servicio.");
           else
             this.status_label.setText("Servicio caducado.");
@@ -85,9 +87,11 @@ public class Status_controller implements Initializable
           LocalDate end = service.getInit_date().toLocalDate().plusDays(30);
           this.end_service_label.setText(end.toString());
           
-          Period period = Period.between(LocalDate.now(), end);
-          
-          if(period.getDays() > 0)
+          Period period = Period.between(service.getInit_date().toLocalDate(), end);
+  
+          if(LocalDate.now().isBefore(service.getInit_date().toLocalDate()))
+            this.status_label.setText("Servicio aun no comienza");
+          else if(period.getDays() > 0)
             this.status_label.setText("Quedan " + period.getDays() +"para culminar el servicio.");
           else
             this.status_label.setText("Servicio caducado.");
@@ -97,9 +101,11 @@ public class Status_controller implements Initializable
           LocalDate end = service.getInit_date().toLocalDate().plusDays(1);
           this.end_service_label.setText(end.toString());
           
-          Period period = Period.between(LocalDate.now(), end);
-          
-          if(period.getDays() > 0)
+          Period period = Period.between(service.getInit_date().toLocalDate(), end);
+  
+          if(LocalDate.now().isBefore(service.getInit_date().toLocalDate()))
+            this.status_label.setText("Servicio aun no comienza");
+          else if(period.getDays() > 0)
             this.status_label.setText("Quedan " + period.getDays() +"para culminar el servicio.");
           else
             this.status_label.setText("Servicio caducado.");

@@ -10,14 +10,18 @@ public class Product
   private String description;
   private double price;
   private long quantity_available;
+  private String supplier_rif;
+  
   
   public Product( ) {}
   
-  public Product(String description, double price, long quantity_available)
+  public Product(long id, String description, double price, long quantity_available, String supplier_rif)
   {
+    this.id = id;
     this.description = description;
     this.price = price;
     this.quantity_available = quantity_available;
+    this.supplier_rif = supplier_rif;
   }
   
   public long getId( )
@@ -60,9 +64,19 @@ public class Product
     this.quantity_available = quantity_available;
   }
   
+  public String getSupplier_rif( )
+  {
+    return supplier_rif;
+  }
+  
+  public void setSupplier_rif(String supplier_rif)
+  {
+    this.supplier_rif = supplier_rif;
+  }
+  
   @Override
   public String toString( )
   {
-    return "Product{" + "id=" + id + ", description='" + description + '\'' + ", price=" + price + ", quantity=" + quantity_available + '}';
+    return "Product{" + "id=" + id + ", description='" + description + '\'' + ", price=" + price + ", quantity_available=" + quantity_available + ", supplier_rif='" + supplier_rif + '\'' + '}';
   }
 }

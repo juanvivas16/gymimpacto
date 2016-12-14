@@ -1,6 +1,8 @@
 package controller;
 
 import data_model.Enrol;
+import data_model.Supplier;
+import db_helper.Db_connection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +17,7 @@ import main.Main;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 /**
@@ -36,31 +39,82 @@ public class Supplier_controller implements Initializable
   @FXML private Button edit_supplier_data_button;
   @FXML private Button save_button;
   
+  private Supplier supplier = new Supplier();
+  private boolean is_id = true;
+  private boolean is_new_supplier = false;
+  private Db_connection db = new Db_connection();
+  
   @Override
   public void initialize(URL location, ResourceBundle resources)
   {
-    username_label.setText(getUsername());
-    status_label.setText(" ");
-    new_supplier_data_button.setDisable(true);
-    edit_supplier_data_button.setDisable(true);
-    save_button.setDisable(true);
+    this.username_label.setText(getUsername());
+    this.status_label.setText(" ");
+    this.new_supplier_data_button.setDisable(true);
+    this.edit_supplier_data_button.setDisable(true);
+    this.save_button.setDisable(true);
+    this.name_text_field.setDisable(true);
+    this.phone_text_field.setDisable(true);
+    this.dir_text_area.setDisable(true);
+    this.desc_text_area.setDisable(true);
   }
 
   @FXML
-  protected void handle_save_action(ActionEvent event)
+  protected void handle_save_action(ActionEvent event) throws SQLException
   {
     
+    if(db.insert_supplier(rif_text_field.getText(),name_text_field.getText(),phone_text_field.getText(),dir_text_area.getText(),desc_text_area.getText(),username))
+      status_label.setText("Proveedor insertado con exito.");
+    else
+      status_label.setText("Error al insertar proveedor.");
 
   }
   
   @FXML
-  protected void handle_search_action(ActionEvent event)
+  protected void handle_search_action(ActionEvent event) throws SQLException
   {
+    if(is_id)
+    {
+      String rif = rif_text_field.getText();
+      Supplier tmp_supp = new Supplier();
+      tmp_supp = db.get_supplier_by_rif(rif);
+      
+      if(tmp_supp != null)
+      {
+        this.supplier = tmp_supp;
+        this.name_text_field.setText(supplier.getName());
+        this.phone_text_field.setText(supplier.getPhone());
+        this.dir_text_area.setText(supplier.getDir());
+        this.desc_text_area.setText(supplier.getProduct_desc());
+        
+        this.edit_supplier_data_button.setDisable(false);
+        this.name_text_field.setDisable(true);
+        this.phone_text_field.setDisable(true);
+        this.dir_text_area.setDisable(true);
+        this.desc_text_area.setDisable(true);
+        
+      } else
+      {
+        this.new_supplier_data_button.setDisable(false);
+        this.name_text_field.clear();
+        this.desc_text_area.clear();
+        this.phone_text_field.clear();
+        this.dir_text_area.clear();
+        this.status_label.setText("Proveedor no existe.");
+        this.edit_supplier_data_button.setDisable(true);
+      }
+    }
     
   }
+  
   @FXML
   protected void handle_new_supplier_button_action(ActionEvent event)
   {
+    this.is_new_supplier = true;
+    save_button.setDisable(false);
+    this.name_text_field.setDisable(false);
+    this.phone_text_field.setDisable(false);
+    this.dir_text_area.setDisable(false);
+    this.desc_text_area.setDisable(false);
     
   }
   
@@ -69,7 +123,14 @@ public class Supplier_controller implements Initializable
   {
     
   }
-
+  
+  @FXML protected  void handle_id_text_changed_action(ActionEvent event)
+  {
+    is_id = false;
+    
+  }
+  
+  
   @FXML
   protected void handle_exit_button(ActionEvent event) throws IOException
   {

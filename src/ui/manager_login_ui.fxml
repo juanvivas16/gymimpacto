@@ -28,16 +28,16 @@
       </MenuBar>
       <Label layoutX="456.0" layoutY="58.0" text="Usuario:" />
       <Label fx:id="username_label" layoutX="510.0" layoutY="58.0" text="__" />
-      <Button fx:id="income_button" layoutX="347.0" layoutY="406.0" mnemonicParsing="false" onAction="#handle_income_action" prefHeight="48.0" prefWidth="142.0" text="Ingresos" />
-      <Button fx:id="employee_button" layoutX="347.0" layoutY="156.0" mnemonicParsing="false" onAction="#handle_employee_action" prefHeight="48.0" prefWidth="142.0" text="Empleados" />
-      <Button fx:id="product_button" layoutX="347.0" layoutY="282.0" mnemonicParsing="false" onAction="#handle_product_action" prefHeight="48.0" prefWidth="142.0" text="Productos" />
-      <Button fx:id="supplier_button" layoutX="347.0" layoutY="218.0" mnemonicParsing="false" onAction="#handle_supplier_action" prefHeight="48.0" prefWidth="142.0" text="Proveedores" />
-      <Button fx:id="inventory_button" layoutX="80.0" layoutY="406.0" mnemonicParsing="false" onAction="#handle_inventory_action" prefHeight="48.0" prefWidth="176.0" text="Inventario de Equipos" />
-      <Button fx:id="expense_button" layoutX="347.0" layoutY="343.0" mnemonicParsing="false" onAction="#handle_expense_action" prefHeight="48.0" prefWidth="142.0" text="Egresos" />
-      <Button fx:id="income_product_button" layoutX="80.0" layoutY="343.0" mnemonicParsing="false" onAction="#handle_income_product_action" prefHeight="48.0" prefWidth="176.0" text="Ingresos por Productos" />
-      <Button fx:id="exit_button" layoutX="543.0" layoutY="411.0" mnemonicParsing="false" onAction="#handle_exit_button_action" prefHeight="38.0" prefWidth="65.0" text="Salir" />
-      <Button fx:id="income_service_button" layoutX="80.0" layoutY="282.0" mnemonicParsing="false" onAction="#handle_income_service_action" prefHeight="48.0" prefWidth="176.0" text="Ingresos por Servicio" />
-      <Button fx:id="service_button" layoutX="80.0" layoutY="218.0" mnemonicParsing="false" onAction="#handle_check_status_action" prefHeight="48.0" prefWidth="176.0" text="Estado de Servicio" />
       <Button fx:id="client_button" layoutX="80.0" layoutY="156.0" mnemonicParsing="false" onAction="#handle_client_action" prefHeight="48.0" prefWidth="176.0" text="Clientes" />
+      <Button fx:id="employee_button" layoutX="347.0" layoutY="156.0" mnemonicParsing="false" onAction="#handle_employee_action" prefHeight="48.0" prefWidth="142.0" text="Empleados" />
+      <Button fx:id="service_button" layoutX="80.0" layoutY="218.0" mnemonicParsing="false" onAction="#handle_check_status_action" prefHeight="48.0" prefWidth="176.0" text="Estado de Servicio" />
+      <Button fx:id="supplier_button" layoutX="347.0" layoutY="218.0" mnemonicParsing="false" onAction="#handle_supplier_action" prefHeight="48.0" prefWidth="142.0" text="Proveedores" />
+      <Button fx:id="income_service_button" layoutX="80.0" layoutY="282.0" mnemonicParsing="false" onAction="#handle_income_service_action" prefHeight="48.0" prefWidth="176.0" text="Ingresos por Servicio" />
+      <Button fx:id="product_button" layoutX="347.0" layoutY="282.0" mnemonicParsing="false" onAction="#handle_product_action" prefHeight="48.0" prefWidth="142.0" text="Productos" />
+      <Button fx:id="income_product_button" layoutX="80.0" layoutY="343.0" mnemonicParsing="false" onAction="#handle_income_product_action" prefHeight="48.0" prefWidth="176.0" text="Ingresos por Productos" />
+      <Button fx:id="expense_button" layoutX="347.0" layoutY="343.0" mnemonicParsing="false" onAction="#handle_expense_action" prefHeight="48.0" prefWidth="142.0" text="Egresos" />
+      <Button fx:id="inventory_button" layoutX="80.0" layoutY="406.0" mnemonicParsing="false" onAction="#handle_inventory_action" prefHeight="48.0" prefWidth="176.0" text="Inventario de Equipos" />
+      <Button fx:id="income_button" layoutX="347.0" layoutY="406.0" mnemonicParsing="false" onAction="#handle_income_action" prefHeight="48.0" prefWidth="142.0" text="Ingresos" />
+      <Button fx:id="exit_button" layoutX="543.0" layoutY="411.0" mnemonicParsing="false" onAction="#handle_exit_button_action" prefHeight="38.0" prefWidth="65.0" text="Salir" />
    </children>
 </Pane>

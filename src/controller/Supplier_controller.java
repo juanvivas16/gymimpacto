@@ -4,6 +4,7 @@ import data_model.Enrol;
 import data_model.Supplier;
 import db_helper.Db_connection;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import main.Main;
 
@@ -56,6 +58,12 @@ public class Supplier_controller implements Initializable
     this.phone_text_field.setDisable(true);
     this.dir_text_area.setDisable(true);
     this.desc_text_area.setDisable(true);
+  
+    rif_text_field.addEventFilter(KeyEvent.KEY_TYPED, rif_Validation(10));
+    name_text_field.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(20));
+    phone_text_field.addEventFilter(KeyEvent.KEY_TYPED, phone_Validation(12));
+    dir_text_area.addEventFilter(KeyEvent.KEY_TYPED, direction_Validation(50));
+    desc_text_area.addEventFilter(KeyEvent.KEY_TYPED, direction_Validation(50));
   }
 
   @FXML
@@ -63,7 +71,10 @@ public class Supplier_controller implements Initializable
   {
     
     if(db.set_supplier_sql(rif_text_field.getText(),name_text_field.getText(),phone_text_field.getText(),dir_text_area.getText(),desc_text_area.getText(),username))
+    {
       status_label.setText("Proveedor insertado con exito.");
+      this.save_button.setDisable(true);
+    }
     else
       status_label.setText("Error al insertar proveedor.");
 
@@ -175,6 +186,79 @@ public class Supplier_controller implements Initializable
     
       pane.getChildren().setAll(root);
     }
+  }
+  
+  public EventHandler<KeyEvent> letter_Validation(final Integer max_Lengh)
+  {
+    return e -> {
+      TextField txt_TextField = (TextField) e.getSource();
+      if (txt_TextField.getText().length() >= max_Lengh)
+      {
+        e.consume();
+      }
+      if(e.getCharacter().matches("[A-Za-z ]"))
+      {
+      }
+      else
+      {
+        e.consume();
+      }
+    };
+  }
+  
+  
+  public EventHandler<KeyEvent> rif_Validation(final Integer max_Lengh)
+  {
+    return e -> {
+      TextField txt_TextField = (TextField) e.getSource();
+      if (txt_TextField.getText().length() >= max_Lengh)
+      {
+        e.consume();
+      }
+      if(e.getCharacter().matches("[V E J 0-9-]"))
+      {
+      }
+      else
+      {
+        e.consume();
+      }
+    };
+  }
+  
+  public EventHandler<KeyEvent> phone_Validation(final Integer max_Lengh)
+  {
+    return e -> {
+      TextField txt_TextField = (TextField) e.getSource();
+      if (txt_TextField.getText().length() >= max_Lengh)
+      {
+        e.consume();
+      }
+      if(e.getCharacter().matches("[0-9-]"))
+      {
+      }
+      else
+      {
+        e.consume();
+      }
+    };
+  }
+  
+  public EventHandler<KeyEvent> direction_Validation(final Integer max_Lengh)
+  {
+    return e -> {
+      TextArea txt_TextField = (TextArea) e.getSource();
+      if (txt_TextField.getText().length() >= max_Lengh)
+      {
+        e.consume();
+      }
+      if(e.getCharacter().matches("[A-Za-z 0-9/]"))
+      {
+      }
+      else
+      {
+        e.consume();
+      }
+    };
   }
 
   @FXML

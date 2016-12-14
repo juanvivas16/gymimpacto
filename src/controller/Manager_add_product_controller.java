@@ -125,7 +125,10 @@ public class Manager_add_product_controller implements Initializable
   protected void handle_save_product_action(ActionEvent event)
   {
     if(db.set_product_sql(desc_textfield.getText(),Double.parseDouble(price_textfield.getText()), Integer.parseInt(quantity_textfield.getText()),supplier_combobox.getValue().toString()))
+    {
       status_label.setText("Producto insertado con exito");
+      this.add_product_button.setDisable(true);
+    }
     else
       status_label.setText("Error al insertar producto");
   }

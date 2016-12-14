@@ -5,11 +5,13 @@ import data_model.Enstate;
 import data_model.Equipment_inventory;
 import db_helper.Db_connection;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import main.Main;
 
@@ -46,13 +48,17 @@ public class Inventory_add_controller implements Initializable
   public void initialize(URL location, ResourceBundle resources)
   {
     username_label.setText(getUsername());
-    
     state_combobox.getItems().setAll(Enstate.values());
     state_combobox.getSelectionModel().selectFirst();
-    
     ad_date_datepicker.setValue(LocalDate.now());
-    
     description_textarea.setPrefColumnCount(1);
+  
+    name_textfield.addEventFilter(KeyEvent.KEY_TYPED, letter_Validation(20));
+    model_textfield.addEventFilter(KeyEvent.KEY_TYPED, alphaTF_Validation(20));
+    quantity_textfield.addEventFilter(KeyEvent.KEY_TYPED, num_Validation(3));
+    ad_date_datepicker.addEventFilter(KeyEvent.KEY_TYPED, date_Validation(10));
+    cost_textfield.addEventFilter(KeyEvent.KEY_TYPED, num_Validation(8));
+    description_textarea.addEventFilter(KeyEvent.KEY_TYPED, alphaTA_Validation(50));
   }
   
   @FXML
@@ -71,8 +77,11 @@ public class Inventory_add_controller implements Initializable
       this.eq_i.setState(Enstate.Inactivo);
     
     if(db.set_inventory_sql(eq_i.getName(), eq_i.getModel(), eq_i.getDescription(), eq_i.getAd_date(), eq_i.getCost(), eq_i.getQuantity(), eq_i.getState(), username))
+    {
       System.out.println("Inserto en inventario");
-
+      this.status_label.setText("Inserto en inventario");
+      this.save_button.setDisable(true);
+    }
   }
   
   @FXML
@@ -119,6 +128,113 @@ public class Inventory_add_controller implements Initializable
       
       pane.getChildren().setAll(root);
     }
+  }
+  
+  public EventHandler<KeyEvent> letter_Validation(final Integer max_Lengh)
+  {
+    return e -> {
+      TextField txt_TextField = (TextField) e.getSource();
+      if (txt_TextField.getText().length() >= max_Lengh)
+      {
+        e.consume();
+      }
+      if(e.getCharacter().matches("[A-Za-z ]"))
+      {
+      }
+      else
+      {
+        e.consume();
+      }
+    };
+  }
+  
+  public EventHandler<KeyEvent> num_Validation(final Integer max_Lengh)
+  {
+    return e -> {
+      TextField txt_TextField = (TextField) e.getSource();
+      if (txt_TextField.getText().length() >= max_Lengh)
+      {
+        e.consume();
+      }
+      if(e.getCharacter().matches("[0-9.]"))
+      {
+      }
+      else
+      {
+        e.consume();
+      }
+    };
+  }
+  
+  public EventHandler<KeyEvent> alphaTA_Validation(final Integer max_Lengh)
+  {
+    return e -> {
+      TextArea txt_TextField = (TextArea) e.getSource();
+      if (txt_TextField.getText().length() >= max_Lengh)
+      {
+        e.consume();
+      }
+      if(e.getCharacter().matches("[A-Za-z 0-9/]"))
+      {
+      }
+      else
+      {
+        e.consume();
+      }
+    };
+  }
+  
+  public EventHandler<KeyEvent> alphaTF_Validation(final Integer max_Lengh)
+  {
+    return e -> {
+      TextField txt_TextField = (TextField) e.getSource();
+      if (txt_TextField.getText().length() >= max_Lengh)
+      {
+        e.consume();
+      }
+      if(e.getCharacter().matches("[A-Za-z 0-9/]"))
+      {
+      }
+      else
+      {
+        e.consume();
+      }
+    };
+  }
+  
+  public EventHandler<KeyEvent> date_Validation(final Integer max_Lengh)
+  {
+    return e -> {
+      DatePicker txt_TextField = (DatePicker) e.getSource();
+      String str = txt_TextField.getValue().toString();
+      
+      System.out.println(str);
+      if ( str.isEmpty() )
+        return;
+      
+      if (txt_TextField.getValue().toString().length() > max_Lengh)
+      {
+        e.consume();
+      }
+      if (str.length() == max_Lengh)
+      {
+        // 3/26/2016
+        if (str.matches("[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}") )
+        {
+          
+        }
+        else
+          txt_TextField.setValue(LocalDate.parse("1970-01-01"));
+      }
+      
+      else if (e.getCharacter().matches("[0-9/]"))
+      {
+      }
+      else
+      {
+        e.consume();
+      }
+    };
   }
   
   @FXML

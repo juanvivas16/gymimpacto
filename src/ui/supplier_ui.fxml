@@ -43,8 +43,8 @@
       <Button fx:id="new_supplier_data_button" disable="true" layoutX="75.0" layoutY="422.0" mnemonicParsing="false" onAction="#handle_new_supplier_button_action" prefHeight="38.0" prefWidth="144.0" text="Nuevo Proveedor" />
       <Button fx:id="edit_supplier_data_button" disable="true" layoutX="238.0" layoutY="422.0" mnemonicParsing="false" onAction="#handle_edit_supplier_data_button_action" prefHeight="38.0" prefWidth="129.0" text="Editar Datos" />
       <Button fx:id="save_button" layoutX="380.0" layoutY="422.0" mnemonicParsing="false" onAction="#handle_save_action" prefHeight="38.0" prefWidth="97.0" text="Agregar" />
-      <Label layoutX="416.0" layoutY="341.0" text="Estado:" />
-      <Label fx:id="status_label" layoutX="465.0" layoutY="341.0" text="__" />
+      <Label layoutX="356.0" layoutY="190.0" text="Estado:" />
+      <Label fx:id="status_label" layoutX="405.0" layoutY="190.0" text="__" />
       <Button fx:id="exit_button" layoutX="537.0" layoutY="427.0" mnemonicParsing="false" onAction="#handle_exit_button" prefHeight="29.0" prefWidth="70.0" text="Atras" />
    </children>
 </Pane>

@@ -14,7 +14,7 @@ CREATE TABLE `customer` (
   `ci` varchar(10) NOT NULL,
   `init_date` date NOT NULL,
   PRIMARY KEY (`ci`),
-  CONSTRAINT `customer_ibfk_3` FOREIGN KEY (`ci`) REFERENCES `person` (`ci`)
+  CONSTRAINT `customer_ibfk_6` FOREIGN KEY (`ci`) REFERENCES `person` (`ci`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -25,7 +25,7 @@ CREATE TABLE `employee` (
   `pay` double NOT NULL,
   `activity` varchar(30) NOT NULL,
   PRIMARY KEY (`employee_ci`),
-  CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`employee_ci`) REFERENCES `person` (`ci`)
+  CONSTRAINT `employee_ibfk_2` FOREIGN KEY (`employee_ci`) REFERENCES `person` (`ci`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -43,7 +43,7 @@ CREATE TABLE `equipment_inventory` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `equipment_inventory_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `expenses`;
@@ -72,9 +72,9 @@ CREATE TABLE `income` (
   PRIMARY KEY (`id`),
   KEY `customer_id` (`customer_id`),
   KEY `user_id` (`user_id`),
-  CONSTRAINT `income_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`ci`),
-  CONSTRAINT `income_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  CONSTRAINT `income_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`username`),
+  CONSTRAINT `income_ibfk_3` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`ci`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 
 DELIMITER ;;
@@ -119,8 +119,11 @@ CREATE TABLE `product` (
   `description` varchar(50) NOT NULL,
   `price` double unsigned NOT NULL,
   `quantity_available` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  `supplier_rif` varchar(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `supplier_rif` (`supplier_rif`),
+  CONSTRAINT `product_ibfk_1` FOREIGN KEY (`supplier_rif`) REFERENCES `supplier` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `service`;
@@ -131,8 +134,8 @@ CREATE TABLE `service` (
   `income_id` int(11) NOT NULL,
   PRIMARY KEY (`income_id`,`customer_id`),
   KEY `customer_id` (`customer_id`),
-  CONSTRAINT `service_ibfk_2` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`ci`),
-  CONSTRAINT `service_ibfk_3` FOREIGN KEY (`income_id`) REFERENCES `income` (`id`)
+  CONSTRAINT `service_ibfk_3` FOREIGN KEY (`income_id`) REFERENCES `income` (`id`),
+  CONSTRAINT `service_ibfk_4` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`ci`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -150,17 +153,6 @@ CREATE TABLE `supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-DROP TABLE IF EXISTS `supplier_product`;
-CREATE TABLE `supplier_product` (
-  `product_id` int(11) NOT NULL,
-  `supplier_rif` varchar(10) NOT NULL,
-  KEY `product_id` (`product_id`),
-  KEY `supplier_rif` (`supplier_rif`),
-  CONSTRAINT `supplier_product_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
-  CONSTRAINT `supplier_product_ibfk_2` FOREIGN KEY (`supplier_rif`) REFERENCES `supplier` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `username` varchar(15) NOT NULL,
@@ -173,4 +165,4 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- 2016-12-13 05:42:51
+-- 2016-12-14 16:49:59

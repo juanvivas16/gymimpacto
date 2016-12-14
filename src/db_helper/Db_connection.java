@@ -505,7 +505,7 @@ public class Db_connection
   }
   
   
-  public boolean insert_supplier(String id, String name, String phone, String dir, String product_desc, String user_id)
+  public boolean set_supplier_sql(String id, String name, String phone, String dir, String product_desc, String user_id)
   {
     try
     {
@@ -559,7 +559,7 @@ public class Db_connection
     return names;
   }
   
-  public boolean set_product_sql(long id, String description, double price, long quantity_available )
+  public boolean set_product_sql(String description, double price, long quantity_available, String supplier)
   {
     try
     {
@@ -567,16 +567,18 @@ public class Db_connection
       PreparedStatement statement;
       
       statement = _con.prepareStatement(
-          "insert into product (id, description, price, quantity_available) " + "values ('" + id +"'','" + description + "','" + price + "','" + quantity_available + "')");
+          "insert into product (description, price, quantity_available, supplier_rif) " + "values ('" + description + "','" + price + "','" + quantity_available + "','" + supplier +"')");
       
       statement.executeUpdate();
       
       _con.commit();
     } catch(SQLException ex)
     {
+      
       try
       {
         _con.rollback();
+        return false;
       } catch(SQLException ex1)
       {
         System.err.println("Transaction failed");
@@ -705,5 +707,12 @@ public class Db_connection
     }
     return null;
   }
+  
+  
+  
+  
+  
+  
+  
   
 }

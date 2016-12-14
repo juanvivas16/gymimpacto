@@ -62,7 +62,7 @@ public class Supplier_controller implements Initializable
   protected void handle_save_action(ActionEvent event) throws SQLException
   {
     
-    if(db.insert_supplier(rif_text_field.getText(),name_text_field.getText(),phone_text_field.getText(),dir_text_area.getText(),desc_text_area.getText(),username))
+    if(db.set_supplier_sql(rif_text_field.getText(),name_text_field.getText(),phone_text_field.getText(),dir_text_area.getText(),desc_text_area.getText(),username))
       status_label.setText("Proveedor insertado con exito.");
     else
       status_label.setText("Error al insertar proveedor.");
@@ -110,12 +110,12 @@ public class Supplier_controller implements Initializable
   protected void handle_new_supplier_button_action(ActionEvent event)
   {
     this.is_new_supplier = true;
-    save_button.setDisable(false);
+    this.save_button.setDisable(false);
     this.name_text_field.setDisable(false);
     this.phone_text_field.setDisable(false);
     this.dir_text_area.setDisable(false);
     this.desc_text_area.setDisable(false);
-    
+    this.new_supplier_data_button.setDisable(true);
   }
   
   @FXML

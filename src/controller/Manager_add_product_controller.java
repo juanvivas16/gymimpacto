@@ -57,13 +57,13 @@ public class Manager_add_product_controller implements Initializable
     this.add_product_button.setDisable(true);
     
   }
-
+  
   @FXML
   protected void handle_edit_product_action(ActionEvent event)
   {
-
+    
   }
-
+  
   @FXML
   protected void handle_new_product_action(ActionEvent event) throws SQLException
   {
@@ -77,9 +77,10 @@ public class Manager_add_product_controller implements Initializable
     supplier_combobox.getItems().addAll(db.get_supplier_name());
     
     this.new_product_button.setDisable(true);
-
+    this.code_textfield.setDisable(true);
+    
   }
-
+  
   @FXML
   protected void handle_search_code_action(ActionEvent event) throws SQLException
   {
@@ -117,13 +118,16 @@ public class Manager_add_product_controller implements Initializable
         
       }
     }
-
+    
   }
   
   @FXML
-  protected void handle_add_product_action(ActionEvent event)
+  protected void handle_save_product_action(ActionEvent event)
   {
-    
+    if(db.set_product_sql(desc_textfield.getText(),Double.parseDouble(price_textfield.getText()), Integer.parseInt(quantity_textfield.getText()),supplier_combobox.getValue().toString()))
+      status_label.setText("Producto insertado con exito");
+    else
+      status_label.setText("Error al insertar producto");
   }
   
   @FXML protected  void handle_id_text_changed_action(ActionEvent event)
@@ -137,57 +141,57 @@ public class Manager_add_product_controller implements Initializable
     if(rol.equals(Enrol.Recepcion))
     {
       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/reception_login_ui.fxml"));
-    
+      
       Parent root = (Parent) fxmlLoader.load();
       Reception_login_controller controller = fxmlLoader.<Reception_login_controller>getController();
       controller.setUsername(getUsername());
       controller.setRol(rol);
       controller.initialize(null, null);
-    
+      
       Main.primary_stage.setTitle("Recepcion | Gimnasio Impacto (C) 2016");
-    
+      
       pane.getChildren().setAll(root);
-    
+      
     } else if(rol.equals(Enrol.Gerente))
     {
       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/manager_login_ui.fxml"));
-    
+      
       Parent root = (Parent)fxmlLoader.load();
       Manager_login_controller controller = fxmlLoader.<Manager_login_controller>getController();
       controller.setUsername(getUsername());
       controller.setRol(rol);
       controller.initialize(null, null);
-    
+      
       Main.primary_stage.setTitle("Gerente | Gimnasio Impacto (C) 2016");
-    
+      
       pane.getChildren().setAll(root);
     } else if(rol.equals(Enrol.Administrador))
     {
       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ui/admin_login_ui.fxml"));
-    
+      
       Parent root = (Parent)fxmlLoader.load();
       Admin_login_controller controller = fxmlLoader.<Admin_login_controller>getController();
       controller.setUsername(getUsername());
       controller.setRol(rol);
       controller.initialize(null, null);
-    
+      
       Main.primary_stage.setTitle("Admin | Gimnasio Impacto (C) 2016");
-    
+      
       pane.getChildren().setAll(root);
     }
   }
-
+  
   @FXML
   protected void handle_menu_item_exit_action(ActionEvent e)
   {
     System.exit(0);
   }
-
+  
   public String getUsername()
   {
     return username;
   }
-
+  
   public void setUsername(String username)
   {
     this.username = username;

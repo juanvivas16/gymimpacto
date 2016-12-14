@@ -72,42 +72,42 @@ public class Status_controller implements Initializable
         {
           LocalDate end = service.getInit_date().toLocalDate().plusDays(15);
           this.end_service_label.setText(end.toString());
-  
-//          Days d = Days.daysBetween(startDate, endDate);
-//          int days = d.getDays();
+          
           Period period = Period.between(LocalDate.now(), end);
           
-          this.status_label.setText("Quedan " + period.getDays() +"para culminar el servicio.");
+          if(period.getDays() > 0)
+            this.status_label.setText("Quedan " + period.getDays() +"para culminar el servicio.");
+          else
+            this.status_label.setText("Servicio caducado.");
           
         } else if(service.getType_s().equals(Service_type.Mensual))
         {
           LocalDate end = service.getInit_date().toLocalDate().plusDays(30);
           this.end_service_label.setText(end.toString());
-  
+          
           Period period = Period.between(LocalDate.now(), end);
-          this.status_label.setText("Quedan " + period.getDays() +" dias para culminar el servicio.");
+          
+          if(period.getDays() > 0)
+            this.status_label.setText("Quedan " + period.getDays() +"para culminar el servicio.");
+          else
+            this.status_label.setText("Servicio caducado.");
           
         }else if(service.getType_s().equals(Service_type.Diario))
         {
           LocalDate end = service.getInit_date().toLocalDate().plusDays(1);
           this.end_service_label.setText(end.toString());
-  
+          
           Period period = Period.between(LocalDate.now(), end);
-          this.status_label.setText("Quedan " + period.getDays() +" para culminar el servicio.");
+          
+          if(period.getDays() > 0)
+            this.status_label.setText("Quedan " + period.getDays() +"para culminar el servicio.");
+          else
+            this.status_label.setText("Servicio caducado.");
         }
-        
-        
-        
       }
-      
-      
     }
-    
-    
-    
-    
-    
   }
+  
   @FXML protected  void handle_id_text_changed_action(ActionEvent event)
   {
     is_id = true;

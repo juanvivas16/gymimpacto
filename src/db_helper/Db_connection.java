@@ -2,6 +2,7 @@ package db_helper;
 
 
 import data_model.*;
+import jdk.internal.util.xml.impl.Pair;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -464,7 +465,7 @@ public class Db_connection
   
   public Service search_service_by_customer_id(String ci) throws SQLException
   {
-    ResultSet rs = this.execute_query("SELECT * FROM service WHERE customer_id ='" + ci + "'" + "ORDER BY income_id LIMIT 1");
+    ResultSet rs = this.execute_query("SELECT * FROM service WHERE customer_id ='" + ci + "'" + "ORDER BY income_id DESC LIMIT 1");
     
     
     if(rs.next())
@@ -559,15 +560,29 @@ public class Db_connection
     return names;
   }
   
+  public String get_supplier_rif_by_name(String name) throws SQLException
+  {
+    ResultSet rs = this.execute_query("SELECT id FROM supplier WHERE name = '"+ name +"'GROUP BY id");
+  
+    if(rs.next())
+    {
+      String rif = rs.getString("id");
+      return new String(rif);
+    }
+    return null;
+  }
+  
   public boolean set_product_sql(String description, double price, long quantity_available, String supplier)
   {
     try
     {
       _con.setAutoCommit(false);
       PreparedStatement statement;
+      String rif = new String();
+      rif = get_supplier_rif_by_name(supplier);
       
       statement = _con.prepareStatement(
-          "insert into product (description, price, quantity_available, supplier_rif) " + "values ('" + description + "','" + price + "','" + quantity_available + "','" + supplier +"')");
+          "insert into product (description, price, quantity_available, supplier_rif) " + "values ('" + description + "','" + price + "','" + quantity_available + "','" + rif +"')");
       
       statement.executeUpdate();
       

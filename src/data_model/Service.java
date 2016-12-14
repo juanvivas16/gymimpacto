@@ -23,6 +23,12 @@ public class Service
     this.customer_ci = customer_ci;
   }
   
+  public Service(Service_type type_s, Date init_date)
+  {
+    this.type_s = type_s;
+    this.init_date = init_date;
+  }
+  
   public long getIncome_id( )
   {
     return income_id;

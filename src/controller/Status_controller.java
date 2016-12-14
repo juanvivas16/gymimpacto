@@ -5,12 +5,14 @@ import data_model.Service;
 import data_model.Service_type;
 import db_helper.Db_connection;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import main.Main;
 
@@ -50,6 +52,9 @@ public class Status_controller implements Initializable
     end_service_label.setText(" ");
     service_type_label.setText(" ");
     status_label.setText(" ");
+    
+    search_textfield.addEventFilter(KeyEvent.KEY_TYPED, ci_Validation(10));
+    
   }
   
   @FXML
@@ -78,7 +83,7 @@ public class Status_controller implements Initializable
           if(LocalDate.now().isBefore(service.getInit_date().toLocalDate()))
             this.status_label.setText("Servicio aun no comienza");
           else if(period.getDays() > 0)
-            this.status_label.setText("Quedan " + period.getDays() +"para culminar el servicio.");
+            this.status_label.setText("Quedan " + period.getDays() +" dias para culminar el servicio.");
           else
             this.status_label.setText("Servicio caducado.");
           
@@ -88,11 +93,11 @@ public class Status_controller implements Initializable
           this.end_service_label.setText(end.toString());
           
           Period period = Period.between(service.getInit_date().toLocalDate(), end);
-  
+          
           if(LocalDate.now().isBefore(service.getInit_date().toLocalDate()))
             this.status_label.setText("Servicio aun no comienza");
           else if(period.getDays() > 0)
-            this.status_label.setText("Quedan " + period.getDays() +"para culminar el servicio.");
+            this.status_label.setText("Quedan " + period.getDays() +" dias para culminar el servicio.");
           else
             this.status_label.setText("Servicio caducado.");
           
@@ -102,14 +107,21 @@ public class Status_controller implements Initializable
           this.end_service_label.setText(end.toString());
           
           Period period = Period.between(service.getInit_date().toLocalDate(), end);
-  
+          
           if(LocalDate.now().isBefore(service.getInit_date().toLocalDate()))
             this.status_label.setText("Servicio aun no comienza");
           else if(period.getDays() > 0)
-            this.status_label.setText("Quedan " + period.getDays() +"para culminar el servicio.");
+            this.status_label.setText("Quedan " + period.getDays() +" dias para culminar el servicio.");
           else
             this.status_label.setText("Servicio caducado.");
         }
+      } else
+      {
+        status_label.setText("No posee servicio contratado.");
+        init_date_label.setText(" ");
+        end_service_label.setText(" ");
+        service_type_label.setText(" ");
+        
       }
     }
   }
@@ -167,6 +179,24 @@ public class Status_controller implements Initializable
   
   @FXML
   protected void handle_menu_item_exit_action(ActionEvent e) {System.exit(0);}
+  
+  public EventHandler<KeyEvent> ci_Validation(final Integer max_Lengh)
+  {
+    return e -> {
+      TextField txt_TextField = (TextField) e.getSource();
+      if (txt_TextField.getText().length() >= max_Lengh)
+      {
+        e.consume();
+      }
+      if(e.getCharacter().matches("[V E 0-9-]"))
+      {
+      }
+      else
+      {
+        e.consume();
+      }
+    };
+  }
   
   public String getUsername() {
     return username;

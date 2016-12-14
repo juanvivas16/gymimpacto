@@ -95,6 +95,7 @@ public class Customer_controller implements Initializable
       this.status_label.setText("¡Error en Apellido!");
     
     this.customer.setDir(direction_text_area.getText());
+    this.status_label.setText(telephone_text_field.getText());
     
     if(checkPhone(telephone_text_field.getText()))
       this.customer.setPhone(telephone_text_field.getText());
@@ -118,10 +119,10 @@ public class Customer_controller implements Initializable
       this.customer.setInit_date(Date.valueOf(LocalDate.now()));
       
       if(customer.getPhone().isEmpty() || customer.getPhone() == null)
-        System.out.println(customer.getCi() +" "+ customer.getName() +" "+ customer.getLast_name() +" "+ customer.getGender() +" "+ customer.getBirth_date() +" "+ customer.getDir() +" "+ customer.getPhone() +" "+ customer.getInit_date());
+        customer.setPhone(telephone_text_field.getText());
       
       if(db.set_customer_sql(customer.getCi(), customer.getName(), customer.getLast_name(), customer.getBirth_date(), customer.getGender(), customer.getDir(), customer.getPhone(), customer.getInit_date()))
-        System.out.println("Inserto ok");
+        System.out.println("Inserto cliente correctamente");
       
       if(checkPhone(telephone_text_field.getText()) && checkAlpha(name_text_field.getText()) && checkAlpha(last_name_text_field.getText()) && checkCI(id_text_field.getText()))
         this.status_label.setText("¡Cliente guardado con éxito!");
@@ -217,11 +218,7 @@ public class Customer_controller implements Initializable
         
         this.status_label.setText("Cliente no existe!");
         this.new_customer_data_button.setDisable(false);
-        
-        if(rol.equals(Enrol.Administrador) || rol.equals(Enrol.Gerente))
-          this.edit_customer_data_button.setDisable(false);
-        else if(rol.equals(Enrol.Recepcion))
-          this.edit_customer_data_button.setDisable(true);
+        this.edit_customer_data_button.setDisable(true);
         
       }
     }
@@ -349,7 +346,7 @@ public class Customer_controller implements Initializable
       {
         e.consume();
       }
-      if(e.getCharacter().matches("[A-Za-z 0-9/-]"))
+      if(e.getCharacter().matches("[V E 0-9-]"))
       {
       }
       else
@@ -367,7 +364,7 @@ public class Customer_controller implements Initializable
       {
         e.consume();
       }
-      if(e.getCharacter().matches("[0-9/-]"))
+      if(e.getCharacter().matches("[0-9-]"))
       {
       }
       else
@@ -455,7 +452,8 @@ public class Customer_controller implements Initializable
     boolean respuesta = false;
     
     //if (str.matches("^\\d+\\d+\\d+\\d+[-]+\\d+\\d+\\d+\\d+\\d+\\d+\\d$"))
-    if(str.matches("([0-9]-|\\-)+"))
+    //if(str.matches("([0-9]+[-])"))
+    if(str.matches("\\d{4}[-\\s]\\d{7}$"))
       respuesta = true;
     
     return respuesta;

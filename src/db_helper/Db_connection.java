@@ -563,7 +563,7 @@ public class Db_connection
   public String get_supplier_rif_by_name(String name) throws SQLException
   {
     ResultSet rs = this.execute_query("SELECT id FROM supplier WHERE name = '"+ name +"'GROUP BY id");
-  
+    
     if(rs.next())
     {
       String rif = rs.getString("id");
@@ -726,7 +726,7 @@ public class Db_connection
   public int get_last_income_id() throws SQLException
   {
     ResultSet rs = this.execute_query("(SELECT id FROM income ORDER BY id DESC LIMIT 1)");
-  
+    
     if(rs.next())
     {
       int id = rs.getInt("id");
@@ -769,4 +769,28 @@ public class Db_connection
     
     return true;
   }
+  
+  public Service get_service_active_by_customer_id(String ci) throws SQLException
+  {
+    ResultSet rs = this.execute_query("SELECT s.type_s, s.init_date FROM service s\n" + "JOIN customer c ON s.customer_id = c.ci\n" + "WHERE s.customer_id = '" + ci + "' ORDER BY s.income_id DESC\n" + "LIMIT 1");
+    
+    if(rs.next())
+    {
+      Service_type type_s = Service_type.Diario;
+      
+      if(rs.getString("type_s").equals("Diario"))
+        type_s = Service_type.Diario;
+      else if(rs.getString("type_s").equals("Quincenal"))
+        type_s = Service_type.Quincenal;
+      else if(rs.getString("type_s").equals("Mensual"))
+        type_s = Service_type.Mensual;
+      
+      Date init_date = rs.getDate("init_date");
+      
+      return new Service(type_s,init_date);
+      
+    }
+    return null;
+  }
+  
 }

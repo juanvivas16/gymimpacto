@@ -17,6 +17,7 @@ import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ResourceBundle;
 
 /**
@@ -127,7 +128,9 @@ public class Invoice_service_controller implements Initializable
     else if(service_combobox.getValue().toString().equals("Mensual"))
       this.service.setType_s(Service_type.Mensual);
     
-    if(db.set_income_service_sql(income.getDescription(), income.getDate(), income.getSub_total(), income.getIva(), income.getTotal(), income.getCustomer_id(), username, service.getInit_date(), service.getType_s()))
+    if(this.service.getInit_date().before(Date.valueOf(LocalDate.now())))
+      this.status_label.setText("Fecha de inicio debe ser mayor a fecha actual");
+    else if(db.set_income_service_sql(income.getDescription(), income.getDate(), income.getSub_total(), income.getIva(), income.getTotal(), income.getCustomer_id(), username, service.getInit_date(), service.getType_s()))
       this.status_label.setText("Ingreso insertado con exito.");
     else
       this.status_label.setText("Error insertando ingreso.");
@@ -141,7 +144,22 @@ public class Invoice_service_controller implements Initializable
     Customer tmp_customer = new Customer();
     tmp_customer = db.get_Customer_by_id(ci);
     
-    if(tmp_customer != null)
+    Service tmp_service = new Service();
+    tmp_service = db.get_service_active_by_customer_id(ci);
+    
+    LocalDate end = LocalDate.now();
+    
+    if(tmp_service.getType_s().equals(Service_type.Quincenal))
+      end = tmp_service.getInit_date().toLocalDate().plusDays(15);
+    
+    else if(tmp_service.getType_s().equals(Service_type.Mensual))
+      end = tmp_service.getInit_date().toLocalDate().plusDays(30);
+    
+    else if(tmp_service.getType_s().equals(Service_type.Diario))
+      end = tmp_service.getInit_date().toLocalDate().plusDays(1);
+    
+    
+    if(tmp_customer != null && end.isBefore(LocalDate.now()))
     {
       this.customer = tmp_customer;
       this.customer_label.setText(customer.getCi() + " " + customer.getName() + " " + customer.getLast_name());
@@ -157,7 +175,7 @@ public class Invoice_service_controller implements Initializable
       
     } else
     {
-      status_label.setText("Cliente no encontrado.");
+      status_label.setText("Servicio aun activo.");
     }
     
   }
